@@ -6,7 +6,7 @@
 Homestead.json
 Homestead.yaml
 .env
-/bizjets
+/bizjets/*.php
 /rss
 
 tests/_output/*

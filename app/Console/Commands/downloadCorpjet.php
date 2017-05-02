@@ -39,7 +39,7 @@ class DownloadCorpjet extends Command
      */
     public function handle()
     {
-    $files = file("/var/www/laravel54/bizjets/corpjet.txt", FILE_IGNORE_NEW_LINES);
+    $files = file("/var/www/laravel54/corpjet.txt", FILE_IGNORE_NEW_LINES);
         foreach ($files as $file) {
         // echo $file . PHP_EOL;
     

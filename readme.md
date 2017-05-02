@@ -40,6 +40,10 @@ mysql -u root -p laravel54 < laravel54.sql
 mysql -u root -p londinium < londinium.sql
 
 ```
+create .env file from the .env.example
+```
+setup the database username and password for the 3 databases
+```
 
 ### Private Jet database tools
 
