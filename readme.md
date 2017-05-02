@@ -1,18 +1,30 @@
-# Andys laravel 5.4 notes
+# Allotmentandy's Laravel 5.4 demo
 
 ## Introduction
 
-This is a demo application to show off some of the features of Laravel 5.4 that i have made.
+This is a demo application to show off some of the features of Laravel 5.4 that i have made. It has the following features
+
+- Private Jet system for importing data using commands 
+- londinium website directory system
+- jquery examples
+- rss feeds to download laravel jobs from 3 feeds
 
 ## Install
 
 download the app 
+```
+mkdir /var/www/laravel54
+cd /var/laravel54
+git clone https://github.com/allotmentandy/laravel54
+```
 
-create 2 directories 
+create 2 directories and give them read/write rights
 
 ```
-/bizjets
-/rss
+mkdir bizjets
+chmod 777 bizjets
+mkdir rss
+chmod 777 rss
 ```
 
 run
