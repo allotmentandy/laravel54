@@ -22,9 +22,7 @@ create 2 directories and give them read/write rights
 
 ```
 mkdir bizjets
-chmod 777 bizjets
 mkdir rss
-chmod 777 rss
 ```
 
 run
