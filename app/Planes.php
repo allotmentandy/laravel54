@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlanesLatest extends Model
+class Planes extends Model
 {
 
 	protected $connection = 'mysql2';
@@ -15,7 +15,7 @@ class PlanesLatest extends Model
      * @var string
      */
     
-    protected $table = 'planesLatest';
+    protected $table = 'planes';
     
     /**
      * Indicates if the model should be timestamped.
@@ -24,4 +24,15 @@ class PlanesLatest extends Model
      */
 
     public $timestamps = false;
+
+    /**
+     * Indicates what can be updated or edited
+     *
+     * @var bool
+     */
+    protected $fillable = [
+        'seenScrape'
+    ];     
+
+
 }

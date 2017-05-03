@@ -162,14 +162,15 @@ INSERT INTO `countries` (`id`, `A`, `B`, `C`, `D`) VALUES
 (144,	'J2',	'J2',	NULL,	NULL),
 (145,	'ZA',	'ZA',	NULL,	NULL);
 
-DROP TABLE IF EXISTS `planesLatest`;
-CREATE TABLE `planesLatest` (
+DROP TABLE IF EXISTS `planes`;
+CREATE TABLE `planes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `reg` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `conNumber` varchar(255) NOT NULL,
   `notes` varchar(255) DEFAULT NULL,
   `countryCode` varchar(10) DEFAULT NULL,
+  `seenScrape` varchar(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `allFields` (`reg`,`type`,`conNumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -5,15 +5,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Planes</div>
-                    <div class="panel-body">
-                        Seen/Scrape<br>
-                        <a href="{{ route('txtview') }}">Download HTML</a><br>
-                        Types List<br>
-                        Country List<br>
-
-                    </div>
-                </div>
+                @include('partials.planes')
             </div>
 
         <div class="col-md-7">

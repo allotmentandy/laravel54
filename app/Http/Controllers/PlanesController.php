@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use DB;
-use App\PlanesLatest;
+use App\Planes;
 use App\Countries;
 
 use PDF;
@@ -17,7 +17,7 @@ class PlanesController extends Controller
 	public $output;
 
     function index(){
-		$data['reg'] = PlanesLatest::orderByRaw('RAND()')->take(1)->get();
+		$data['reg'] = Planes::orderByRaw('RAND()')->take(1)->get();
 
     	return view('planes', $data);
     }
@@ -50,11 +50,11 @@ class PlanesController extends Controller
 			
 			foreach ($items as $item){
 
-					if ($item['countryCode'] != $countryCode){
-						//$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
-						echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] ."</th></tr>" . PHP_EOL;
-						$countryCode = $item['countryCode'];
-					}
+				if ($item['countryCode'] != $countryCode){
+					//$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
+					echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] ."</th></tr>" . PHP_EOL;
+					$countryCode = $item['countryCode'];
+				}
 
 			$seen =  rand(0,2);
 			echo "<tr><td ";
@@ -74,58 +74,70 @@ class PlanesController extends Controller
 				
 				default:
 			echo "><b>☐</b> ";
-
-  
- 					break;
+				break;
 			}
 
-
-
-					echo "</td><td>" . $item['reg'] . "</td><td>";
-					echo $item['type'] . "</td><td>";
-					echo $item['conNumber'] . "</td></tr>" .PHP_EOL;
+				echo "</td><td>" . $item['reg'] . "</td><td>";
+				echo $item['type'] . "</td><td>";
+				echo $item['conNumber'] . "</td></tr>" .PHP_EOL;
 				}
 		
-
 			}
 		);
 			echo ("</table></body></html>");
 	
 		}
 	
-    
-    function pdfview(){
+    public function list(){
+    	$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(15);
+    	return view('planesList', $data);
+    }
 
-		set_time_limit(5000);
-		ini_set('memory_limit','1200M');
 
-    	$output = ("<style>body {font-family: Helvetica, Arial, Sans-Serif;} th {background: #ddd; text-align: left; padding: 5px;}</style>");
+    public function seen( $id){
+		Planes::where('id', $id)->update(['seenScrape' => 'seen']);
+		return back()->with('message','Operation Successful !' . $id);
+    }
 
-		PlanesLatest::select('reg', 'type', 'conNumber', 'countryCode')->orderBy('countryCode', 'asc')->chunk(5000, function($items)  use (&$output) {
-			$countryCode = "";
+    public function scrape( $id){
+		Planes::where('id', $id)->update(['seenScrape' => 'scrape']);
+		return back()->with('message','Operation Successful !' . $id);
+    }
+
+
+    // pdf view is too much for the server, use browser?
+  	//   function pdfview(){
+
+		// set_time_limit(5000);
+		// ini_set('memory_limit','1200M');
+
+  		// $output = ("<style>body {font-family: Helvetica, Arial, Sans-Serif;} th {background: #ddd; text-align: left; padding: 5px;}</style>");
+
+		// Planes::select('reg', 'type', 'conNumber', 'countryCode')->orderBy('countryCode', 'asc')->chunk(5000, function($items)  use (&$output) {
+		// $countryCode = "";
 			
-			$output .= "<table>";
+		// $output .= "<table>";
 
-			foreach ($items as $item){
+		// foreach ($items as $item){
 
-					if ($item['countryCode'] != $countryCode){
-						$output .= "<tr><th colspan='3'>" . $item['countryCode'] ."</th></tr>";
-						$countryCode = $item['countryCode'];
-					}
-					$output .= "<tr><td>" . $item['reg'] . "</td><td>";
-					$output .= $item['type'] . "</td><td>";
-					$output .= $item['conNumber'] . "</td></tr>";
-				}
+		// 			if ($item['countryCode'] != $countryCode){
+		// 				$output .= "<tr><th colspan='3'>" . $item['countryCode'] ."</th></tr>";
+		// 				$countryCode = $item['countryCode'];
+		// 			}
+		// 			$output .= "<tr><td>" . $item['reg'] . "</td><td>";
+		// 			$output .= $item['type'] . "</td><td>";
+		// 			$output .= $item['conNumber'] . "</td></tr>";
+		// 		}
 		
-			$output .= "</table>";
+		// 	$output .= "</table>";
 
-			}
-		);
+		// 	}
+		// );
 	
-		$pdf = PDF::loadHTML($output);
+		// $pdf = PDF::loadHTML($output);
 
-		return $pdf->download('planes.pdf'); 
+		// return $pdf->download('planes.pdf'); 
 
-		}
+		// }
 
 }

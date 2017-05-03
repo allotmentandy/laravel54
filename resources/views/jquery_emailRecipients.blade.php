@@ -15,7 +15,7 @@
     
     <h4>Recipients:</h4>
 
-    <form action="/reportEditRecipientsProcess" method="POST"  class="form-horizontal">
+    <form action="/" method="POST" class="form-horizontal">
 
     <a href="#" id="add" class="button">ADD ANOTHER EMAIL</a>
     <br>
