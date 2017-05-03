@@ -27,10 +27,10 @@ class RssController extends Controller
 
     function demo() {
     $feed = Feeds::make([
-        'http://www.indeed.co.uk/rss?q=php',
+        'http://www.indeed.co.uk/rss?q=laravel',
+        'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss',
         'https://remoteok.io/remote-jobs.rss',
-		'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith',
-		'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss'
+		'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith'
     ], 20);
     $data = array(
       'title'     => $feed->get_title(),

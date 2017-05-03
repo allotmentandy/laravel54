@@ -19,6 +19,8 @@ class JqueryController extends Controller
     	return view('jquery_togglePanels');
     }
 
-
+	function jquery_emailRecipients(){
+    	return view('jquery_emailRecipients');
+    }
 
 }

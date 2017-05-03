@@ -39,6 +39,7 @@ Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/jquery', 'JqueryController@index')->name('jquery');;
 Route::get('/jquery/SmsMessage', 'JqueryController@jquery_smsMessage')->name('jquery_smsMessage');;
 Route::get('/jquery/TogglePanels', 'JqueryController@jquery_togglePanels')->name('jquery_togglePanels');;
+Route::get('/jquery/EmailRecipients', 'JqueryController@jquery_emailRecipients')->name('jquery_emailRecipients');;
 
 
 //twitter
