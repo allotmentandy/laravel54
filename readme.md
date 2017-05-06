@@ -21,11 +21,13 @@ cd /var/laravel54
 git clone https://github.com/allotmentandy/laravel54
 ```
 
-create 2 directories and give them read/write rights
+create 4 directories and give them read/write rights
 
 ```
 mkdir bizjets
 mkdir rss
+mkdir public/jetPhotos
+mkdir public/airlinersNet 
 ```
 
 run
