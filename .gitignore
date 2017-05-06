@@ -8,5 +8,5 @@ Homestead.yaml
 .env
 /bizjets/*.php
 /rss
-
+public/planeImages/
 tests/_output/*

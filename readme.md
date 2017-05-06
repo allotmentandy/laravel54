@@ -8,6 +8,9 @@ This is a demo application to show off some of the features of Laravel 5.4 that 
 - londinium website directory system
 - jquery examples
 - rss feeds to download laravel jobs from 3 feeds
+- guzzle command to download html
+- import command to parse downloaded html
+- twitter api examples 
 
 ## Install
 
@@ -63,16 +66,11 @@ Parse the files using xpath and import into the database from each of these file
 php artisan bizjets:import
 ```
 
-to do 
+### Job to download an image when a plane is marked as seen
 
-``` compare the new data to the planesLatest table ```
-
-
-### to do
-- private jet database examples
-- guzzle command to download html
-- import command to parse downloaded html
-- twitter api examples 
+```
+php artisan queue:work --tries=1
+```
 
 #### phpunit tests
 run with 
@@ -91,3 +89,9 @@ php artisan dusk
 
 
 
+
+
+### to do
+- compare the planesNew data to the planes table 
+- Xpath extract the data from the donwload jobs - serial, owner and store in db 
+- blank results for registration eg. 3c-llx

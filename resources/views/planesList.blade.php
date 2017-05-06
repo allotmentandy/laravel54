@@ -8,7 +8,7 @@
                 @include('partials.planes')
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-9">
 
             <table class="table table-condensed">
             <?php 
@@ -43,7 +43,7 @@
 
             <?php 
                 echo $planes->links();
-            echo Session::get('message');
+                echo Session::get('message');
             ?>
         </div>
     </div>
