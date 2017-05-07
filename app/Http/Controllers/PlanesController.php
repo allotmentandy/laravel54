@@ -95,13 +95,13 @@ class PlanesController extends Controller
         Planes::where('id', $id)->update(['seenScrape' => 'seen']);
         // now set the job to download an image of this
         $this->downloadImage($id);
-        return back()->with('message', 'Operation Successful !' . $id);
+        return back()->with('message', 'Operation Successful <b>' . $id .  '</b>');
     }
 
     public function scrape($id)
     {
         Planes::where('id', $id)->update(['seenScrape' => 'scrape']);
-        return back()->with('message', 'Operation Successful !' . $id);
+        return back()->with('message', 'Operation Successful ' . $id);
     }
 
     private function downloadImage($id)

@@ -43,11 +43,20 @@
 
             <?php 
                 echo $planes->links();
-                echo Session::get('message');
             ?>
+
         </div>
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+            <script type="text/javascript">
+                    $(document).ready(function() {
+                        $.bootstrapGrowl("<?php echo Session::get('message'); ?>");
+                    });
+            </script>
 
 @endsection
+
