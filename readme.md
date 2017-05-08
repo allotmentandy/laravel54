@@ -30,8 +30,17 @@ mkdir public/jetPhotos
 mkdir public/airlinersNet 
 ```
 
+PHP requirements
+```
+apt-get install php7.0-gd
+apt-get install php7.0-tidy
+apt-get install php7.0-mbstring
+```
+
 run
 ``` 
+php artisan key:generate
+php artisan config:clear
 composer install
 ```
 

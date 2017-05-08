@@ -32,7 +32,6 @@
 
                 // echo "<td>" . $p->notes . "</td>";
 
-
                 echo "</tr>";
 
             endforeach;
@@ -48,15 +47,18 @@
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('scripts')
-            <script type="text/javascript">
-                    $(document).ready(function() {
-                        $.bootstrapGrowl("<?php echo Session::get('message'); ?>");
-                    });
-            </script>
-
+    <?php
+    if (Session::get('message')){
+    ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.bootstrapGrowl("<?php echo Session::get('message'); ?>", { type: 'success', delay: 0  });
+        });
+    </script>
+    <?php  
+    }
+    ?>
 @endsection
-
