@@ -31,6 +31,9 @@ class Planes extends Model
      * @var bool
      */
     protected $fillable = [
+        'reg',
+        'type',
+        'conNumber',
         'seenScrape'
     ];     
 

@@ -71,11 +71,20 @@ download data from the corpjet website using this command to the diretory above.
 php artisan bizjets:download
 ```
 
-Parse the files using xpath and import into the database from each of these files into the planesNew table
+Parse the files using xpath and import into the planesNew table from each of these files 
 
 ```
 php artisan bizjets:import
 ```
+
+Compate the planesNew table with the planes table
+
+```
+php artisan bizjets:importNewAircraftToLive 
+
+* version 1 - only imports new aircraft so far!
+```
+
 
 ### Job to download an image when a plane is marked as seen
 

@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\rss::class,
         Commands\importPlanes::class,
+        Commands\ImportNewAircraftToLive::class,
         Commands\downloadCorpjet::class,
         Commands\DownloadImageJetPhoto::class,
         Commands\DownloadImageAirlinersNet::class,
