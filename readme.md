@@ -26,8 +26,8 @@ create 4 directories and give them read/write rights
 ```
 mkdir bizjets
 mkdir rss
-mkdir public/jetPhotos
-mkdir public/airlinersNet 
+mkdir public/planesImages/jetPhotos
+mkdir public/planesImages/airlinersNet
 ```
 
 PHP requirements
