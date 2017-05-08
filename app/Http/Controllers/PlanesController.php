@@ -90,6 +90,12 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
+    public function types()
+    {
+        $data['types'] = Planes::select('type')->distinct('type')->orderBy('type')->get();
+        return view('typesList', $data);
+    }
+
     public function seen($id)
     {
         Planes::where('id', $id)->update(['seenScrape' => 'seen']);

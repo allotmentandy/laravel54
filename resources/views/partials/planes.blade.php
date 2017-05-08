@@ -1,8 +1,9 @@
                 <div class="panel-heading"><a href="{{ route('planes') }}">Planes</a></div>
                     <div class="panel-body">
                         <a href="{{ route('planesList') }}">View all (seen)</a><br>
-                        <a href="{{ route('txtview') }}">Download HTML</a><br>
-                        Types List<br>
+                        <a href="{{ route('txtView') }}">Download HTML</a><br>
+                        <a href="{{ route('planeTypes') }}">Types List</a><br>
+                        <br>
                         Country List<br>
 						
 

@@ -21,7 +21,9 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/planes', 'PlanesController@index')->name('planes');
 Route::get('/planes/pdf',array('as'=>'pdfview','uses'=>'PlanesController@pdfview'));
-Route::get('/planes/txt',array('as'=>'txtview','uses'=>'PlanesController@txtview'));
+Route::get('/planes/txt',array('as'=>'txtView','uses'=>'PlanesController@txtview'));
+Route::get('/planes/types', 'PlanesController@types')->name('planeTypes');
+
 Route::get('/planes/list', 'PlanesController@list')->name('planesList');
 Route::get('/planes/list/seen/{id}', 'PlanesController@seen'); 
 Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape'); 
