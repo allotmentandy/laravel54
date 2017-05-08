@@ -55,7 +55,7 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $.bootstrapGrowl("<?php echo Session::get('message'); ?>", { type: 'success', delay: 0  });
+            $.bootstrapGrowl("<?php echo Session::get('message'); ?>", { type: 'success', delay: 4000 , allow_dismiss: false,  });
         });
     </script>
     <?php  
