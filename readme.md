@@ -26,6 +26,7 @@ create 4 directories and give them read/write rights
 ```
 mkdir bizjets
 mkdir rss
+mkdir public/planeImages
 mkdir public/planeImages/jetPhotos
 mkdir public/planeImages/airlinersNet
 ```
