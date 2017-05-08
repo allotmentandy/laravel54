@@ -23,6 +23,8 @@ Route::get('/planes', 'PlanesController@index')->name('planes');
 Route::get('/planes/pdf',array('as'=>'pdfview','uses'=>'PlanesController@pdfview'));
 Route::get('/planes/txt',array('as'=>'txtView','uses'=>'PlanesController@txtview'));
 Route::get('/planes/types', 'PlanesController@types')->name('planeTypes');
+Route::get('/planes/type/{type}', 'PlanesController@type')->name('planeType');
+
 
 Route::get('/planes/list', 'PlanesController@list')->name('planesList');
 Route::get('/planes/list/seen/{id}', 'PlanesController@seen'); 

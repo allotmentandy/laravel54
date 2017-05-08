@@ -92,9 +92,16 @@ class PlanesController extends Controller
 
     public function types()
     {
-        $data['types'] = Planes::select('type')->distinct('type')->orderBy('type')->get();
+        $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();
         return view('typesList', $data);
     }
+
+    public function type($type)
+    {
+        $data['planes'] = Planes::where("type", "=", $type)->orderBy('countryCode')->orderBy('id')->paginate(15);
+        return view('planesList', $data);
+    }
+
 
     public function seen($id)
     {

@@ -16,9 +16,9 @@
 
                 echo "<tr><td>";
 
-                echo $p->type . " </td>";
+                echo '<a href="/planes/type/' . $p->type . '">' . $p->type . '</a></td><td> ' . $p->count_row;
 
-                echo "</tr>";
+                echo "</td></tr>";
 
             endforeach;
 
