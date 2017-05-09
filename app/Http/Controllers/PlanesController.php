@@ -27,11 +27,8 @@ class PlanesController extends Controller
     public function txtview()
     {
         echo("<html><head>");
-
         echo "<style>body {font-family: Verdana, Sans-Serif;} </style";
-
         echo "<style>th {background: #ddd; text-align: left; padding: 5px; } table, tr, td { line-height: 12px; margin: 0; padding: 0; border: 0; font-size: 11px } </style>";
-            
         echo("</head>
 			<body>");
         echo("<table cellspacing='0' cellpadding='0'>");
