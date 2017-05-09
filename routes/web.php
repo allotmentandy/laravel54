@@ -37,7 +37,8 @@ Route::post('/planes/search', 'PlanesController@search')->name('aircraftSearch')
 
 
 Route::get('/rss', 'RssController@index')->name('rss');;
-Route::get('/rss/demo', 'RssController@demo')->name('rssdemo');;
+Route::get('/rss/jobs', 'RssController@jobs')->name('rssJobs');;
+Route::get('/rss/news', 'RssController@news')->name('rssNews');;
 
 
 Route::get('/londinium', 'LondiniumController@index')->name('londinium');;

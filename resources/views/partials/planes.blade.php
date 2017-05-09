@@ -10,5 +10,10 @@
 						Reg Search
 						<input type="text" size="10" name="q">
 						</form>
+
+                        <b>Error Checking:</b><br>
+                        missing from countries<br>
+                        blank entries<br>
+
                     </div>
                 </div>

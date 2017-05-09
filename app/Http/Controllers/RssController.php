@@ -20,26 +20,38 @@ class RssController extends Controller
             echo $filew . "<br>";
         }
 
-
-        //https://packagist.org/packages/willvincent/feeds
-
     }
 
-    function demo() {
-    $feed = Feeds::make([
-        'http://www.indeed.co.uk/rss?q=laravel',
-        'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss',
-        'https://remoteok.io/remote-jobs.rss',
-		'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith'
-    ], 20);
-    $data = array(
-      'title'     => $feed->get_title(),
-      'permalink' => $feed->get_permalink(),
-      'items'     => $feed->get_items(),
-    );
+    function jobs() {
+        $feed = Feeds::make([
+            'http://www.indeed.co.uk/rss?q=laravel',
+            'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss',
+            'https://remoteok.io/remote-jobs.rss',
+            'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith'
+        ], 20);
+        $data = array(
+          'title'     => $feed->get_title(),
+          'permalink' => $feed->get_permalink(),
+          'items'     => $feed->get_items(),
+        );
 
-    return View('feed', $data);
-  }
+        return View('feed', $data);
+    }
+
+    function news() {
+        $feed = Feeds::make([
+            'http://stackoverflow.com/feeds/tag/laravel',
+            'https://www.reddit.com/r/laravel/.rss',
+            'http://laraveldaily.com/feed/'
+        ], 20);
+        $data = array(
+          'title'     => $feed->get_title(),
+          'permalink' => $feed->get_permalink(),
+          'items'     => $feed->get_items(),
+        );
+
+        return View('feed', $data);
+    }
 
 
 }
