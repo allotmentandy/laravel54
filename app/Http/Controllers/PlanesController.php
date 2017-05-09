@@ -9,6 +9,7 @@ use App\Planes;
 use App\Countries;
 use App\Jobs\downloadSeenAircraftImage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Input;
 
 //use PDF;
 
@@ -90,6 +91,16 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
+    public function countries()
+    {
+        $data['planes'] = Countries::orderBy('B')->paginate(300);
+        return view('countriesList', $data);
+    }
+
+
+    
+
+
     public function types()
     {
         $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();
@@ -122,8 +133,19 @@ class PlanesController extends Controller
 
     	Log::info('downloadImageFunction called with : '.$id);
     	$this->dispatch(new downloadSeenAircraftImage($id));
-        //return true;
     }
+
+    public function search (){
+        $data['title'] = "Search for: " . Input::get('q');
+
+        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->paginate(15);
+
+        return view('planesList', $data);
+    }
+
+
+
+
 
     // pdf view is too much for the server, use browser?
     //   function pdfview(){

@@ -3,12 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="panel panel-default">
                 @include('partials.planes')
             </div>
+        
 
-            <div class="col-md-9">
+            <div class="col-md-10">
 
             <table class="table table-condensed">
             <?php 
@@ -32,6 +33,13 @@
 
                 // echo "<td>" . $p->notes . "</td>";
 
+                ?>
+                <td>
+                <a href="http://www.airliners.net/search?registrationActual={{$p['reg']}}" target="_blank">Airliners.net</a>
+
+                <a href="https://www.jetphotos.com/registration/{{$p['reg']}}" target="_blank">Jetphotos</a></td>
+
+                <?php
                 echo "</tr>";
 
             endforeach;

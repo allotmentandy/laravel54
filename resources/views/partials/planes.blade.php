@@ -3,13 +3,11 @@
                         <a href="{{ route('planesList') }}">View all (seen)</a><br>
                         <a href="{{ route('txtView') }}">Download HTML</a><br>
                         <a href="{{ route('planeTypes') }}">Types List</a><br>
-                        <br>
-                        Country List<br>
-						
+                        <a href="{{ route('planeCountries') }}">Countries List</a><br>
 
 						<form action="/planes/search" method="POST">
 						 {{ csrf_field() }}
-						Search
+						Reg Search
 						<input type="text" size="10" name="q">
 						</form>
                     </div>

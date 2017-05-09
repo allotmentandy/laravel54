@@ -22,13 +22,18 @@ Route::get('/home', 'HomeController@index');
 Route::get('/planes', 'PlanesController@index')->name('planes');
 Route::get('/planes/pdf',array('as'=>'pdfview','uses'=>'PlanesController@pdfview'));
 Route::get('/planes/txt',array('as'=>'txtView','uses'=>'PlanesController@txtview'));
+
 Route::get('/planes/types', 'PlanesController@types')->name('planeTypes');
 Route::get('/planes/type/{type}', 'PlanesController@type')->name('planeType');
 
+Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountries');
+Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
 
 Route::get('/planes/list', 'PlanesController@list')->name('planesList');
 Route::get('/planes/list/seen/{id}', 'PlanesController@seen'); 
 Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape'); 
+Route::post('/planes/search', 'PlanesController@search')->name('aircraftSearch');
+
 
 
 Route::get('/rss', 'RssController@index')->name('rss');;
@@ -52,7 +57,7 @@ Route::get('/jquery/EmailRecipients', 'JqueryController@jquery_emailRecipients')
 //twitter
 Route::get('/userTimeline', function()
 {
-	$tweets = Twitter::getUserTimeline(['screen_name' => 'andylondon', 'count' => 20, 'format' => 'array']);
+	$tweets = Twitter::getUserTimeline(['screen_name' => 'andylondon', 'count' => 2, 'format' => 'array']);
 	echo ("<pre>");
 	var_dump($tweets);
 });
