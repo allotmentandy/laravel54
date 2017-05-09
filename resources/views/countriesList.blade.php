@@ -48,7 +48,6 @@
 <link rel="stylesheet" type="text/css" href="/css/datatables.min.css"/>
 <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.min.css">
 
- 
 <script type="text/javascript" src="/js/datatables.min.js"></script>
 
 <script>

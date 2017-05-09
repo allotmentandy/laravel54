@@ -58,7 +58,7 @@ Route::get('/jquery/EmailRecipients', 'JqueryController@jquery_emailRecipients')
 //twitter
 Route::get('/userTimeline', function()
 {
-	$tweets = Twitter::getUserTimeline(['screen_name' => 'andylondon', 'count' => 2, 'format' => 'array']);
+	$tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
 	echo ("<pre>");
 	var_dump($tweets);
 });
