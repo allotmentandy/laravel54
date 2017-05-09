@@ -47,15 +47,11 @@ class LondiniumController extends Controller
         return view('londiniumSites', $data);
     }
 
-
-
     function save( $id){
         $Londinium = Londinium::where('id', '=', $id)->first();
         $Londinium->saved = 'saved';
         $Londinium->save();
 		return back()->with('message','Operation Successful !');
     }
-
-
-
+    
 }

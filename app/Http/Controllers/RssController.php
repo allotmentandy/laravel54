@@ -27,7 +27,8 @@ class RssController extends Controller
             'http://www.indeed.co.uk/rss?q=laravel',
             'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss',
             'https://remoteok.io/remote-jobs.rss',
-            'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith'
+            'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith',
+            'http://uk.dice.com/rss/laravel/all-locations/en/jobs-feed.xml?JobTypeFilter=2&xc=247'
         ], 20);
         $data = array(
           'title'     => $feed->get_title(),

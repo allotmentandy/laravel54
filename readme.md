@@ -1,5 +1,7 @@
 # Allotmentandy's Laravel 5.4 demo
 
+I am looking for a job either in London, or working remotely. I have around 20 years experience working for a wide range of firms using a lot of different technologies. If you think i might be a good fit for your firm, please contact me by posting an issue on this repository. 
+
 ## Introduction
 
 This is a demo application to show off some of the features of Laravel 5.4 that i have made. It has the following features
@@ -7,7 +9,7 @@ This is a demo application to show off some of the features of Laravel 5.4 that 
 - Private Jet system for importing data using commands 
 - londinium website directory system
 - jquery examples
-- rss feeds to download laravel jobs from 3 feeds
+- rss feeds to download laravel jobs and news from feeds
 - guzzle command to download html
 - import command to parse downloaded html
 - twitter api examples 

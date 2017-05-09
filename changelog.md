@@ -1,5 +1,9 @@
 # Allotmentandy's Laravel 5.4 demo CHANGELOG
 
+## 9th May 2017
+- added more feeds to the rss section
+- added ability to search for a reg to the aircraft planes section
+
 ## 8th May 2017
 update the requirements in the readme php 7.0 gd, tidy and mbstring is required
 update aircraft.sql to include jobs table sql and failed jobs table
