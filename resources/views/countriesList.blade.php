@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            <div class="panel panel-default">
+            <div class="panel panel-info">
                 @include('partials.planes')
             </div>
         

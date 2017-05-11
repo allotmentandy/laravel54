@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-                <div class="panel-heading">Laravel RSS Feeds</div>
+                <div class="panel-info">Laravel RSS Feeds</div>
                     <div class="panel-body">
                         <a href="{{ route('rssJobs') }}">Job Feeds</a><br>
                         <a href="{{ route('rssNews') }}">News Feeds</a><br>

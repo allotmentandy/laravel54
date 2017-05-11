@@ -7,22 +7,18 @@ use Feeds;
 
 class RssController extends Controller
 {
-    function index(){
-    	//path to directory to scan
-        $directory = "/var/www/laravel54/rss/*.rss";
-
-        $file= glob($directory);
-
-        $filesArray =  array();
-
-        //print each file name
-        foreach ($file as $filew) {
-            echo $filew . "<br>";
-        }
-
+    public function index()
+    {
+        $data = array(
+          'title'     => "",
+          'permalink' => "",
+          'items'     => array()
+        );
+        return View('feed', $data);
     }
 
-    function jobs() {
+    public function jobs()
+    {
         $feed = Feeds::make([
             'http://www.indeed.co.uk/rss?q=laravel',
             'http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss',
@@ -39,7 +35,8 @@ class RssController extends Controller
         return View('feed', $data);
     }
 
-    function news() {
+    public function news()
+    {
         $feed = Feeds::make([
             'http://stackoverflow.com/feeds/tag/laravel',
             'https://www.reddit.com/r/laravel/.rss',
@@ -53,6 +50,4 @@ class RssController extends Controller
 
         return View('feed', $data);
     }
-
-
 }

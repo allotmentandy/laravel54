@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <div class="panel panel-default">
+            <div class="panel panel-info">
                 <div class="panel-heading">Examples</div>
                     <div class="panel-body">
                         <a href="{{ route('planes') }}">Planes</a><br>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">Planes</div>
                     <div class="panel-body">
                         <div class="panel-body">
@@ -41,8 +41,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Londinium</div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading ">Londinium</div>
                     <div class="panel-body">
                         <div class="panel-body">
                             Tool to manage a website link directory.
