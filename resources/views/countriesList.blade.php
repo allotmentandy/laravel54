@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
         
 
-            <div class="col-md-10">
+            <div class="col-md-8">
 
             <table class="table table-condensed" id="datatables">
             <thead>
@@ -19,22 +19,19 @@
                 <th>country</th>
             </tr>
             </thead>
-            <?php 
-            foreach ($planes as $p):
-
+            <?php
+            foreach ($planes as $p) :
                 echo "<tr>";
                 echo "<td>" . $p->id . "</td>";
                 echo "<td>" . $p->A . "</td>";
                 echo "<td>" . $p->B . "</td>";
                 echo "</tr>";
-
             endforeach;
-
             ?>
 
             </table>
 
-            <?php 
+            <?php
                 echo $planes->links();
             ?>
 

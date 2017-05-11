@@ -11,7 +11,7 @@ use App\Jobs\downloadSeenAircraftImage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Input;
 
-//use PDF;
+//use PDF; // removed as too intense.
 
 class PlanesController extends Controller
 {
