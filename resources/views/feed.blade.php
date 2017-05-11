@@ -14,15 +14,17 @@
                 </div>
         
         <div class="col-md-9">
-            <div class="panel panel-default">     
-                @foreach ($items as $item)
-                    <div class="item">
-                        <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
-                        <p>{{ $item->get_permalink() }}</p>
-                        <!-- <p>{{ $item->get_description() }}</p> -->
-                        <p class="text-right"><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
-                    </div>
-                @endforeach
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @foreach ($items as $item)
+                        <div class="item">
+                            <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
+                            <p>{{ $item->get_permalink() }}</p>
+                            
+                            <p class="text-right"><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

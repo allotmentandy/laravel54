@@ -16,13 +16,14 @@
                 </div>
             </div>
 
-        <div class="col-md-7">
+        <div class="col-md-9">
             <div class="panel panel-default">
-                    <div class="panel-body">
-                        Welcome to my demo laravel site. 
-                        <br>
-                        There are a number of artisan commands to download and import data. Please see the readme.md file
-                    </div>
+                <div class="panel-body">
+                    Welcome to my demo laravel site. 
+                    <br>
+                    There are a number of artisan commands to download and import data. Please see the readme.md file
+                
+                </div>
             </div>
         </div>
     </div>

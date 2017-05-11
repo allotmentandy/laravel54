@@ -11,5 +11,8 @@
 						Search
 						<input type="text" size="10" name="q">
 						</form>
+						<hr>
+						Output HTML<br>
+						(to be saved and uploaded)
                     </div>
                 </div>
