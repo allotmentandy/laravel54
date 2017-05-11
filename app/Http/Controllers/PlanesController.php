@@ -40,44 +40,42 @@ class PlanesController extends Controller
             $countryCodeArray[$row['A']] = $row['B'];
         }
 
-        PlanesLatest::select('reg', 'type', 'conNumber', 'countryCode')->orderBy('countryCode', 'asc')->orderBy('id', 'asc')->chunk(25000, function ($items) use ($countryCodeArray) {
-            if (!isset($countryCode)) {
-                $countryCode = "";
-            }
-            
-            foreach ($items as $item) {
-                if ($item['countryCode'] != $countryCode) {
-                    //$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
-                    echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] ."</th></tr>" . PHP_EOL;
-                    $countryCode = $item['countryCode'];
+        Planes::select('reg', 'type', 'conNumber', 'countryCode')
+        ->orderBy('countryCode', 'asc')
+        ->orderBy('id', 'asc')
+        ->chunk(
+            25000,
+            function ($items) use ($countryCodeArray) {
+                if (!isset($countryCode)) {
+                    $countryCode = "";
                 }
+            
+                foreach ($items as $item) {
+                    if ($item['countryCode'] != $countryCode) {
+                        //$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
+                        echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] ."</th></tr>" . PHP_EOL;
+                        $countryCode = $item['countryCode'];
+                    }
 
-                $seen =  rand(0, 2);
-                echo "<tr><td ";
-                switch ($seen) {
-            case '1':
-            echo " style='
-				border-bottom: 2px solid red;
-			'
-			><b>☑</b> ";
-            break;
+                    $seen =  rand(0, 2);
+                    echo "<tr><td ";
+                    switch ($seen) {
+                        case '1':
+                            echo " style='border-bottom: 2px solid red;'><b>☑</b> ";
+                        break;
+                        case '2':
+                            echo " style=''><b>☐</b> ";
+                        break;
+                        default:
+                            echo "><b>☐</b> ";
+                        break;
+                    }
 
-            case '2':
-            echo " style='
-			'
-			><b>☐</b> ";
-             break;
-                
-                default:
-            echo "><b>☐</b> ";
-                break;
+                    echo "</td><td>" . $item['reg'] . "</td><td>";
+                    echo $item['type'] . "</td><td>";
+                    echo $item['conNumber'] . "</td></tr>" .PHP_EOL;
+                }
             }
-
-                echo "</td><td>" . $item['reg'] . "</td><td>";
-                echo $item['type'] . "</td><td>";
-                echo $item['conNumber'] . "</td></tr>" .PHP_EOL;
-            }
-        }
         );
         echo("</table></body></html>");
     }
@@ -127,12 +125,12 @@ class PlanesController extends Controller
 
     private function downloadImage($id)
     {
-
-    	Log::info('downloadImageFunction called with : '.$id);
-    	$this->dispatch(new downloadSeenAircraftImage($id));
+        Log::info('downloadImageFunction called with : '.$id);
+        $this->dispatch(new downloadSeenAircraftImage($id));
     }
 
-    public function search (){
+    public function search()
+    {
         $data['title'] = "Search for: " . Input::get('q');
 
         $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->paginate(15);
