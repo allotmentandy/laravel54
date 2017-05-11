@@ -1,5 +1,10 @@
 # Allotmentandy's Laravel 5.4 demo CHANGELOG
 
+## 11th May 2017
+- added some tests using phpunit, codeception and dusk
+- improvements to the output of the bizjet output
+- updated bash.sh script to run all the tests
+
 ## 9th May 2017
 - added more feeds to the rss section
 - added ability to search for a reg to the aircraft planes section

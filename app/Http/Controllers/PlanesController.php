@@ -40,7 +40,7 @@ class PlanesController extends Controller
             $countryCodeArray[$row['A']] = $row['B'];
         }
 
-        Planes::select('reg', 'type', 'conNumber', 'countryCode')
+        Planes::select('reg', 'type', 'conNumber', 'countryCode', 'seenScrape')
         ->orderBy('countryCode', 'asc')
         ->orderBy('id', 'asc')
         ->chunk(
@@ -57,23 +57,17 @@ class PlanesController extends Controller
                         $countryCode = $item['countryCode'];
                     }
 
-                    $seen =  rand(0, 2);
-                    echo "<tr><td ";
-                    switch ($seen) {
-                        case '1':
-                            echo " style='border-bottom: 2px solid red;'><b>☑</b> ";
-                        break;
-                        case '2':
-                            echo " style=''><b>☐</b> ";
-                        break;
-                        default:
-                            echo "><b>☐</b> ";
-                        break;
+                    $underline =">";
+                    if ($item['seenScrape'] == "seen") {
+                        $underline = " style='border-bottom: 2px solid red;'>";
+                    } elseif ($item['seenScrape'] == "scrape") {
+                        $underline= " style='border-bottom: 2px solid green;'>";
                     }
 
-                    echo "</td><td>" . $item['reg'] . "</td><td>";
-                    echo $item['type'] . "</td><td>";
-                    echo $item['conNumber'] . "</td></tr>" .PHP_EOL;
+                    echo "<tr><td " . $underline . " <b>☑</b> ";
+                    echo "</td><td" . $underline . $item['reg'];
+                    echo "</td><td" . $underline . $item['type'];
+                    echo "</td><td" . $underline . $item['conNumber'] . "</td></tr>" .PHP_EOL;
                 }
             }
         );
@@ -92,10 +86,6 @@ class PlanesController extends Controller
         return view('countriesList', $data);
     }
 
-
-    
-
-
     public function types()
     {
         $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();
@@ -107,7 +97,6 @@ class PlanesController extends Controller
         $data['planes'] = Planes::where("type", "=", $type)->orderBy('countryCode')->orderBy('id')->paginate(15);
         return view('planesList', $data);
     }
-
 
     public function seen($id)
     {
