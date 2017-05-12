@@ -19,7 +19,6 @@ $(document).ready(function() {
                 else {
                      $(msg).closest('tr').addClass('green');                
                 }
-
             }
         });
     });

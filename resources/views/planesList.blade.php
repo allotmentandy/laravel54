@@ -14,7 +14,16 @@
                 <?php
                 foreach ($planes as $p) :
 
-                    echo "<tr><th>";
+                    if ($p->seenScrape == "Seen") {
+                        echo("<tr class='red'>");
+                    } elseif ($p->seenScrape == "Scrape") {
+                        echo("<tr class='green'>");
+                    } else {
+                        echo "<tr>";
+                    }
+
+
+                    echo "<th>";
 
                     if ($p->seenScrape == "Seen") {
                         echo("Seen");

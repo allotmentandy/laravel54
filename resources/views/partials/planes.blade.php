@@ -17,7 +17,7 @@
             <li>missing countries</li>
             <li>blank reg entries</li>
             <li>clean up type typos</li>
-            <li>more details for each</li> 
+            <li>more details UNDO SEEN SCRAPE</li> 
             <li>improve import new</li>
             <li>backup seen / scrapes</li>
         </ul>
