@@ -13,6 +13,13 @@ $(document).ready(function() {
                 // alert(msg + seenScrape );
                 $(msg).text(seenScrape);
                 $(msg+"scrape").text("");
+                if (seenScrape == "Seen"){
+                     $(msg).closest('tr').addClass('red');                
+                }
+                else {
+                     $(msg).closest('tr').addClass('green');                
+                }
+
             }
         });
     });

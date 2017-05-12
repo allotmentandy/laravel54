@@ -3,69 +3,65 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
         
+            <div class="col-md-9">
+                <table class="table table-condensed">
 
-            <div class="col-md-8">
+                <?php
+                foreach ($planes as $p) :
 
-            <table class="table table-condensed">
+                    echo "<tr><th>";
 
+                    if ($p->seenScrape == "Seen") {
+                        echo("Seen");
+                    } elseif ($p->seenScrape == "Scrape") {
+                        echo("Scrape");
+                    } else {
+                        ?>
+                        <form method="POST" class="{{$p->id}}" id="seen">
+                            <input type="hidden" name="id" value="{{$p->id}}">
+                            <input type="hidden" name="seenScrape" value="Seen">
+                            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                            <input type="submit" value="Seen" id="button" class="button">
+                        </form>
+                    
+                        <form method="POST" class="{{$p->id}}scrape" id="scrape">
+                            <input type="hidden" name="id" value="{{$p->id}}">
+                            <input type="hidden" name="seenScrape" value="Scrape">
+                            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                            <input type="submit" value="Scrape" id="scrape" name="scrape" class="button">
+                        </form>
+                    <?php
 
-
-            <?php
-            foreach ($planes as $p) :
-
-                echo "<tr><td>";
-
-                if ($p->seenScrape == "Seen") {
-                    echo("Seen");
-                } elseif ($p->seenScrape == "Scrape") {
-                    echo("Scrape");
-                } else {
+                    }
                     ?>
-                    <form method="POST" class="{{$p->id}}" id="seen">
-                        <input type="hidden" name="id" value="{{$p->id}}">
-                        <input type="hidden" name="seenScrape" value="Seen">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                        <input type="submit" value="Seen" id="button" class="button">
-                    </form>
-                
-                    <form method="POST" class="{{$p->id}}scrape" id="scrape">
-                        <input type="hidden" name="id" value="{{$p->id}}">
-                        <input type="hidden" name="seenScrape" value="Scrape">
-                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                        <input type="submit" value="Scrape" id="scrape" name="scrape" class="button">
-                    </form>
-                <?php
 
-                }
-                ?>
+                    </th>
+                    <?php 
+                    echo "<th>" . $p->reg . "</th><td>";
+                    $id = $p->id;
+                    echo $p->type . " </td><td>";
+                    echo $p->conNumber . "</td>";
 
-                </td>
-                <?php 
-                echo "<td>" . $p->reg . "</td><td>";
-                $id = $p->id;
-                echo $p->type . " </td><td>";
-                echo $p->conNumber . "</td>";
+                    // echo "<td>" . $p->notes . "</td>";
 
-                // echo "<td>" . $p->notes . "</td>";
+                    ?>
+                    <td>
+                    <a href="/planes/details/{{ $id }}" class="button">More..</a>
+                    </td>
+
+
+                    <?php
+                    echo "</tr>";
+                endforeach;
 
                 ?>
-                <td>
-                <a href="/planes/details/{{ $id }}">More..</a>
-                </td>
 
-
-                <?php
-                echo "</tr>";
-            endforeach;
-
-            ?>
-
-            </table>
+                </table>
 
             <?php
                 echo $planes->links();
