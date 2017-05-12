@@ -25,6 +25,7 @@ Route::get('/planes/txt', array('as'=>'txtView','uses'=>'PlanesController@txtvie
 
 Route::get('/planes/types', 'PlanesController@types')->name('planeTypes');
 Route::get('/planes/type/{type}', 'PlanesController@type')->name('planeType');
+Route::get('/planes/type/job/{type}', 'PlanesController@typePhotoJob');
 
 Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountries');
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
@@ -35,7 +36,7 @@ Route::get('/planes/list', 'PlanesController@list')->name('planesList');
 Route::post('/planes/ajax/', 'PlanesController@ajax');
 
 Route::get('/planes/details/{id}', 'PlanesController@details');
-Route::post('/planes/search', 'PlanesController@search')->name('aircraftSearch');
+Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
 
 
 

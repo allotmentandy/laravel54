@@ -48,21 +48,32 @@ class ImportNewAircraftToLive extends Command
         // first loop - get the results from planesNew
 
         PlanesNew::orderBy('id')->chunk(100, function ($planesNew) {
-             foreach ($planesNew as $row) {
+            foreach ($planesNew as $row) {
+                $planes = Planes::select('reg', 'type', 'conNumber', 'notes')->where('reg', '=', $row->reg)->where('type', '=', $row->type)->where('conNumber', '=', $row->conNumber)->first();
 
-                $planes = Planes::select('reg', 'type', 'conNumber')->where('reg', '=', $row->reg )->where('type', '=', $row->type )->where('conNumber', '=', $row->conNumber )->first();
+                if (!count($planes)) {
+                    // find the old reg
+                    $originalPlane = Planes::select('reg', 'id', 'type', 'conNumber')->where('type', '=', $row->type)->where('conNumber', '=', $row->conNumber)->get();
+                    if (count($originalPlane)) {
+                        foreach ($originalPlane as $orig) {
+                            // echo "OLD ".  $orig->reg . " ". $orig->type ." " . $orig->conNumber .PHP_EOL;
+                            // echo "NEW " . $row->reg . " " . $row->type ." " . $row->conNumber . PHP_EOL;
 
-                if (!$planes){
-                    echo "NEW " . $row->reg . " " . $row->type ." " . $row->conNumber . PHP_EOL;
+                            // this is a re-reg
+                        }
+                    } else {
+                        echo "BRAND NEW " . $row->reg . " " . $row->type ." " . $row->conNumber . " " .$row->notes . PHP_EOL;
+                    }
                     
-                    $plane = new Planes;
-                    $plane->reg = $row->reg;
-                    $plane->type = $row->type;
-                    $plane->conNumber = $row->conNumber;
-                    $plane->notes = $row->notes;
-                    $plane->countryCode = $row->countryCode;
-                    $plane->save();
-
+                    // echo "------------------". PHP_EOL;
+                                        
+                    // $plane = new Planes;
+                    // $plane->reg = $row->reg;
+                    // $plane->type = $row->type;
+                    // $plane->conNumber = $row->conNumber;
+                    // $plane->notes = $row->notes;
+                    // $plane->countryCode = $row->countryCode;
+                    // $plane->save();
                 }
             }
         });

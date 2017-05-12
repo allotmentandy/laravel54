@@ -110,6 +110,17 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
+    public function typePhotoJob($type)
+    {
+        $data['planes'] = Planes::where("type", "=", $type)->get();
+
+        foreach ($data['planes'] as $plane) {
+            $this->dispatch(new downloadSeenAircraftImage($plane->id));
+        }
+    }
+
+
+
     // public function seen($id)
     // {
     //     Planes::where('id', $id)->update(['seenScrape' => 'seen']);
@@ -148,9 +159,9 @@ class PlanesController extends Controller
     {
         $data['title'] = "Search for: " . Input::get('q');
 
-        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->paginate(15);
+        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->get();
 
-        return view('planesList', $data);
+        return view('planeSearch', $data);
     }
 
 

@@ -18,6 +18,15 @@
                         {{$item['type']}}<br>
                         {{$item['conNumber']}}
                     @endforeach                
+                
+                <hr>
+
+                    <form action="/planes/search" method="post">
+                     {{ csrf_field() }}
+                    Reg Search
+                    <input type="text" size="10" name="q">
+                    </form>
+
                 </div>
             </div>
         </div>

@@ -15,6 +15,8 @@
             foreach ($types as $p) :
                 echo "<tr><td>";
                 echo '<a href="/planes/type/' . $p->type . '">' . $p->type . '</a></td><td> ' . $p->count_row;
+                echo "<td>";
+                echo "<a href='/planes/type/job/" . $p->type ."'>queue photo jobs for all</a>";
                 echo "</td></tr>";
             endforeach;
 

@@ -5,11 +5,6 @@
         <a href="{{ route('planeTypes') }}">Types List</a><br>
         <a href="{{ route('planeCountries') }}">Countries List</a><br>
 
-		<form action="/planes/search" method="POST">
-		 {{ csrf_field() }}
-		Reg Search
-		<input type="text" size="10" name="q">
-		</form>
         <hr>
         <h4>to do</h4>
         <ul>

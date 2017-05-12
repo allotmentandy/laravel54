@@ -47,34 +47,42 @@ class importPlanes extends Command
 
         $counter = 0;
 
-        echo "Importing files into database". PHP_EOL;
-
         //path to directory to scan
         $directory = env("BIZJETS_DIRECTORY") . "*.php";
+        echo $directory . PHP_EOL;
 
-        if (env("BIZJETS_DIRECTORY") == ""){
-            echo "you need to run php artisan config:cache";
+        if (env("BIZJETS_DIRECTORY") == "") {
+            echo "you need to run php artisan config:cache" . PHP_EOL;
             exit;
         }
 
+        echo "Importing files into database". PHP_EOL;
+
+
         $run = $this->ask('Do you want to run this import and CLEAR THE planesNew table? Type YES');
 
-        if ($run != "YES"){
+        if ($run != "YES") {
             echo "You need to type YES to run it, ABORTING";
             exit;
         }
 
         PlanesNew::truncate();
 
-        $file= glob($directory);
+        $files= glob($directory);
+
+        usort($files, function ($a, $b) {
+            return filemtime($a) - filemtime($b);
+        });
+
 
         $filesArray =  array();
 
         //print each file name
-        foreach ($file as $filew) {
-            //echo $filew . PHP_EOL;
-            $filesArray[] = $filew;
+        foreach ($files as $file) {
+            // echo $file . PHP_EOL;
+            $filesArray[] = $file;
         }
+
 
         foreach ($filesArray as $file) {
             $doc = new \DOMDocument();
@@ -104,12 +112,19 @@ class importPlanes extends Command
                     $lines[] = $cell->nodeValue;
                 }
 
-            $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$lines[1]', '$lines[2]', '$lines[3]' , '$code') ;";
+                $notes = strtoupper($lines[3]);
+                $aReplace = array('(', ')');
+                $notes = str_replace($aReplace, ' ', $notes);
 
-            DB::insert($sql);
+                $aReplace = array(' EX ', ',' , '/', '  ');
+                $notes = str_replace($aReplace, ' ', $notes);
+
+
+                $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$lines[1]', '$lines[2]', '$notes' , '$code') ;";
+
+                DB::insert($sql);
                 $counter++;
             }
-
         }
         $this->question("FINISHED " . time() . " completed " . $counter . " lines");
 

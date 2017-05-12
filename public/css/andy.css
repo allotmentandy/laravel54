@@ -58,3 +58,7 @@ form, form div {
     background: green;
     padding: 2px;
 }
+
+a:visited {
+    color: purple !important;
+}

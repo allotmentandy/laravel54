@@ -166,22 +166,28 @@ CREATE TABLE `planes` (
   `reg` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `conNumber` varchar(255) NOT NULL,
-  `notes` varchar(255) DEFAULT NULL,
+  `notes` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `countryCode` varchar(10) DEFAULT NULL,
   `seenScrape` varchar(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `allFields` (`reg`,`type`,`conNumber`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `planesNew`;
 CREATE TABLE `planesNew` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `reg` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `conNumber` varchar(255) NOT NULL,
-  `notes` varchar(255) DEFAULT NULL,
-  `countryCode` varchar(10) DEFAULT NULL,
+  `reg` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `type` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `conNumber` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `notes` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `countryCode` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `allFields` (`reg`,`type`,`conNumber`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
