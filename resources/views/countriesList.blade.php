@@ -14,17 +14,17 @@
             <table class="table table-condensed" id="datatables">
             <thead>
             <tr>
-                <th>id</th>
                 <th>code</th>
                 <th>country</th>
+                <th>id</th>
             </tr>
             </thead>
             <?php
             foreach ($planes as $p) :
                 echo "<tr>";
-                echo "<td>" . $p->id . "</td>";
-                echo "<td>" . $p->A . "</td>";
+                echo "<td><a href='/planes/country/" . $p->A. "'>" . $p->A . "</a></td>";
                 echo "<td>" . $p->B . "</td>";
+                echo "<td>" . $p->id . "</td>";
                 echo "</tr>";
             endforeach;
             ?>

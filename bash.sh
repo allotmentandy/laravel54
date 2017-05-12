@@ -32,17 +32,6 @@ chmod -R 777 tests/_output
 php artisan up
 
 
-echo "--------------running phpunit tests"
-phpunit
-
-
-echo "--------------running codeception tests"
-./vendor/bin/codecept run
-
-
-echo "--------------running dusk tests"
-php artisan dusk
-
 
 
 # echo "--------------colors example in bash"

@@ -86,6 +86,12 @@ class PlanesController extends Controller
         return view('countriesList', $data);
     }
 
+    public function country($countryCode)
+    {
+        $data['planes'] = Planes::where("countryCode", "=", $countryCode)->orderBy('id')->orderBy('reg')->paginate(15);
+        return view('planesList', $data);
+    }
+
     public function types()
     {
         $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();
