@@ -35,3 +35,5 @@
 .table td {
     border: 0px !important;
 }
+
+form, form div { display: inline; }

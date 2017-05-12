@@ -80,6 +80,12 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
+    public function details($id)
+    {
+        $data['details'] = Planes::where("id", "=", $id)->get();
+        return view('planeDetails', $data);
+    }
+
     public function countries()
     {
         $data['planes'] = Countries::orderBy('B')->orderBy('A')->paginate(300);
@@ -104,18 +110,32 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
-    public function seen($id)
+    // public function seen($id)
+    // {
+    //     Planes::where('id', $id)->update(['seenScrape' => 'seen']);
+    //     // now set the job to download an image of this
+    //     $this->downloadImage($id);
+    //     return back()->with('message', 'Operation Successful <b>' . $id .  '</b>');
+    // }
+
+    // public function scrape($id)
+    // {
+    //     Planes::where('id', $id)->update(['seenScrape' => 'scrape']);
+    //     return back()->with('message', 'Operation Successful ' . $id);
+    // }
+
+    public function ajax()
     {
-        Planes::where('id', $id)->update(['seenScrape' => 'seen']);
+        $id = Input::get('id');
+        $seenScrape = Input::get('seenScrape');
+
+        Planes::where('id', $id)->update(['seenScrape' => $seenScrape]);
+
         // now set the job to download an image of this
         $this->downloadImage($id);
-        return back()->with('message', 'Operation Successful <b>' . $id .  '</b>');
-    }
 
-    public function scrape($id)
-    {
-        Planes::where('id', $id)->update(['seenScrape' => 'scrape']);
-        return back()->with('message', 'Operation Successful ' . $id);
+        $response = ".".$id;
+        return $response;
     }
 
     private function downloadImage($id)

@@ -12,20 +12,41 @@
             <div class="col-md-8">
 
             <table class="table table-condensed">
+
+
+
             <?php
             foreach ($planes as $p) :
+
                 echo "<tr><td>";
 
-                if ($p->seenScrape == "seen") {
+                if ($p->seenScrape == "Seen") {
                     echo("Seen");
-                } elseif ($p->seenScrape == "scrape") {
+                } elseif ($p->seenScrape == "Scrape") {
                     echo("Scrape");
                 } else {
-                    echo "<a href=\"/planes/list/seen/$p->id\" class=\"button\">Seen</a>";
-                    echo "<a href=\"/planes/list/scrape/$p->id\" class=\"button\">Frame</a>";
-                }
+                    ?>
+                    <form method="POST" class="{{$p->id}}" id="seen">
+                        <input type="hidden" name="id" value="{{$p->id}}">
+                        <input type="hidden" name="seenScrape" value="Seen">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                        <input type="submit" value="Seen" id="button" class="button">
+                    </form>
+                
+                    <form method="POST" class="{{$p->id}}scrape" id="scrape">
+                        <input type="hidden" name="id" value="{{$p->id}}">
+                        <input type="hidden" name="seenScrape" value="Scrape">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+                        <input type="submit" value="Scrape" id="scrape" name="scrape" class="button">
+                    </form>
+                <?php
 
-                echo "</td><td>" . $p->reg . "</td><td>";
+                }
+                ?>
+
+                </td>
+                <?php 
+                echo "<td>" . $p->reg . "</td><td>";
                 $id = $p->id;
                 echo $p->type . " </td><td>";
                 echo $p->conNumber . "</td>";
@@ -34,9 +55,9 @@
 
                 ?>
                 <td>
-                <a href="http://www.airliners.net/search?registrationActual={{$p['reg']}}" target="_blank">Airliners.net</a>
+                <a href="/planes/details/{{ $id }}">More..</a>
+                </td>
 
-                <a href="https://www.jetphotos.com/registration/{{$p['reg']}}" target="_blank">Jetphotos</a></td>
 
                 <?php
                 echo "</tr>";
@@ -56,6 +77,9 @@
 @endsection
 
 @section('scripts')
+
+    <script src="{{ asset('js/ajax.js') }}"></script>
+
     <?php
     if (Session::get('message')) {
         ?>
@@ -64,8 +88,10 @@
             $.bootstrapGrowl("<?php echo Session::get('message'); ?>", { type: 'success', delay: 4000 , allow_dismiss: false,  });
         });
     </script>
+    
     <?php
 
     }
     ?>
+
 @endsection

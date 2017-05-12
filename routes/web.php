@@ -30,12 +30,11 @@ Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountr
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
 
 Route::get('/planes/list', 'PlanesController@list')->name('planesList');
-Route::get('/planes/list/seen/{id}', 'PlanesController@seen');
+// Route::get('/planes/list/seen/{id}', 'PlanesController@seen');
+// Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape');
+Route::post('/planes/ajax/', 'PlanesController@ajax');
 
-
-Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape');
-
-
+Route::get('/planes/details/{id}', 'PlanesController@details');
 Route::post('/planes/search', 'PlanesController@search')->name('aircraftSearch');
 
 
