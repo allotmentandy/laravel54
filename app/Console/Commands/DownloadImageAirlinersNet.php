@@ -40,7 +40,6 @@ class DownloadImageAirlinersNet extends Command
      */
     public function handle()
     {
-
         $reg = $this->argument('reg');
 
         echo "command called to download :" . $reg . PHP_EOL;
@@ -62,13 +61,12 @@ class DownloadImageAirlinersNet extends Command
         
         $src = $xpath->evaluate("string(//img[@class='lazy-load']/@src)");
         if ($src) {
-            $imgSrc =  $src;
+            $imgSrc = $src;
             $contents=file_get_contents($imgSrc);
             $save_path="/var/www/laravel54/public/planeImages/airlinersNet/".$reg . ".jpg";
-            file_put_contents($save_path,$contents);
+            file_put_contents($save_path, $contents);
             
-            echo PHP_EOL;
+            //echo PHP_EOL;
         }
-
     }
 }

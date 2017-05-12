@@ -174,6 +174,16 @@ class PlanesController extends Controller
         return view('planeSearch', $data);
     }
 
+    public function todo()
+    {
+        return view('planesTodo');
+    }
+
+    public function help()
+    {
+        return view('planesHelp');
+    }
+
 
 
 

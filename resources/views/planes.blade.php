@@ -30,20 +30,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Notes</div>
-                    <div class="panel-body">
+        
 
-                        to make a pdf<br>
 
-                        <code>
-                        wkhtmltopdf http://localhost/planes/txt planes2.pdf
-                        </code>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </div>
 </div>

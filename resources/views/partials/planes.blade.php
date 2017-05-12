@@ -4,17 +4,9 @@
         <a href="{{ route('txtView') }}">Download HTML</a><br>
         <a href="{{ route('planeTypes') }}">Types List</a><br>
         <a href="{{ route('planeCountries') }}">Countries List</a><br>
-
         <hr>
-        <h4>to do</h4>
-        <ul>
-            <li>Error Checking:</li>
-            <li>missing countries</li>
-            <li>blank reg entries</li>
-            <li>clean up type typos</li>
-            <li>more details UNDO SEEN SCRAPE</li> 
-            <li>improve import new</li>
-            <li>backup seen / scrapes</li>
-        </ul>
+        <a href="{{ route('planesTodo') }}">Todo</a><br>
+        <a href="{{ route('planesHelp') }}">Help</a><br>
+        
     </div>
 </div>

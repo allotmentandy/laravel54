@@ -40,7 +40,6 @@ class DownloadImageJetPhoto extends Command
      */
     public function handle()
     {
-
         $reg = $this->argument('reg');
 
         echo "command called to download :" . $reg . PHP_EOL;
@@ -63,14 +62,14 @@ class DownloadImageJetPhoto extends Command
         // jetphotos
         
         $src = $xpath->evaluate("string(//img[@class='result__photo']/@src)");
-        if ($src){
+        if ($src) {
             $imgSrc =  "https:" . $src;
             $contents=file_get_contents($imgSrc);
             $save_path="/var/www/laravel54/public/planeImages/jetPhotos/".$reg . ".jpg";
-            file_put_contents($save_path,$contents);
+            file_put_contents($save_path, $contents);
             
             $alt = $xpath->evaluate("string(//img[@class='result__photo']/@alt)");
-            echo $alt;
+            echo "jetphoto " . $alt;
 
             echo PHP_EOL;
         }
