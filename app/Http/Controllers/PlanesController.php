@@ -98,6 +98,16 @@ class PlanesController extends Controller
         return view('planesList', $data);
     }
 
+    public function countryPhotoJob($countryCode)
+    {
+        $data['planes'] = Planes::where("countryCode", "=", $countryCode)->get();
+
+        foreach ($data['planes'] as $plane) {
+            $this->dispatch(new downloadSeenAircraftImage($plane->id));
+        }
+    }
+
+
     public function types()
     {
         $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();

@@ -29,6 +29,7 @@ Route::get('/planes/type/job/{type}', 'PlanesController@typePhotoJob');
 
 Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountries');
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
+Route::get('/planes/country/job/{countryCode}', 'PlanesController@countryPhotoJob');
 
 Route::get('/planes/list', 'PlanesController@list')->name('planesList');
 // Route::get('/planes/list/seen/{id}', 'PlanesController@seen');

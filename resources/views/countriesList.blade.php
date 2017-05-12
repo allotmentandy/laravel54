@@ -25,6 +25,9 @@
                 echo "<td><a href='/planes/country/" . $p->A. "'>" . $p->A . "</a></td>";
                 echo "<td>" . $p->B . "</td>";
                 echo "<td>" . $p->id . "</td>";
+                echo "<td>";
+                echo "<a href='/planes/country/job/" . $p->A ."'>queue photo jobs for all</a>";
+
                 echo "</tr>";
             endforeach;
             ?>
