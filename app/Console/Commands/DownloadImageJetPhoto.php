@@ -53,10 +53,16 @@ class DownloadImageJetPhoto extends Command
         $html = $response->getBody()->getContents();
 
         $doc = new \DOMDocument();
+
         $tidy = tidy_parse_string($html);
+        $tidy->cleanRepair();
+
         $html = $tidy->html();
 
+        libxml_use_internal_errors(true);
         $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+        libxml_clear_errors();
+
         $xpath = new \DOMXpath($doc);
 
         // jetphotos
@@ -70,7 +76,6 @@ class DownloadImageJetPhoto extends Command
             
             $alt = $xpath->evaluate("string(//img[@class='result__photo']/@alt)");
             echo "jetphoto " . $alt;
-
             echo PHP_EOL;
         }
     }

@@ -53,10 +53,22 @@ class DownloadImageAirlinersNet extends Command
         $html = $response->getBody()->getContents();
 
         $doc = new \DOMDocument();
-        $tidy = tidy_parse_string($html);
+        $tidy_config = array(
+                     'clean' => true,
+                     'output-xhtml' => true,
+                     'show-body-only' => false,
+                     'wrap' => 0,
+                     );
+        $tidy = tidy_parse_string($html, $tidy_config, 'UTF8');
+        $tidy->cleanRepair();
+
         $html = $tidy->html();
 
+
+        libxml_use_internal_errors(true);
         $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+        libxml_clear_errors();
+
         $xpath = new \DOMXpath($doc);
         
         $src = $xpath->evaluate("string(//img[@class='lazy-load']/@src)");
@@ -66,7 +78,7 @@ class DownloadImageAirlinersNet extends Command
             $save_path="/var/www/laravel54/public/planeImages/airlinersNet/".$reg . ".jpg";
             file_put_contents($save_path, $contents);
             
-            //echo PHP_EOL;
+            echo "AirlinerNet".PHP_EOL;
         }
     }
 }
