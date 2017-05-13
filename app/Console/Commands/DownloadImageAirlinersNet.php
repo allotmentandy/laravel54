@@ -72,13 +72,16 @@ class DownloadImageAirlinersNet extends Command
         $xpath = new \DOMXpath($doc);
         
         $src = $xpath->evaluate("string(//img[@class='lazy-load']/@src)");
+
         if ($src) {
             $imgSrc = $src;
             $contents=file_get_contents($imgSrc);
             $save_path="/var/www/laravel54/public/planeImages/airlinersNet/".$reg . ".jpg";
             file_put_contents($save_path, $contents);
+
+            $operator = $xpath->evaluate('string(//div[@class="ps-v2-results-display-detail-no-wrapping"] )');
             
-            echo "AirlinerNet".PHP_EOL;
+            echo "AirlinerNet: " . $operator .PHP_EOL;
         }
     }
 }
