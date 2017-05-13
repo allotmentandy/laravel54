@@ -2,14 +2,16 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
-            <div class="col-md-5">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Info and Photos</div>
-                    <div class="panel-body">
+        
+            <div class="col-md-9">
+            
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Info and Photos</div>
+                        <div class="panel-body">
                         <?php
                         foreach ($details as $row) :
                         ?>
@@ -19,19 +21,22 @@
                         
                         {{ $row->conNumber   }}
                         </h2>
-                        
+                        {{ $row->notes}}
+                        <br>
+
                         <?php
                         endforeach;
                         ?>
-                        seen / scrape?
-                        <br>
-                        undo - set to null
+                        seen / scrape? <b>{{$row->seenScrape}}</b> <button>undo</button>
+                        <br><br>
+
+
                         <?php
                         $path = "/var/www/laravel54/public";
                         foreach ($details as $row) :
                             $filename = "/planeImages/jetPhotos/" . $row->reg. ".jpg";
                             if (file_exists($path.$filename)) {
-                                echo "<img src='". $filename . "'><br>" ;
+                                echo "<img src='". $filename . "'>" ;
                             }
                             $filename = "/planeImages/airlinersNet/" . $row->reg. ".jpg";
                             if (file_exists($path.$filename)) {
@@ -39,14 +44,7 @@
                             }
                         endforeach;
                         ?>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Links</div>
-                    <div class="panel-body">
-                        <br>
+                    <h4>Links</h4>
                         <a href="https://www.jetphotos.com/registration/{{$row['reg']}}" target="_blank">Jetphotos</a>
                         <br>
                         <a href="http://www.airliners.net/search?registrationActual={{$row['reg']}}" target="_blank">Airliners.net</a>
@@ -58,8 +56,11 @@
                         <a href="https://planefinder.net/data/aircraft/{{$row['reg']}}" target="_blank">Plane Finder</a>
                         <br>
                         <a href="https://www.flightradar24.com/data/aircraft/{{$row['reg']}}" target="_blank">FlightRadar</a>
+
                     </div>
                 </div>
+            </div>
+
             </div>
         </div>
     </div>
