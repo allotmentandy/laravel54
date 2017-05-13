@@ -31,7 +31,7 @@ Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountr
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
 Route::get('/planes/country/job/{countryCode}', 'PlanesController@countryPhotoJob');
 
-Route::get('/planes/list', 'PlanesController@list')->name('planesList');
+Route::get('/planes/list', 'PlanesController@planesList')->name('planesList');
 // Route::get('/planes/list/seen/{id}', 'PlanesController@seen');
 // Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape');
 Route::post('/planes/ajax/', 'PlanesController@ajax');

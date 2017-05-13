@@ -74,7 +74,7 @@ class PlanesController extends Controller
         echo("</table></body></html>");
     }
     
-    public function list()
+    public function planesList()
     {
         $data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(15);
         return view('planesList', $data);
