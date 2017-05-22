@@ -12,7 +12,7 @@
 						<input type="text" size="10" name="q">
 						</form>
 						<hr>
-						Output HTML<br>
+						<a href="{{ route('outputHtml')}}">Output HTML</a><br>
 						(to be saved and uploaded)
                     </div>
                 </div>

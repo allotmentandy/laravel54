@@ -56,6 +56,9 @@ Route::get('/londinium/saved', 'LondiniumController@saved')->name('saved');
 Route::post('/londinium/search', 'LondiniumController@search')->name('search');
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');
 Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
+Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
+
+
 
 Route::get('/jquery', 'JqueryController@index')->name('jquery');
 Route::get('/jquery/SmsMessage', 'JqueryController@jquery_smsMessage')->name('jquery_smsMessage');

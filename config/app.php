@@ -237,6 +237,7 @@ return [
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
         'Feeds'    => willvincent\Feeds\Facades\FeedsFacade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
