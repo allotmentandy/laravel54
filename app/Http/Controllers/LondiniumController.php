@@ -62,6 +62,23 @@ class LondiniumController extends Controller
         return back()->with('message', 'Operation Successful !');
     }
 
+    public function sitesBySubcategory()
+    {
+        $subcategories = [];
+
+        $result = Subcategories::orderBy('name')->get();
+        foreach ($result as $row) {
+            $subcategories[$row['id'] ]= $row['name'];
+        }
+
+
+        $data['subcategories'] = $subcategories;
+        $data['sites'] = Londinium::where('saved', '=', 'saved')->orderBy('subcategory_id')->paginate(1000);
+
+        return view('londiniumSitesOutputBySubcategory', $data);
+    }
+
+
     public function outputHtml()
     {
         \Debugbar::disable();

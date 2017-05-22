@@ -11,6 +11,10 @@
 						Search
 						<input type="text" size="10" name="q">
 						</form>
+
+						<hr>
+						<a href="{{ route('sitesBySubcategory') }}">sitesBySubcategory</a><br>
+
 						<hr>
 						<a href="{{ route('outputHtml')}}">Output HTML</a><br>
 						(to be saved and uploaded)
