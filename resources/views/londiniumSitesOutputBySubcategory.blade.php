@@ -20,7 +20,7 @@
                     @foreach ($sites as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "(". $site->subcategory_id . ")</h4>";
+                            echo "<h4><a target='_blank' href='subcategory/". $site->subcategory_id  . "'>" . $subcategories [$site->subcategory_id] . "(". $site->subcategory_id . ")</a></h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
