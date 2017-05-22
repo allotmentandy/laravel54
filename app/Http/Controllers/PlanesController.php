@@ -167,9 +167,9 @@ class PlanesController extends Controller
 
     public function search()
     {
-        $data['title'] = "Search for: " . Input::get('q');
+        $data['title'] = Input::get('q');
 
-        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->get();
+        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->orWhere('notes', 'like', '%' . Input::get('q') . '%')->get();
 
         return view('planeSearch', $data);
     }

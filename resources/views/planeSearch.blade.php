@@ -9,6 +9,13 @@
             </div>
         
             <div class="col-md-9">
+                
+                    <form action="/planes/search" method="post">
+                     {{ csrf_field() }}
+                    Reg Search
+                    <input type="text" size="10" name="q" value={{$title}}>
+                    </form>
+                
                 <table class="table table-condensed">
 
                 <?php
@@ -38,7 +45,7 @@
                     echo $p->type . " </td><td>";
                     echo $p->conNumber . "</td>";
 
-                    // echo "<td>" . $p->notes . "</td>";
+                     echo "<td>" . $p->notes . "</td>";
 
                     ?>
                     <td>
