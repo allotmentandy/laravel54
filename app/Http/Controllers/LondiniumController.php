@@ -27,7 +27,7 @@ class LondiniumController extends Controller
 
     public function saved()
     {
-        $data['sites'] = Londinium::orderBy('id')->where('saved', '=', 'saved')->paginate(100);
+        $data['sites'] = Londinium::orderBy('url')->where('saved', '=', 'saved')->paginate(2099);
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
         $data['highestSavedId'] = Londinium::select('id')->where('saved', '=', 'saved')->orderBy('id', 'DESC')->take(1)->get();
         return view('londiniumSites', $data);
@@ -61,6 +61,15 @@ class LondiniumController extends Controller
         $Londinium->save();
         return back()->with('message', 'Operation Successful !');
     }
+
+    public function unsave($id)
+    {
+        $Londinium = Londinium::where('id', '=', $id)->first();
+        $Londinium->saved = '';
+        $Londinium->save();
+        return back()->with('message', 'Operation Successful !');
+    }
+
 
     public function sitesBySubcategory()
     {

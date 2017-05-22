@@ -62,3 +62,7 @@ form, form div {
 a:visited {
     color: purple !important;
 }
+
+.light{
+    color: pink;
+}

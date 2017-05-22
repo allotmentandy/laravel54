@@ -26,6 +26,7 @@
                         ?>
 
                         <b>{{ $site->url }}</b>
+                        ({{$site->id}})
                         <br>
                     
                     @endforeach

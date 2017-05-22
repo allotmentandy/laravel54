@@ -69,6 +69,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#jobs" role="tab" data-toggle="tab">Jobs</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#news" role="tab" data-toggle="tab">News</a>
+            </li>
         </ul>
     </nav>
     <!-- Tab panes -->
@@ -176,6 +179,11 @@
         <div role="tabpanel" class="tab-pane fade" id="jobs">
             <div class="container-fluid">
                 Jobs</div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="news">
+            <div class="container-fluid">
+                News</div>
         </div>
 
 

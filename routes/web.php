@@ -52,6 +52,8 @@ Route::get('/rss/news', 'RssController@news')->name('rssNews');
 Route::get('/londinium', 'LondiniumController@index')->name('londinium');
 Route::get('/londinium/sites', 'LondiniumController@sites')->name('sites');
 Route::get('/londinium/sites/save/{id}', 'LondiniumController@save');
+Route::get('/londinium/sites/unsave/{id}', 'LondiniumController@unsave');
+
 Route::get('/londinium/saved', 'LondiniumController@saved')->name('saved');
 Route::post('/londinium/search', 'LondiniumController@search')->name('search');
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');

@@ -20,13 +20,21 @@
                     
                     <?php
                     if ($site->saved == 'saved') {
-                        echo("SAVED</td><td>");
+                        echo("SAVED ");
                     } else {
-                        echo "<a href=\"/londinium/sites/save/$site->id\" class=\"button\">Save</a> </td><td>";
+                        echo "<a href=\"/londinium/sites/save/$site->id\" class=\"button\">Save</a> ";
                     }
                     ?>
                             
                         <b>{{ $site->url }}</b>
+                        <span class="light">{{$site->id}} {{$site->subcategory_id}}</span>
+
+                    <?php
+                    if ($site->saved == 'saved') {
+                        echo "<a href=\"/londinium/sites/unsave/$site->id\" class=\"button\">UNSAVE</a> ";
+                    }
+                    ?>
+
 
                         <br>
                         @endforeach
