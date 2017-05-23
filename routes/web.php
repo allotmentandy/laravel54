@@ -63,6 +63,7 @@ Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcateg
 Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
 
 Route::get('/londinium/screenshot', 'LondiniumController@screenshot')->name('screenshot');
+Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
 
 
 

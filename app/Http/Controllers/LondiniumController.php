@@ -8,6 +8,8 @@ use DB;
 use App\Londinium;
 use App\Subcategories;
 use Debugbar;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class LondiniumController extends Controller
 {
@@ -105,5 +107,87 @@ class LondiniumController extends Controller
         ->setHeightToRenderWholePage()
         ->setTimeout(5000)
         ->save('/var/www/laravel54/public/screenshots/londinium.jpg');
+    }
+
+    public function spider()
+    {
+        // get random url from sites table
+        $data['url'] = Londinium::where('active', '=', 1)->orderByRaw('RAND()')->take(1)->first();
+
+        $url = $data['url']->url;
+        $id = $data['url']->id;
+
+        echo $id . " -> " . $url;
+
+        $client = new \GuzzleHttp\Client([
+            'timeout'  => 200.0,
+            'http_errors' => false,
+            'base_uri' => $url
+            ]);
+        
+
+
+        try {
+            $response = $client->request('GET', $url);
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            // If there are network errors, we need to ensure the application doesn't crash.
+            // if $e->hasResponse is not null we can attempt to get the message
+            // Otherwise, we'll just pass a network unavailable message.
+            if ($e->hasResponse()) {
+                $exception = (string) $e->getResponse()->getBody();
+                $exception = json_decode($exception);
+                echo $e->getCode();
+                echo "request exception" . $response->getStatusCode();
+                exit;
+            } else {
+                echo "request exception else";
+                exit;
+            }
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
+            echo "connection exception";
+            // var_dump($e);
+            exit();
+        }
+
+
+
+
+        $html = $response->getBody()->getContents();
+
+        $doc = new \DOMDocument();
+        $tidy_config = array(
+                     'clean' => true,
+                     'output-xhtml' => true,
+                     'show-body-only' => false,
+                     'wrap' => 0,
+                     );
+        $tidy = tidy_parse_string($html, $tidy_config, 'UTF8');
+        $tidy->cleanRepair();
+
+        $html = $tidy->html();
+
+        libxml_use_internal_errors(true);
+        $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+        libxml_clear_errors();
+
+        $xpath = new \DOMXpath($doc);
+        $title = $xpath->evaluate("string(//html/head/title[1])");
+        echo "<h1>".$title . "</h1>";
+
+
+        $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
+        foreach ($desc as $content) {
+            echo $content->value . PHP_EOL;
+        }
+
+
+        $hrefs = $xpath->evaluate("/html/body//a");
+
+        for ($i = 0; $i < $hrefs->length; $i++) {
+            $href = $hrefs->item($i);
+            $url = $href->getAttribute('href');
+            $title = @$href->firstChild->nodeValue;
+            echo "<br /> $url $title";
+        }
     }
 }
