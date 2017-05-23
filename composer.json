@@ -12,6 +12,7 @@
         "laravel/dusk": "^1.0@dev",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "spatie/browsershot": "^1.9",
         "thujohn/twitter": "^2.2",
         "willvincent/feeds": "1.1.*"
     },

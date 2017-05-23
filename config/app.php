@@ -185,6 +185,8 @@ return [
         willvincent\Feeds\FeedsServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        Spatie\Browsershot\BrowsershotServiceProvider::class,
+
     ],
 
     /*

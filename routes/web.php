@@ -62,6 +62,8 @@ Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcategory')->name('sitesBySubcategory');
 Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
 
+Route::get('/londinium/screenshot', 'LondiniumController@screenshot')->name('screenshot');
+
 
 
 Route::get('/jquery', 'JqueryController@index')->name('jquery');

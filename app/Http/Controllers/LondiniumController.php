@@ -93,4 +93,17 @@ class LondiniumController extends Controller
         \Debugbar::disable();
         return view('outputHtml');
     }
+
+    public function screenshot()
+    {
+        // uses https://github.com/spatie/browsershot
+
+        $browsershot = new \Spatie\Browsershot\Browsershot();
+        $browsershot
+        ->setURL('http://www.londinium.com')
+        ->setWidth(400)
+        ->setHeightToRenderWholePage()
+        ->setTimeout(5000)
+        ->save('/var/www/laravel54/public/screenshots/londinium.jpg');
+    }
 }
