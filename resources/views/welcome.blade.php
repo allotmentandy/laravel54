@@ -8,6 +8,7 @@
                 <div class="panel-heading">Examples</div>
                 <div class="panel-body">
                     <a href="{{ route('planes') }}">Planes</a><br>
+                    <a href="{{ route('planesApi') }}">Planes API</a><br>
                     <a href="{{ route('londinium') }}">Londinium</a><br>
                     <a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
                     <a href="{{ route('rssNews') }}">RSS news feeds</a><br>

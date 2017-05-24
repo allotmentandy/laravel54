@@ -10,4 +10,9 @@ class VueController extends Controller
     {
         return view('vue');
     }
+
+    public function ajax()
+    {
+        return view('vueAjax');
+    }
 }

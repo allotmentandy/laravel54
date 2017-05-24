@@ -7,7 +7,7 @@
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
-        
+        </div>
 
             <div class="col-md-8">
 

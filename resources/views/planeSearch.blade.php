@@ -7,59 +7,59 @@
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
-        
-            <div class="col-md-9">
-                
-                    <form action="/planes/search" method="post">
-                     {{ csrf_field() }}
-                    Reg Search
-                    <input type="text" size="10" name="q" value={{$title}}>
-                    </form>
-                
-                <table class="table table-condensed">
+        </div>
+        <div class="col-md-9">
+            
+                <form action="/planes/search" method="post">
+                 {{ csrf_field() }}
+                Reg Search
+                <input type="text" size="10" name="q" value={{$title}}>
+                </form>
+            
+            <table class="table table-condensed">
 
-                <?php
-                foreach ($planes as $p) :
-                    if ($p->seenScrape == "Seen") {
-                        echo("<tr class='red'>");
-                    } elseif ($p->seenScrape == "Scrape") {
-                        echo("<tr class='green'>");
-                    } else {
-                        echo "<tr>";
-                    }
-
-
-                    echo "<th>";
-
-                    if ($p->seenScrape == "Seen") {
-                        echo("Seen");
-                    } elseif ($p->seenScrape == "Scrape") {
-                        echo("Scrape");
-                    }
-                    ?>
-
-                    </th>
-                    <?php
-                    echo "<th>" . $p->reg . "</th><td>";
-                    $id = $p->id;
-                    echo $p->type . " </td><td>";
-                    echo $p->conNumber . "</td>";
-
-                     echo "<td>" . $p->notes . "</td>";
-
-                    ?>
-                    <td>
-                    <a href="/planes/details/{{ $id }}" class="button">More..</a>
-                    </td>
+            <?php
+            foreach ($planes as $p) :
+                if ($p->seenScrape == "Seen") {
+                    echo("<tr class='red'>");
+                } elseif ($p->seenScrape == "Scrape") {
+                    echo("<tr class='green'>");
+                } else {
+                    echo "<tr>";
+                }
 
 
-                    <?php
-                    echo "</tr>";
-                endforeach;
+                echo "<th>";
 
+                if ($p->seenScrape == "Seen") {
+                    echo("Seen");
+                } elseif ($p->seenScrape == "Scrape") {
+                    echo("Scrape");
+                }
                 ?>
 
-                </table>
+                </th>
+                <?php
+                echo "<th>" . $p->reg . "</th><td>";
+                $id = $p->id;
+                echo $p->type . " </td><td>";
+                echo $p->conNumber . "</td>";
+
+                 echo "<td>" . $p->notes . "</td>";
+
+                ?>
+                <td>
+                <a href="/planes/details/{{ $id }}" class="button">More..</a>
+                </td>
+
+
+                <?php
+                echo "</tr>";
+            endforeach;
+
+            ?>
+
+            </table>
 
         </div>
     </div>

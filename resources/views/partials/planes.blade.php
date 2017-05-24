@@ -9,4 +9,4 @@
         <a href="{{ route('planesHelp') }}">Help</a><br>
         
     </div>
-</div>
+

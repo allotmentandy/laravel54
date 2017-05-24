@@ -7,7 +7,7 @@
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
-
+        </div>
         <div class="col-md-8">
             <div class="panel panel-primary">
                 <div class="panel-heading">Notes</div>
@@ -19,7 +19,6 @@
                         wkhtmltopdf http://localhost/planes/txt planes2.pdf
                         </code>
                     </div>
-
                 </div>
             </div>
         </div>
