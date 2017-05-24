@@ -72,6 +72,9 @@ Route::get('/jquery/SmsMessage', 'JqueryController@jquery_smsMessage')->name('jq
 Route::get('/jquery/TogglePanels', 'JqueryController@jquery_togglePanels')->name('jquery_togglePanels');
 Route::get('/jquery/EmailRecipients', 'JqueryController@jquery_emailRecipients')->name('jquery_emailRecipients');
 
+Route::get('/vue', 'VueController@index')->name('vue');
+
+
 
 //twitter
 Route::get('/userTimeline', function () {

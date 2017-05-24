@@ -12,6 +12,7 @@
                     <a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
                     <a href="{{ route('rssNews') }}">RSS news feeds</a><br>
                     <a href="{{ route('jquery') }}">Jquery Examples</a><br>
+                    <a href="{{ route('vue') }}">Vue Examples</a><br>
                 </div>
             </div>
         </div>
