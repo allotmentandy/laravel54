@@ -16,8 +16,30 @@
 
                 <div class="panel-body">
 
+<pre>
+setRegSeen($id)
 
-                getRandomPlane()
+setRegScrape($id)
+</pre>
+
+<pre>
+getRandomPlane()
+
+getPlaneByRegistration()
+
+getTypes()
+
+getCountries()
+
+getCountryListByCode($code)
+
+getTypeListByType($type)
+
+getPlaneList()
+</pre>
+
+todo: paging for lists
+
                 </div>
             </div>
         </div>

@@ -11,12 +11,16 @@ use App\Jobs\downloadSeenAircraftImage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Input;
 
-//use PDF; // removed as too intense.
-
 class PlanesApiController extends Controller
 {
     public function index()
     {
         return view('planesApi');
+    }
+
+    public function getTypes()
+    {
+        $data['types'] = Planes::select('type')->groupBy('type')->get();
+        return $data;
     }
 }

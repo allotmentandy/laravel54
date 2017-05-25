@@ -38,6 +38,7 @@ Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 
 Route::get('/planesApi', 'PlanesApiController@index')->name('planesApi');
+Route::get('/planesApi/getTypes', 'PlanesApiController@getTypes')->name('planesApiGetTypes');
 
 
 Route::get('/rss', 'RssController@index')->name('rss');

@@ -52,7 +52,7 @@ class importPlanes extends Command
         echo $directory . PHP_EOL;
 
         if (env("BIZJETS_DIRECTORY") == "") {
-            echo "you need to run php artisan config:cache" . PHP_EOL;
+            echo "you need to run php artisan config:clear" . PHP_EOL;
             exit;
         }
 
@@ -119,11 +119,12 @@ class importPlanes extends Command
                 $aReplace = array(' EX ', ',' , '/', '  ');
                 $notes = str_replace($aReplace, ' ', $notes);
 
-
-                $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$lines[1]', '$lines[2]', '$notes' , '$code') ;";
-
-                DB::insert($sql);
-                $counter++;
+                // ignore rows with blank type and conNumber
+                if ($lines[1] && $lines[2]) {
+                    $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$lines[1]', '$lines[2]', '$notes' , '$code') ;";
+                    DB::insert($sql);
+                    $counter++;
+                }
             }
         }
         $this->question("FINISHED " . time() . " completed " . $counter . " lines");
