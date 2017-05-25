@@ -15,4 +15,9 @@ class VueController extends Controller
     {
         return view('vueAjax');
     }
+
+    public function planesTypes()
+    {
+        return view('vuePlanesTypes');
+    }
 }

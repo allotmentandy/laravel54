@@ -2,6 +2,7 @@
     <div class="panel-body">
         <a href="{{ route('vue') }}">vue home</a><br>
         <a href="{{ route('vueAjax') }}">vue Ajax</a><br>
+        <a href="{{ route('vuePlanesTypes') }}">vue PlanesTypes</a><br>
         <hr>
         <h5>Links</h5>
         <a href="https://vuejs-tips.github.io/cheatsheet/" target="_blank">Vue.js cheatsheet</a><br>

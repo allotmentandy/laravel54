@@ -130,11 +130,11 @@ class ImportPlanes extends Command
             }
         }
         $this->question("FINISHED " . time() . " completed " . $counter . " lines");
-
-//end of command
     }
-    /** correct typos in the original data
-     *
+
+    /** correct typos in the original data and standardize types
+     * see this link for the 4 letter codes
+     * http://www.flugzeuginfo.net/table_accodes_en.php?sort=manuasc
      *
      * @return string
      */
@@ -158,13 +158,41 @@ class ImportPlanes extends Command
             return "BAe 125-800SP";
         } elseif ($type == "Cessna 525A Citation Cj2") {
             return "Cessna 525A CitationJet Cj2";
+        } elseif ($type == "Falcon 20") {
+            return "Dassault Falcon 20";
+        } elseif ($type == "Falcon 2000") {
+            return "Dassault Falcon 2000";
+        } elseif ($type == "FALCON 20C") {
+            return "Dassault Falcon 20C";
+        } elseif ($type == "Falcon 20D") {
+            return "Dassault Falcon 20D";
+        } elseif ($type == "Falcon 20E") {
+            return "Dassault Falcon 20E";
+        } elseif ($type == "Falcon 20F") {
+            return "Dassault Falcon 20F";
+        } elseif ($type == "Gulfstream 2SP") {
+            return "Gulfstream IISP";
+        } elseif ($type == "Gulfstream 450") {
+            return "Gulfstream G450";
+        } elseif ($type == "Lear Jet 24") {
+            return "Learjet 24";
+        } elseif ($type == "Lear Jet 24D") {
+            return "Learjet 24D";
+        } elseif ($type == "Lear Jet 25B") {
+            return "Learjet 25B";
+        } elseif ($type == "Lear Jet 25C") {
+            return "Learjet 25C";
+        } elseif ($type == "Lear Jet 25D") {
+            return "Learjet 25D";
+        } elseif ($type == "Lear Jet 25G") {
+            return "Learjet 25G";
         } else {
             return $type;
         }
     }
 
 
-    
+
  
     /**
      * Get the console command arguments.
