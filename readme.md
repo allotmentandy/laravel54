@@ -6,9 +6,11 @@ I am looking for a job either in London, or working remotely. I have around 20 y
 
 This is a demo application to show off some of the features of Laravel 5.4 that i have made. It has the following features
 
-- Private Jet system for importing data using commands 
-- londinium website directory system
+- Private Jet system for importing data using artisan commands 
+- API version of the planes database 
+- website directory system manager to output static html site
 - jquery examples
+- vue.js examples
 - rss feeds to download laravel jobs and news from feeds
 - guzzle command to download html
 - import command to parse downloaded html

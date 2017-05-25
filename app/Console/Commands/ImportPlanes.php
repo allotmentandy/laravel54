@@ -9,7 +9,7 @@ use DB;
 use App\PlanesNew;
 use App\Countries;
 
-class importPlanes extends Command
+class ImportPlanes extends Command
 {
 
     /**
@@ -119,9 +119,11 @@ class importPlanes extends Command
                 $aReplace = array(' EX ', ',' , '/', '  ');
                 $notes = str_replace($aReplace, ' ', $notes);
 
+                $type = $this->cleanType($lines[1]);
+
                 // ignore rows with blank type and conNumber
-                if ($lines[1] && $lines[2]) {
-                    $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$lines[1]', '$lines[2]', '$notes' , '$code') ;";
+                if ($type && $lines[2]) {
+                    $sql = "INSERT INTO `aircraft`.`planesNew` ( `reg`, `type`, `conNumber`, `notes` , `countryCode`) VALUES ( '$lines[0]', '$type', '$lines[2]', '$notes' , '$code') ;";
                     DB::insert($sql);
                     $counter++;
                 }
@@ -131,7 +133,39 @@ class importPlanes extends Command
 
 //end of command
     }
+    /** correct typos in the original data
+     *
+     *
+     * @return string
+     */
+    protected function cleanType($type)
+    {
+        if ($type == "A318 Elite") {
+            return "Airbus A318 Elite";
+        } elseif ($type == "Dasasult Falcon 2000") {
+            return "Dassault Falcon 2000";
+        } elseif ($type == "Cessna F550 Citation II") {
+            return "Cessna 550 Citation II";
+        } elseif ($type == "Eclipse 500") {
+            return "Eclipse EA500";
+        } elseif ($type == "125-700A") {
+            return "BAe 125-700A";
+        } elseif ($type == "BAe125-700A") {
+            return "BAe 125-700A";
+        } elseif ($type == "BAe125-800A") {
+            return "BAe 125-800A";
+        } elseif ($type == "BAe125-800SP") {
+            return "BAe 125-800SP";
+        } elseif ($type == "Cessna 525A Citation Cj2") {
+            return "Cessna 525A CitationJet Cj2";
+        } else {
+            return $type;
+        }
+    }
 
+
+    
+ 
     /**
      * Get the console command arguments.
      *
