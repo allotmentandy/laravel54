@@ -20,4 +20,9 @@ class VueController extends Controller
     {
         return view('vuePlanesTypes');
     }
+
+    public function planesTypesAxios()
+    {
+        return view('vuePlanesTypesAxios');
+    }
 }

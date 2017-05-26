@@ -41,7 +41,6 @@ Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 Route::get('/planesApi', 'PlanesApiController@index')->name('planesApi');
 Route::get('/planesApi/getTypes', 'PlanesApiController@getTypes')->name('planesApiGetTypes');
 
-
 Route::get('/rss', 'RssController@index')->name('rss');
 Route::get('/rss/jobs', 'RssController@jobs')->name('rssJobs');
 Route::get('/rss/news', 'RssController@news')->name('rssNews');
@@ -70,6 +69,7 @@ Route::get('/jquery/EmailRecipients', 'JqueryController@jquery_emailRecipients')
 Route::get('/vue', 'VueController@index')->name('vue');
 Route::get('/vueAjax', 'VueController@ajax')->name('vueAjax');
 Route::get('/vuePlanesTypes', 'VueController@planesTypes')->name('vuePlanesTypes');
+Route::get('/vuePlanesTypesAxios', 'VueController@planesTypesAxios')->name('vuePlanesTypesAxios');
 
 
 //twitter
