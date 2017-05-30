@@ -10,3 +10,4 @@ Homestead.yaml
 /rss
 public/planeImages/
 tests/_output/*
+tests/_support/*
