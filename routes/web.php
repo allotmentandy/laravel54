@@ -63,6 +63,8 @@ Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('out
 Route::get('/londinium/screenshot/{id}', 'LondiniumController@screenshot')->name('screenshot');
 Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
 
+Route::get('/londinium/errors', 'LondiniumController@londiniumErrors')->name('londiniumErrors');
+
 
 
 Route::get('/jquery', 'JqueryController@index')->name('jquery');

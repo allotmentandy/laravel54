@@ -14,6 +14,7 @@
 
 						<hr>
 						<a href="{{ route('sitesBySubcategory') }}">sitesBySubcategory</a><br>
+						<a href="{{ route('londiniumErrors') }}">Errors</a><br>
 
 						<hr>
 						<a href="{{ route('outputHtml')}}">Output HTML</a><br>

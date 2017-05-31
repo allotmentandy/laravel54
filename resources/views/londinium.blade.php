@@ -13,7 +13,9 @@
                 <div class="panel-body">
                     Random Site:
                     @foreach ($site as $item)<br>
-                        {{$item['url']}}<br>
+                        <h1>{{$item['id']}}  {{$item['url']}}</h1>
+                        <a href="/londinium/site/{{$item['id']}}" target="_blank">details</a><br>
+                        <img src="/screenshots/{{$item['id']}}.jpg"><br>
                         <br>
                         <br>
                     @endforeach

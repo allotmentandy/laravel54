@@ -16,7 +16,7 @@ class LondiniumController extends Controller
 {
     public function index()
     {
-        $data['site'] = Londinium::orderByRaw('RAND()')->take(1)->get();
+        $data['site'] = Londinium::where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->get();
         return view('londinium', $data);
     }
 
@@ -260,5 +260,18 @@ class LondiniumController extends Controller
             $title = @$href->firstChild->nodeValue;
             echo "<br /> $url $title";
         }
+    }
+
+    public function londiniumErrors()
+    {
+        echo "<h2>errors</h2>";
+        echo "sites with http status NOT 200";
+        echo "<br>";
+        echo "sites with blank title tags";
+        echo "<br>";
+        echo "sites with missing screenshots or screenshots < 10kb";
+        echo "<br>";
+        echo "errors";
+        echo "<br>";
     }
 }
