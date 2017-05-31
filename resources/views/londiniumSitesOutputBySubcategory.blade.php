@@ -25,7 +25,10 @@
                         }
                         ?>
 
-                        <b>{{ $site->url }}</b>
+                        {{ $spiderStatus[$site->id] or '???' }}
+                        
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
                         ({{$site->id}})
                         <br>
                     
