@@ -294,7 +294,7 @@ class LondiniumController extends Controller
             $comma_separated = implode(",", $idArray);
             echo "<hr>";
             echo "all ids to reset the sql<pre>";
-            echo "UPDATE sites set updated_at = '[0000-00-00 00:00:00' and screenshot_at = '[0000-00-00 00:00:00' where id in (" . $comma_separated . ");\n";
+            echo "UPDATE sites set updated_at = '0000-00-00 00:00:00' and screenshot_at = '0000-00-00 00:00:00' where id in (" . $comma_separated . ");\n";
 
             echo "DELETE FROM spider WHERE id in (" . $comma_separated . ")";
         }
