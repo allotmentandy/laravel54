@@ -1,5 +1,18 @@
 # Allotmentandy's Laravel 5.4 demo CHANGELOG
 
+## 31st May 2017
+- added a spider and screenump maker for the londinium directory maker
+- added an .env variable to enable the screendump maker as part of the spider
+- spider only gets the title tag for now (more is commented out)
+
+## 30th May 2017
+- added a vue.js crud for the items table
+- axios plane types via ajax
+- vue-resource vue.js ajax api for the planetypes
+
+## 25th May 2017
+- cleanup the data for the aircraft system on import, correct typos / mistypes
+
 ## 11th May 2017
 - added some tests using phpunit, codeception and dusk
 - improvements to the output of the bizjet output
