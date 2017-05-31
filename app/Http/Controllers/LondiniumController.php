@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 use App\Londinium;
 use App\Subcategories;
+use App\Spider;
 use Debugbar;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -151,13 +152,14 @@ class LondiniumController extends Controller
         }
 
 
-		echo '<html>
+        echo '<html>
     <head>
         <meta http-equiv="refresh" content="0">
     </head>
     <body>';
-        echo $id . " -> " . $url;
+        echo $id . " -> " . $url . "<hr>";
 
+        echo "Status Code: " . $response->getStatusCode();
 
         $html = $response->getBody()->getContents();
 
@@ -182,9 +184,15 @@ class LondiniumController extends Controller
         echo "<h1>".$title . "</h1>";
 
 
-		// store title in spider table with id and status 
+        // store title in spider table with id and status
+        
+        $s = Spider::firstOrNew(array('id' => $id));
+        $s->status = $response->getStatusCode();
+        $s->title = $title;
+        $s->save();
 
-		exit;
+
+        exit;
 
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
