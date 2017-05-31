@@ -37,17 +37,12 @@ class LondiniumController extends Controller
 
     public function siteEditUrl($id)
     {
-        // echo $id;
-        // echo $_POST['url'];
-
         $site = Londinium::find($id); //select the book using primary id
         $site->url = $_POST['url'];
         $site->save();
 
         return back()->with('message', 'Operation Successful !');
     }
-
-
 
     public function saved()
     {
@@ -98,17 +93,17 @@ class LondiniumController extends Controller
     public function sitesBySubcategory()
     {
         $subcategories = [];
-
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
             $subcategories[$row['id'] ]= $row['name'];
         }
 
         $spiderStatus = [];
-
+        $spiderTitle = [];
         $result = Spider::get();
         foreach ($result as $row) {
             $spiderStatus[$row['id'] ]= $row['status'];
+            $spiderTitle[$row['id'] ]= $row['title'];
         }
 
         $data['spiderStatus'] = $spiderStatus;
