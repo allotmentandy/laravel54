@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Londinium extends Model
 {
-
-	protected $connection = 'mysql3';
-	
+    protected $connection = 'mysql3';
+    
     /**
      * The table associated with the model.
      *
@@ -23,7 +22,7 @@ class Londinium extends Model
      * @var bool
      */
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     /**
      * Indicates what can be updated or edited
@@ -32,9 +31,7 @@ class Londinium extends Model
      */
     protected $fillable = [
         'saved'
-    ];     
+    ];
 
     // join cat/subcat
-
-
 }
