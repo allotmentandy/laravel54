@@ -7548,3 +7548,13 @@ INSERT INTO `subcategories` (`id`, `name`, `active`) VALUES
 (1514,  'Digital Agency', 'Y'),
 (1515,  'Door Handles', 'Y'),
 (1516,  'Livery Company', 'Y');
+
+
+
+DROP TABLE IF EXISTS `spider`;
+CREATE TABLE `spider` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

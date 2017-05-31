@@ -112,21 +112,22 @@ class LondiniumController extends Controller
     public function spider()
     {
         // get random url from sites table
-        $data['url'] = Londinium::where('active', '=', 1)->orderByRaw('RAND()')->take(1)->first();
+        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
 
         $url = $data['url']->url;
         $id = $data['url']->id;
-
-        echo $id . " -> " . $url;
 
         $client = new \GuzzleHttp\Client([
             'timeout'  => 200.0,
             'http_errors' => false,
             'base_uri' => $url
             ]);
+
+
+
+
+
         
-
-
         try {
             $response = $client->request('GET', $url);
         } catch (\GuzzleHttp\Exception\RequestException $e) {
@@ -150,6 +151,12 @@ class LondiniumController extends Controller
         }
 
 
+		echo '<html>
+    <head>
+        <meta http-equiv="refresh" content="0">
+    </head>
+    <body>';
+        echo $id . " -> " . $url;
 
 
         $html = $response->getBody()->getContents();
@@ -175,10 +182,20 @@ class LondiniumController extends Controller
         echo "<h1>".$title . "</h1>";
 
 
+		// store title in spider table with id and status 
+
+		exit;
+
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
             echo $content->value . PHP_EOL;
         }
+        echo "<hr>";
+        $desc = $xpath->query('/html/head/meta[@name="keywords"]/@content');
+        foreach ($desc as $content) {
+            echo $content->value . PHP_EOL;
+        }
+        echo "<hr>";
 
 
         $hrefs = $xpath->evaluate("/html/body//a");
