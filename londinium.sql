@@ -12,6 +12,7 @@ CREATE TABLE `sites` (
   `active` int(11) NOT NULL DEFAULT '0',
   `url` varchar(200) NOT NULL DEFAULT '',
   `saved` varchar(10) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `subcategory_id` (`subcategory_id`),
   KEY `url` (`url`),

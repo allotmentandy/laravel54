@@ -113,12 +113,10 @@ class LondiniumController extends Controller
     public function spider()
     {
         // get random url from sites table
-//        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
+        // $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
 
-// added updated_at timestamp
-        // $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '>', time() - (24*60*60))->orderBy('updated_at')->take(1)->first();
-        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '=', null)->orderBy('updated_at')->take(1)->first();
-
+        // added updated_at timestamp
+        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '>', time() - (24*60*60))->orderBy('updated_at')->take(1)->first();
 
 
         $url = $data['url']->url;
@@ -148,7 +146,7 @@ class LondiniumController extends Controller
                 echo "request exception" . $response->getStatusCode();
                 exit;
             } else {
-                echo "request exception else" . $url;
+                echo "request exception else " . $url;
                 exit;
             }
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
