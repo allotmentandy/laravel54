@@ -50,13 +50,17 @@ Route::get('/londinium', 'LondiniumController@index')->name('londinium');
 Route::get('/londinium/sites', 'LondiniumController@sites')->name('sites');
 Route::get('/londinium/sites/save/{id}', 'LondiniumController@save');
 Route::get('/londinium/sites/unsave/{id}', 'LondiniumController@unsave');
+
+Route::get('/londinium/site/{id}', 'LondiniumController@site')->name('site');
+Route::post('/londinium/siteEditUrl/{id}', 'LondiniumController@siteEditUrl');
+
 Route::get('/londinium/saved', 'LondiniumController@saved')->name('saved');
 Route::post('/londinium/search', 'LondiniumController@search')->name('search');
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');
 Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcategory')->name('sitesBySubcategory');
 Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
-Route::get('/londinium/screenshot', 'LondiniumController@screenshot')->name('screenshot');
+Route::get('/londinium/screenshot/{id}', 'LondiniumController@screenshot')->name('screenshot');
 Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
 
 
@@ -72,7 +76,7 @@ Route::get('/vuePlanesTypes', 'VueController@planesTypes')->name('vuePlanesTypes
 Route::get('/vuePlanesTypesAxios', 'VueController@planesTypesAxios')->name('vuePlanesTypesAxios');
 
 Route::get('manage-vue', 'VueItemController@manageVue');
-Route::resource('vueitems','VueItemController');
+Route::resource('vueitems', 'VueItemController');
 
 
 //twitter

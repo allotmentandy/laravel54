@@ -30,6 +30,13 @@
 
                         <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
                         ({{$site->id}})
+
+                        <?php
+                        echo "<a href=\"/londinium/sites/unsave/$site->id\" class=\"button\">UNSAVE</a> ";
+
+                        echo "<a href=\"/londinium/site/$site->id\" class=\"button\">Details</a> ";
+
+                        ?>
                         <br>
                     
                     @endforeach

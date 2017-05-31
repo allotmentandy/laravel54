@@ -28,6 +28,27 @@ class LondiniumController extends Controller
         return view('londiniumSites', $data);
     }
 
+    public function site($id)
+    {
+        $data['id'] = $id;
+        $data['sites'] = Londinium::orderBy('id')->where('id', '=', $id)->get();
+        return view('londiniumSite', $data);
+    }
+
+    public function siteEditUrl($id)
+    {
+        // echo $id;
+        // echo $_POST['url'];
+
+        $site = Londinium::find($id); //select the book using primary id
+        $site->url = $_POST['url'];
+        $site->save();
+
+        return back()->with('message', 'Operation Successful !');
+    }
+
+
+
     public function saved()
     {
         $data['sites'] = Londinium::orderBy('url')->where('saved', '=', 'saved')->paginate(2099);
@@ -104,17 +125,25 @@ class LondiniumController extends Controller
         return view('outputHtml');
     }
 
-    public function screenshot()
+    public function screenshot($id)
     {
-        // uses https://github.com/spatie/browsershot
+        $data['url'] = Londinium::where('id', '=', $id)->take(1)->first();
 
+        if (!$data['url']) {
+            echo "no id/url. finished";
+            exit;
+        }
+
+        $url = $data['url']->url;
+
+        // uses https://github.com/spatie/browsershot
         $browsershot = new \Spatie\Browsershot\Browsershot();
         $browsershot
-        ->setURL('http://www.londinium.com')
-        ->setWidth(400)
+        ->setURL($url)
+        ->setWidth(640)
         ->setHeightToRenderWholePage()
         ->setTimeout(5000)
-        ->save('/var/www/laravel54/public/screenshots/londinium.jpg');
+        ->save('/var/www/laravel54/public/screenshots/'. $id . '.jpg');
     }
 
     public function spider()
