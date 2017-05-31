@@ -232,6 +232,11 @@ class LondiniumController extends Controller
 
         Londinium::find($id)->touch();
 
+        $makeScreenshots = env("LONDINIUM_SPIDER_SCREENSHOTS_MAKE");
+
+        if ($makeScreenshots) {
+            $this->screenshot($id);
+        }
 
         exit;
 

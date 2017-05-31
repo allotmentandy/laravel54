@@ -11,3 +11,4 @@ Homestead.yaml
 public/planeImages/
 tests/_output/*
 tests/_support/*
+public/screenshots/*
