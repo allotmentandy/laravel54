@@ -107,6 +107,7 @@ class LondiniumController extends Controller
         }
 
         $data['spiderStatus'] = $spiderStatus;
+        $data['spiderTitle'] = $spiderTitle;
         $data['subcategories'] = $subcategories;
         $data['sites'] = Londinium::where('saved', '=', 'saved')->orderBy('subcategory_id')->paginate(1000);
 
