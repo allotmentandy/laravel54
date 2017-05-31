@@ -148,22 +148,23 @@ class LondiniumController extends Controller
         // $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
 
         // added updated_at timestamp
-        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '>', time() - (24*60*60))->orderBy('updated_at')->take(1)->first();
+        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '<', time() - (24*60*60))->orderBy('updated_at')->take(1)->first();
 
-
+        if (!$data['url']) {
+            echo "all spidering and screendumps complete for today :)";
+            exit;
+        }
         $url = $data['url']->url;
         $id = $data['url']->id;
 
         $client = new \GuzzleHttp\Client([
             'timeout'  => 200.0,
             'http_errors' => false,
-            'base_uri' => $url
+            'base_uri' => $url,
+            'headers' => [
+                'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36',
+                ],
             ]);
-
-
-
-
-
         
         try {
             $response = $client->request('GET', $url);
@@ -264,14 +265,38 @@ class LondiniumController extends Controller
 
     public function londiniumErrors()
     {
+        $idArray = [];
+
         echo "<h2>errors</h2>";
-        echo "sites with http status NOT 200";
-        echo "<br>";
-        echo "sites with blank title tags";
-        echo "<br>";
+        echo "sites with http status NOT 200<br>";
+        
+        $blanks = Spider::where('status', '<>', "200")->get();
+        foreach ($blanks as $row) {
+            echo "<a target='_blank' href='/londinium/site/" .$row['id'] . "'>". $row['id']. " (". $row['status'].  ") ". $row['title']."</a><br>";
+            $idArray[] = $row['id'];
+        }
+
+        echo "<hr>";
+        echo "sites with blank title tags<br>";
+        $blanks = Spider::where('title', '=', "")->get();
+        foreach ($blanks as $row) {
+            echo "<a target='_blank' href='/londinium/site/" .$row['id'] . "'>". $row['id']. " </a><br>";
+            $idArray[] = $row['id'];
+        }
+        echo "<hr>";
         echo "sites with missing screenshots or screenshots < 10kb";
-        echo "<br>";
-        echo "errors";
-        echo "<br>";
+        echo "<hr>";
+        echo "title like site not found";
+        
+
+
+        if (sizeof($idArray) > 0) {
+            $comma_separated = implode(",", $idArray);
+            echo "<hr>";
+            echo "all ids to reset the sql<pre>";
+            echo "UPDATE sites set updated_at = '[0000-00-00 00:00:00' and screenshot_at = '[0000-00-00 00:00:00' where id in (" . $comma_separated . ");\n";
+
+            echo "DELETE FROM spider WHERE id in (" . $comma_separated . ")";
+        }
     }
 }
