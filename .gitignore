@@ -6,7 +6,7 @@
 Homestead.json
 Homestead.yaml
 .env
-.env.dusk
+.env.dusk.local
 /bizjets/*.php
 /rss
 public/planeImages/

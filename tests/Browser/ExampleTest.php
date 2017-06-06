@@ -17,12 +17,14 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('/')
+                    ->resize(1024, 768)
                     ->assertSee('Laravel')
                     ->screenshot('home');
         });
 
         $this->browse(function ($browser) {
             $browser->visit('http://localhost/planes/list')
+                    ->resize(1024, 768)
                     ->screenshot('planesList');
         });
 

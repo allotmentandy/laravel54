@@ -26,6 +26,7 @@
                      {{ csrf_field() }}
                     Reg Search
                     <input type="text" size="10" name="q">
+                    <input type="submit" value="search">
                     </form>
 
                 </div>
