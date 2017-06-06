@@ -18,9 +18,11 @@
                 <div class="panel-body">
                     @foreach ($items as $item)
                         <div class="item">
-                            <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
+                            <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>                            
+                            <button type="button" class="btn btn-warning" data-toggle="popover" data-placement="right" title="Popover title" data-content="{{ $item->get_description() }}">More Details</button>
+
                             <p>{{ $item->get_permalink() }}</p>
-                            
+
                             <p class="text-right"><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
                         </div>
                     @endforeach
@@ -30,6 +32,14 @@
     </div>
 </div>
 
+@endsection
 
+@section('scripts')
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 
 @endsection
+
