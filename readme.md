@@ -66,6 +66,9 @@ setup the database username and password for the 3 databases
 
 ### Private Jet database tools
 
+![Planes DB screenshot](/tests/Browser/screenshots/planesList.png)
+
+
 set a variable for the directory where the corpjet files will be downloaded in the .env file
 
 ``` 

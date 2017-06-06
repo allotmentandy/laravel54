@@ -21,6 +21,13 @@ class ExampleTest extends DuskTestCase
                     ->screenshot('home');
         });
 
+        $this->browse(function ($browser) {
+            $browser->visit('http://localhost/planes/list')
+                    ->screenshot('planesList');
+        });
+
+
+
 
 
         // read https://github.com/laravel/dusk/blob/master/src/Browser.php
