@@ -20,5 +20,9 @@ class ExampleTest extends DuskTestCase
                     ->assertSee('Laravel')
                     ->screenshot('home');
         });
+
+
+
+        // read https://github.com/laravel/dusk/blob/master/src/Browser.php
     }
 }
