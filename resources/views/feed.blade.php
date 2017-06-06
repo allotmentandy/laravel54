@@ -19,7 +19,7 @@
                     @foreach ($items as $item)
                         <div class="item">
                             <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>                            
-                            <button type="button" class="btn btn-warning" data-toggle="popover" data-placement="right" title="Popover title" data-content="{{ $item->get_description() }}">More Details</button>
+                            <button type="button" class="btn btn-info" data-toggle="popover" data-placement="right" title="Popover title" data-content="{{ $item->get_description() }}">More Details</button>
 
                             <p>{{ $item->get_permalink() }}</p>
 
