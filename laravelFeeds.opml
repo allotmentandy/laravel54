@@ -6,7 +6,6 @@
     </head>
     <body>
         <outline text="Elance Jobs" type="rss" htmlUrl="https://www.elance.com/r/rss/jobs/" xmlUrl="https://www.elance.com/r/rss/jobs/"/>
-        <outline text="Fox eBook" type="rss" htmlUrl="http://www.foxebook.net" xmlUrl="http://www.foxebook.net/feed/"/>
         <outline text="Full Stack Radio" type="rss" htmlUrl="http://fullstackradio.com" xmlUrl="https://simplecast.com/podcasts/279/rss"/>
         <outline text="IBM developerWorks : Web development" type="rss" htmlUrl="http://www.ibm.com/developerworks/" xmlUrl="http://www.ibm.com/developerworks/views/web/rss/libraryview.jsp"/>
         <outline text="Job Feed" type="rss" htmlUrl="http://www.computerfutures.com/en/job-search" xmlUrl="http://www.computerfutures.com/en/job-search?task=searchAdverts&amp;form-keywords=php%20london&amp;form-job-type=0&amp;form-country=0&amp;form-jobs-posted=0&amp;form-jobs-salary=0&amp;form-order-field=&amp;form-order-dir=DESC&amp;redirect=0&amp;format=feed&amp;type=rss"/>
@@ -30,7 +29,6 @@
         <outline text="Newest questions tagged laravel - Stack Overflow" type="rss" htmlUrl="http://stackoverflow.com/questions/tagged/?tagnames=laravel&amp;sort=newest" xmlUrl="http://stackoverflow.com/feeds/tag?tagnames=laravel&amp;sort=newest"/>
         <outline text="Newly Submitted Packages" type="rss" htmlUrl="https://packagist.org/explore/" xmlUrl="https://packagist.org/feeds/packages.rss"/>
         <outline text="Packalyst :: Latest Packages" type="rss" htmlUrl="https://packalyst.com/rss/packages" xmlUrl="http://packalyst.com/rss/packages"/>
-        <outline text="PDF Books Planet - Download thousands of Free PDF and EPUB Books!" type="rss" htmlUrl="https://www.pdfbooksplanet.org/" xmlUrl="http://www.pdfbooksplanet.org/rss.xml"/>
         <outline text="PHP Developer Jobs in Hammersmith | Indeed.co.uk" type="rss" htmlUrl="http://www.indeed.co.uk/jobs?q=PHP+Developer&amp;l=Hammersmith" xmlUrl="http://www.indeed.co.uk/rss?q=PHP+Developer&amp;l=Hammersmith"/>
         <outline text="PHP Podcasts" type="rss" htmlUrl="https://www.phppodcasts.com" xmlUrl="http://feeds.feedburner.com/PhpPodcasts"/>
         <outline text="PHP Test Club - Latest topics" type="rss" htmlUrl="http://phptest.club/latest" xmlUrl="http://phptest.club/latest.rss"/>
