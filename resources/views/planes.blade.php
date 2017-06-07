@@ -22,7 +22,7 @@
                 
                 <hr>
 
-                    <form action="/planes/search" method="post">
+                  <form action="/planes/search" method="get">
                      {{ csrf_field() }}
                     Reg Search
                     <input type="text" size="10" name="q">

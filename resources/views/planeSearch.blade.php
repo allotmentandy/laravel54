@@ -10,11 +10,21 @@
         </div>
         <div class="col-md-9">
             
-                <form action="/planes/search" method="post">
-                 {{ csrf_field() }}
-                Reg Search
-                <input type="text" size="10" name="q" value={{$title}}>
-                </form>
+                   <form action="/planes/search" method="get">
+                     {{ csrf_field() }}
+                    Reg Search
+                    <input type="text" size="10" name="q" value={{$title}}>
+                    <input type="submit" value="search">
+                    </form>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
             
             <table class="table table-condensed">
 

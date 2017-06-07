@@ -168,7 +168,7 @@ class PlanesController extends Controller
     public function search(Request $request)
     {
         $this->validate($request, [
-        'q' => 'required||min:3',
+        'q' => 'required|min:3',
         ]);
 
         $data['title'] = Input::get('q');

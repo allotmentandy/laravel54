@@ -33,7 +33,7 @@ Route::get('/planes/list', 'PlanesController@planesList')->name('planesList');
 // Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape');
 Route::post('/planes/ajax/', 'PlanesController@ajax');
 Route::get('/planes/details/{id}', 'PlanesController@details');
-Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
+Route::get('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
 Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 
