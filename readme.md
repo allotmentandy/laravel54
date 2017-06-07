@@ -1,6 +1,6 @@
 # Allotmentandy's Laravel 5.4 demo
 
-I am looking for a job either in London, or working remotely. I have around 20 years experience working for a wide range of firms using a lot of different technologies. If you think i might be a good fit for your firm, please contact me by posting an issue on this repository. 
+I am looking for a job either in London, or working remotely. I have around 20 years experience working for a wide range of firms using a lot of different technologies. If you think i might be a good fit for your firm, please contact me by posting an issue on this repository or contacting me on twitter.com/londiniumcom
 
 ![Homepage screenshot](/tests/Browser/screenshots/home.png)
 
@@ -14,8 +14,8 @@ This is a demo application to show off some of the features of Laravel 5.4 that 
 - jquery examples
 - vue.js examples
 - rss feeds to download laravel jobs and news from feeds
-- guzzle command to download html
-- import command to parse downloaded html
+- guzzle artisan command to download html
+- import artisan command to parse downloaded html
 - twitter api examples 
 
 ## Install
