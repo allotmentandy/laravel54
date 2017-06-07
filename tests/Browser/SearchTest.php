@@ -18,6 +18,7 @@ class SearchTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('http://localhost/planes');
+            $browser->maximize();
             $browser->type('q', 'I-ADVD');
             $browser->press("search");
             $browser->pause(1000)

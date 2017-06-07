@@ -6,9 +6,10 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Chrome;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class ExampleTest extends DuskTestCase
+class KeyboardTest extends DuskTestCase
 {
     /**
+     * @group rss
      * A basic browser test example.
      *
      * @return void
@@ -16,16 +17,14 @@ class ExampleTest extends DuskTestCase
     public function testBasicExample()
     {
         $this->browse(function ($browser) {
-            $browser->visit('/')
+            $browser->visit('http://localhost/rss/jobs')
                     ->maximize()
-                    ->assertSee('Laravel')
-                    ->screenshot('home');
+                    ->pause(1000)
+                    ->click('.btn')
+                    ->pause(1000)
+                    ->screenshot('rssFeedPopup');
         });
 
-        $this->browse(function ($browser) {
-            $browser->visit('http://localhost/planes/list')
-                    ->screenshot('planesList');
-        });
 
 
 
