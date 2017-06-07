@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+    <head>
+        <title>QuiteRSS</title>
+        <dateModified>Sat May 6 09:51:41 2017</dateModified>
+    </head>
+    <body>
+        <outline text="Elance Jobs" type="rss" htmlUrl="https://www.elance.com/r/rss/jobs/" xmlUrl="https://www.elance.com/r/rss/jobs/"/>
+        <outline text="Fox eBook" type="rss" htmlUrl="http://www.foxebook.net" xmlUrl="http://www.foxebook.net/feed/"/>
+        <outline text="Full Stack Radio" type="rss" htmlUrl="http://fullstackradio.com" xmlUrl="https://simplecast.com/podcasts/279/rss"/>
+        <outline text="IBM developerWorks : Web development" type="rss" htmlUrl="http://www.ibm.com/developerworks/" xmlUrl="http://www.ibm.com/developerworks/views/web/rss/libraryview.jsp"/>
+        <outline text="Job Feed" type="rss" htmlUrl="http://www.computerfutures.com/en/job-search" xmlUrl="http://www.computerfutures.com/en/job-search?task=searchAdverts&amp;form-keywords=php%20london&amp;form-job-type=0&amp;form-country=0&amp;form-jobs-posted=0&amp;form-jobs-salary=0&amp;form-order-field=&amp;form-order-dir=DESC&amp;redirect=0&amp;format=feed&amp;type=rss"/>
+        <outline text="jobs in netherlands - Stack Overflow" type="rss" htmlUrl="http://stackoverflow.com/jobs" xmlUrl="https://stackoverflow.com/jobs/feed?l=netherlands&amp;d=20&amp;u=Miles"/>
+        <outline text="Jobs in Netherlands speaking English" type="rss" htmlUrl="https://netherlands.expatjobs.eu/jobs-speaking/English?" xmlUrl="https://netherlands.expatjobs.eu/jobs-speaking/English?rss=true"/>
+        <outline text="Jobs matching “laravel” - Stack Overflow Careers" type="rss" htmlUrl="http://stackoverflow.com/jobs" xmlUrl="http://careers.stackoverflow.com/uk/jobs/feed?searchTerm=laravel"/>
+        <outline text="Jobs within 50 miles of luton - Stack Overflow Careers" type="rss" htmlUrl="http://stackoverflow.com/jobs" xmlUrl="http://careers.stackoverflow.com/jobs/feed?location=luton&amp;range=50&amp;distanceUnits=Miles"/>
+        <outline text="JobServe Search Results (ci london)" type="rss" htmlUrl="http://www.jobserve.com" xmlUrl="http://www.jobserve.com/MySearch/ED0589AD0579EEC9.rss"/>
+        <outline text="KillerStartups" type="rss" htmlUrl="https://www.killerstartups.com" xmlUrl="http://killerstartups.com/feed/"/>
+        <outline text="Laracasts" type="rss" htmlUrl="https://laracasts.com/series/lets-build-a-forum-with-laravel/episodes/34" xmlUrl="https://laracasts.com/feed"/>
+        <outline text="LaraJobs" type="rss" htmlUrl="http://larajobs.com" xmlUrl="https://larajobs.com/feed"/>
+        <outline text="laravel - Stack Overflow" type="rss" htmlUrl="http://stackoverflow.com/questions/tagged/?tagnames=laravel&amp;sort=active" xmlUrl="http://stackoverflow.com/feeds/tag/laravel"/>
+        <outline text="Laravel - The PHP Framework For Web Artisans" type="rss" htmlUrl="https://www.reddit.com/r/laravel/" xmlUrl="https://www.reddit.com/r/laravel/.rss"/>
+        <outline text="Laravel developers tips" type="rss" htmlUrl="https://laradevtips.com" xmlUrl="https://laradevtips.com/feed/"/>
+        <outline text="Laravel Jobs - Stack Overflow Careers" type="rss" htmlUrl="http://stackoverflow.com/jobs" xmlUrl="http://careers.stackoverflow.com/uk/jobs/feed?tags=laravel"/>
+        <outline text="Laravel Jobs | Indeed.com" type="rss" htmlUrl="http://www.indeed.com/jobs?q=Laravel&amp;rbl=New+York%2C+NY&amp;jlid=45f6c4ded55c00bf" xmlUrl="http://rss.indeed.com/rss?q=Laravel&amp;rbl=New+York%2C+NY&amp;jlid=45f6c4ded55c00bf"/>
+        <outline text="laravel Jobs in Luton | Indeed.co.uk" type="rss" htmlUrl="http://www.indeed.co.uk/jobs?q=laravel&amp;l=Luton" xmlUrl="http://www.indeed.co.uk/rss?q=laravel&amp;l=Luton"/>
+        <outline text="Laravel News" type="rss" htmlUrl="https://laravel-news.com" xmlUrl="https://laravel-news.com/feed/"/>
+        <outline text="laravel Ofertas de emprego em Lisboa | Indeed.pt" type="rss" htmlUrl="http://www.indeed.pt/jobs?q=laravel&amp;l=lisboa" xmlUrl="http://www.indeed.pt/rss?q=laravel&amp;l=lisboa"/>
+        <outline text="Laravel.io Podcast" type="rss" htmlUrl="http://laravel.com" xmlUrl="https://simplecast.com/podcasts/351/rss"/>
+        <outline text="Newest questions tagged laravel - Stack Overflow" type="rss" htmlUrl="http://stackoverflow.com/questions/tagged/?tagnames=laravel&amp;sort=newest" xmlUrl="http://stackoverflow.com/feeds/tag?tagnames=laravel&amp;sort=newest"/>
+        <outline text="Newly Submitted Packages" type="rss" htmlUrl="https://packagist.org/explore/" xmlUrl="https://packagist.org/feeds/packages.rss"/>
+        <outline text="Packalyst :: Latest Packages" type="rss" htmlUrl="https://packalyst.com/rss/packages" xmlUrl="http://packalyst.com/rss/packages"/>
+        <outline text="PDF Books Planet - Download thousands of Free PDF and EPUB Books!" type="rss" htmlUrl="https://www.pdfbooksplanet.org/" xmlUrl="http://www.pdfbooksplanet.org/rss.xml"/>
+        <outline text="PHP Developer Jobs in Hammersmith | Indeed.co.uk" type="rss" htmlUrl="http://www.indeed.co.uk/jobs?q=PHP+Developer&amp;l=Hammersmith" xmlUrl="http://www.indeed.co.uk/rss?q=PHP+Developer&amp;l=Hammersmith"/>
+        <outline text="PHP Podcasts" type="rss" htmlUrl="https://www.phppodcasts.com" xmlUrl="http://feeds.feedburner.com/PhpPodcasts"/>
+        <outline text="PHP Test Club - Latest topics" type="rss" htmlUrl="http://phptest.club/latest" xmlUrl="http://phptest.club/latest.rss"/>
+        <outline text="PHP Town Hall" type="rss" htmlUrl="https://phptownhall.com" xmlUrl="http://feeds.feedburner.com/phptownhall/drDl"/>
+        <outline text="PHP Weekly Archive Feed" type="rss" htmlUrl="http://us15.campaign-archive.com/feed?u=dbfcd660859177225962fa83e&amp;id=a94ca11274" xmlUrl="http://phpweekly.com/rss.xml"/>
+        <outline text="PHP.net releases" type="rss" htmlUrl="http://php.net" xmlUrl="http://php.net/releases/feed.php"/>
+        <outline text="PHP: The latest new in the PHP world" type="rss" htmlUrl="https://www.reddit.com/r/PHP/" xmlUrl="https://www.reddit.com/r/PHP/.rss"/>
+        <outline text="PHPDeveloper.org" type="rss" htmlUrl="http://www.phpdeveloper.org" xmlUrl="http://www.phpdeveloper.org/feed"/>
+        <outline text="PhpStorm Tips" type="rss" htmlUrl="http://phpstorm.tips/tips.rss" xmlUrl="http://phpstorm.tips/tips.rss"/>
+        <outline text="Planet PHP" type="rss" htmlUrl="http://planet-php.net" xmlUrl="http://www.planet-php.org/rss/"/>
+        <outline text="Recent Commits to awesome-laravel:master" type="rss" htmlUrl="https://github.com/chiraggude/awesome-laravel/commits/master" xmlUrl="https://github.com/chiraggude/awesome-laravel/commits/master.atom"/>
+        <outline text="Recent Commits to laravel:master" type="rss" htmlUrl="https://github.com/laravel/laravel/commits/master" xmlUrl="https://github.com/laravel/laravel/commits/master.atom"/>
+        <outline text="Remote OK" type="rss" htmlUrl="https://remoteok.io" xmlUrl="https://remoteok.io/remote-jobs.rss"/>
+        <outline text="Shawn Blanc" type="rss" htmlUrl="http://shawnblanc.net" xmlUrl="http://shawnblanc.net/feed/"/>
+        <outline text="The IT Jobboard.co.uk results for PHP in London" type="rss" htmlUrl="http://uk.dice.com/?SearchTerms=PHP&amp;LocationSearchTerms=London&amp;OrderBy=1&amp;JobTypeFilter=1&amp;LocationId=2047895&amp;Mode=AdvertSearch&amp;lang=en" xmlUrl="http://www.theitjobboard.co.uk/rss/PHP/London/en/jobs-feed.xml?JobTypeFilter=1&amp;xc=247"/>
+        <outline text="Vegi Bit" type="rss" htmlUrl="http://vegibit.com" xmlUrl="http://vegibit.com/feed/"/>
+        <outline text="Zend Developer Zone" type="rss" htmlUrl="https://devzone.zend.com" xmlUrl="http://devzone.zend.com/feed/"/>
+        <outline text="Life plus Linux" type="rss" htmlUrl="http://lifepluslinux.blogspot.com/" xmlUrl="http://lifepluslinux.blogspot.com/feeds/posts/default"/>
+        <outline text="Laravel News Podcast" type="rss" htmlUrl="https://laravel-news.com/podcast" xmlUrl="https://rss.simplecast.com/podcasts/1356/rss"/>
+        <outline text="Derek MacDonald" type="rss" htmlUrl="http://derekmd.com" xmlUrl="http://derekmd.com/feed/"/>
+        <outline text="Danny van Kooten" type="rss" htmlUrl="https://dannyvankooten.com/" xmlUrl="https://dannyvankooten.com/feed.xml"/>
+        <outline text="Work In Startups" type="rss" htmlUrl="http://workinstartups.com/job-board/" xmlUrl="http://feeds.feedburner.com/WorkInStartups?format=xml"/>
+        <outline text="laravel Jobs in London | Indeed.co.uk" type="rss" htmlUrl="http://www.indeed.co.uk/jobs?q=laravel&amp;l=London&amp;jt=permanent&amp;sort=date" xmlUrl="http://www.indeed.co.uk/rss?q=laravel&amp;l=London&amp;jt=permanent&amp;sort=date"/>
+    </body>
+</opml>
