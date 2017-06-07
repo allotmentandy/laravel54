@@ -22,7 +22,8 @@ class KeyboardTest extends DuskTestCase
                     ->pause(1000)
                     ->click('.btn')
                     ->pause(1000)
-                    ->screenshot('rssFeedPopup');
+                    ->screenshot('rssFeedPopup')
+                    ->keys('.btn', ['{RETURN_KEY}', '']);
         });
 
 
