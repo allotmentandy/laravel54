@@ -165,8 +165,12 @@ class PlanesController extends Controller
         $this->dispatch(new downloadSeenAircraftImage($id));
     }
 
-    public function search()
+    public function search(Request $request)
     {
+        $this->validate($request, [
+        'q' => 'required||min:3',
+        ]);
+
         $data['title'] = Input::get('q');
 
         $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->orWhere('notes', 'like', '%' . Input::get('q') . '%')->get();
