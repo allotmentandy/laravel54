@@ -72,6 +72,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#news" role="tab" data-toggle="tab">News</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a>
+            </li>
         </ul>
     </nav>
     <!-- Tab panes -->
@@ -184,6 +187,11 @@
         <div role="tabpanel" class="tab-pane fade" id="news">
             <div class="container-fluid">
                 News</div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="info">
+            <div class="container-fluid">
+                info</div>
         </div>
 
 

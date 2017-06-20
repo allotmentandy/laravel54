@@ -18,7 +18,6 @@ class ExampleTest extends DuskTestCase
         $this->browse(function ($browser) {
             $browser->visit('/')
                     ->maximize()
-                    ->assertSee('Laravel')
                     ->screenshot('home');
         });
 

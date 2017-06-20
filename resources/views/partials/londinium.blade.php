@@ -1,7 +1,6 @@
-                <div class="panel-heading">Londinium</div>
+                <div class="panel-heading"><a href="{{ route('londinium') }}">Londinium</a></div>
                     <div class="panel-body">
-                        <a href="{{ route('londinium') }}">home</a><br>
-						<a href="{{ route('sites') }}">All sites</a><br>
+                        <a href="{{ route('sites') }}">All sites</a><br>
 						<a href="{{ route('saved') }}">Saved sites</a><br>
 						<a href="{{ route('subcategories') }}">Subcategories</a><br>
 						
