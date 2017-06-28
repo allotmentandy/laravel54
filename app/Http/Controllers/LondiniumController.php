@@ -49,6 +49,16 @@ class LondiniumController extends Controller
         $data['sites'] = Londinium::orderBy('url')->where('saved', '=', 'saved')->paginate(2099);
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
         $data['highestSavedId'] = Londinium::select('id')->where('saved', '=', 'saved')->orderBy('id', 'DESC')->take(1)->get();
+
+
+        $subcategories = [];
+        $result = Subcategories::orderBy('name')->get();
+        foreach ($result as $row) {
+            $subcategories[$row['id'] ]= $row['name'];
+        }
+
+        $data['subcategories'] = $subcategories;
+
         return view('londiniumSites', $data);
     }
 
@@ -114,11 +124,99 @@ class LondiniumController extends Controller
         return view('londiniumSitesOutputBySubcategory', $data);
     }
 
+    public function savedSubcategory()
+    {
+        $subcategories = [];
+        $result = Subcategories::orderBy('name')->get();
+        foreach ($result as $row) {
+            $subcategories[$row['id'] ]= $row['name'];
+        }
+
+        $spiderStatus = [];
+        $spiderTitle = [];
+        $result = Spider::get();
+        foreach ($result as $row) {
+            $spiderStatus[$row['id'] ]= $row['status'];
+            $spiderTitle[$row['id'] ]= $row['title'];
+        }
+
+        $data['spiderStatus'] = $spiderStatus;
+        $data['spiderTitle'] = $spiderTitle;
+        $data['subcategories'] = $subcategories;
+        $data['sites'] = Londinium::where('saved', '=', 'saved')->orderBy('subcategory_id')->paginate(1000);
+
+        return view('londiniumSavedSubcategory', $data);
+    }
+
 
     public function outputHtml()
     {
         \Debugbar::disable();
-        return view('outputHtml');
+
+        $subcategories = [];
+        $result = Subcategories::orderBy('name')->get();
+        foreach ($result as $row) {
+            $subcategories[$row['id'] ]= $row['name'];
+        }
+
+        $data['subcategories'] = $subcategories;
+
+
+
+        $Travel = [ 262, 265, 268, 270, 330, 331,341, 368, 332, 1495, 604, 457, 780, 829,];
+        $Tourism = [2, 5, 3, 154, 451, 452,  318, 292, ];
+        $Food = [245, 249, 250, 957, 871, 358, ];
+        $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 609, 611, 612, 615, 437, 168, 189, 863, 563, ];
+        $Finance = [284, 285, 348,];
+        $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644, ];
+        $Property = [ 290,  293, 334,   423,];
+        $Media = [174, 176, 177, 178, 179, 181, 601, ];
+        $Info = [327,144, 147, 149, 1147, 940, 1066, 1138,  344, 431,];
+        $Events = [  158, 172, 562, 355, 520, 335,];
+
+
+
+        $TravelString = implode(", ", $Travel);
+        $data['Travel'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Travel)->orderByRaw("FIELD(subcategory_id, $TravelString )")->paginate(1000);
+
+
+
+        $TourismString = implode(", ", $Tourism);
+        $data['Tourism'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Tourism)->orderByRaw("FIELD(subcategory_id, $TourismString )")->paginate(1000);
+
+
+        $FoodString = implode(", ", $Food);
+        $data['Food'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Food)->orderByRaw("FIELD(subcategory_id, $FoodString )")->paginate(1000);
+
+
+        $ShoppingString = implode(", ", $Shopping);
+        $data['Shopping'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Shopping)->orderByRaw("FIELD(subcategory_id, $ShoppingString )")->paginate(1000);
+
+        $FinanceString = implode(", ", $Finance);
+        $data['Finance'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Finance)->orderByRaw("FIELD(subcategory_id, $FinanceString )")->paginate(1000);
+
+        $SportString = implode(", ", $Sport);
+        $data['Sport'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Sport)->orderByRaw("FIELD(subcategory_id, $SportString )")->paginate(1000);
+
+        $PropertyString = implode(", ", $Property);
+        $data['Property'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Property)->orderByRaw("FIELD(subcategory_id, $PropertyString )")->paginate(1000);
+
+        $MediaString = implode(", ", $Media);
+        $data['Media'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Media)->orderByRaw("FIELD(subcategory_id, $MediaString )")->paginate(1000);
+
+        $InfoString = implode(", ", $Info);
+        $data['Info'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Info)->orderByRaw("FIELD(subcategory_id, $InfoString )")->paginate(1000);
+
+        $EventsString = implode(", ", $Events);
+        $data['Events'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Events)->orderByRaw("FIELD(subcategory_id, $EventsString )")->paginate(1000);
+
+
+
+         
+
+        $data['date'] = date('Y-m-d H:i:s');
+
+        return view('outputHtml', $data);
     }
 
     public function screenshot($id)

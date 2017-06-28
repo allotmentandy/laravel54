@@ -52,28 +52,28 @@
                 <a class="nav-link" href="#tourism" role="tab" data-toggle="tab">Tourism</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#four" role="tab" data-toggle="tab">History</a>
+                <a class="nav-link" href="#food" role="tab" data-toggle="tab">Food</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#five" role="tab" data-toggle="tab">TV & Radio</a>
+                <a class="nav-link" href="#shopping" role="tab" data-toggle="tab">Shopping</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#six" role="tab" data-toggle="tab">Shopping</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#seven" role="tab" data-toggle="tab">Finance</a>
+                <a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#sport" role="tab" data-toggle="tab">Sport</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#jobs" role="tab" data-toggle="tab">Jobs</a>
+                <a class="nav-link" href="#property" role="tab" data-toggle="tab">Property</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#news" role="tab" data-toggle="tab">News</a>
+                <a class="nav-link" href="#media" role="tab" data-toggle="tab">Media</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#events" role="tab" data-toggle="tab">Events</a>
             </li>
         </ul>
     </nav>
@@ -145,53 +145,272 @@
                     </div>
                 </div>
                 <footer class="footer">
-                    footer
+                    updated {{$date}}
                 </footer>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="travel">
             <div class="container-fluid">
-                travel</div>
+                
+                <h1>Travel</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Travel as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+
+                </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="tourism">
             <div class="container-fluid">
-                tourism...</div>
+                <h1>Tourism</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Tourism as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+</div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="four">
+        <div role="tabpanel" class="tab-pane fade" id="food">
             <div class="container-fluid">
-                4...</div>
+                <h1>Food</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Food as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+
+                </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="five">
             <div class="container-fluid">
-                5...</div>
+
+</div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="six">
+        <div role="tabpanel" class="tab-pane fade" id="shopping">
             <div class="container-fluid">
-                6...</div>
+                <h1>Shopping</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Shopping as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+            </div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="seven">
+        <div role="tabpanel" class="tab-pane fade" id="finance">
             <div class="container-fluid">
-                7...</div>
+                <h1>Finance</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Finance as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+            </div>
         </div>
 
         <div role="tabpanel" class="tab-pane fade" id="sport">
             <div class="container-fluid">
-                Sport</div>
+                <h1>Sport</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Sport as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+                </div>
         </div>
 
-        <div role="tabpanel" class="tab-pane fade" id="jobs">
+        <div role="tabpanel" class="tab-pane fade" id="property">
             <div class="container-fluid">
-                Jobs</div>
+                 <h1>Property</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Property as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+            </div>
         </div>
 
-        <div role="tabpanel" class="tab-pane fade" id="news">
+        <div role="tabpanel" class="tab-pane fade" id="media">
             <div class="container-fluid">
-                News</div>
+               
+                <h1>London Media and News</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Media as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+
+</div>
         </div>
 
         <div role="tabpanel" class="tab-pane fade" id="info">
             <div class="container-fluid">
-                info</div>
+                
+                <h1>Information</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Info as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+</div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="events">
+            <div class="container-fluid">
+                
+                <h1>London Event Venues</h1>
+
+                    <?php
+                     $subcat=0;
+                    ?>
+
+                    @foreach ($Events as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+
+
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+
+                        <br>
+                    
+                    @endforeach
+</div>
         </div>
 
 

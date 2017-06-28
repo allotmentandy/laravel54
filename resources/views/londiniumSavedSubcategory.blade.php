@@ -15,33 +15,27 @@
 
                     <?php
                      $subcat=0;
+                     $inArray = [];
                     ?>
 
                     @foreach ($sites as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
-                            echo "<h4><a target='_blank' href='subcategory/". $site->subcategory_id  . "'>" . $site->subcategory_id . " " . $subcategories [$site->subcategory_id] . "(". $site->subcategory_id . ")</a></h4>";
+                            echo "<h4><a target='_blank' href='subcategory/". $site->subcategory_id  . "'>" . $site->subcategory_id . " " . $subcategories [$site->subcategory_id] . "</a></h4>";
                             $subcat = $site->subcategory_id;
+                            $inArray[]= $site->subcategory_id;
                         }
-                        ?>
-
-                        {{ $spiderStatus[$site->id] or '???' }}
-                        <?php
-
-                        echo "<a href=\"/londinium/site/$site->id\" target=\"_blank\">Details</a> ";
-
-                        ?>
-                        
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
-                        ({{$site->id}})
-
-                        {{ $spiderTitle[$site->id] or '???' }}
-
-                        <br>
-                    
+                        ?>                    
                     @endforeach
                     
+                    <hr>
+                    <h4>All subcat id's for the output page</h4>
+                    <?php
+                    foreach ($inArray as $key => $value) {
+                        echo $value . ", ";
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@
                     ?>
                             
                         <b>{{ $site->url }}</b>
-                        <span class="light">{{$site->id}} {{$site->subcategory_id}}</span>
+                        <span class="light">{{$site->id}} {{$subcategories[$site->subcategory_id]}}</span>
 
                     <?php
                     if ($site->saved == 'saved') {
