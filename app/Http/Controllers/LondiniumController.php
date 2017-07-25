@@ -11,6 +11,8 @@ use App\Spider;
 use Debugbar;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use Illuminate\Support\ServiceProvider;
+use allotmentandy\socialmedialinkextractor;
 
 class LondiniumController extends Controller
 {
@@ -274,10 +276,10 @@ class LondiniumController extends Controller
                 $exception = (string) $e->getResponse()->getBody();
                 $exception = json_decode($exception);
                 echo $e->getCode();
-                echo "request exception" . $response->getStatusCode();
+                echo "request exception" . $response->getStatusCode() . " " . $id;
                 exit;
             } else {
-                echo "request exception else " . $url;
+                echo "request exception else " . $url . $id;
                 exit;
             }
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
@@ -289,7 +291,7 @@ class LondiniumController extends Controller
 
         echo '<html>
     <head>
-        <meta http-equiv="refresh" content="0">
+        <meta http-equiv="refresh" content="3600">
     </head>
     <body>';
         echo $id . " -> " . $url . "<hr>";
@@ -337,7 +339,7 @@ class LondiniumController extends Controller
             $this->screenshot($id);
         }
 
-        exit;
+//        exit;
 
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
@@ -350,15 +352,22 @@ class LondiniumController extends Controller
         }
         echo "<hr>";
 
-
+        // extract links
+        $linkArray = [];
         $hrefs = $xpath->evaluate("/html/body//a");
 
         for ($i = 0; $i < $hrefs->length; $i++) {
             $href = $hrefs->item($i);
             $url = $href->getAttribute('href');
             $title = @$href->firstChild->nodeValue;
-            echo "<br /> $url $title";
+            //echo "<br /> $url $title";
+            array_push($linkArray, $url);
         }
+        $smle = new \allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorController;
+        echo "<hr>";
+        echo $smle->getTwitter($linkArray);
+        echo "<hr>";
+        echo $smle->getFacebook($linkArray);
     }
 
     public function londiniumErrors()

@@ -186,6 +186,8 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
 
         Spatie\Browsershot\BrowsershotServiceProvider::class,
+        allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorServiceProvider::class,
+
 
     ],
 
