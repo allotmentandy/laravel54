@@ -5,11 +5,37 @@
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-info">
+                @include('partials.londinium')
+            </div>
+
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                
+                <div class="panel-body">
+
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
                     @foreach ($sites as $site)
 
                         <a href="{{$site->url}}" target="_blank">{{$site->url}}</a>
+                        <br>
                         <form method="post" action="/londinium/siteEditUrl/{{$site->id}}">
                         <input type="text" name="url" size="50" value="{{ $site->url }}">
+                        <input type="submit">
+                        {!! csrf_field() !!}
+                        </form>
+                        
+                        <hr>
+
+                        <br>
+                        Edit Name
+                        <form method="post" action="/londinium/siteEditName/{{$site->id}}">
+                        <input type="text" name="name" size="50" value="{{ $site->name }}">
                         <input type="submit">
                         {!! csrf_field() !!}
                         </form>
@@ -29,20 +55,26 @@
                         echo "<a href=\"/londinium/sites/unsave/$site->id\" class=\"button\">UNSAVE</a> ";
                     }
                     ?>
+                        <hr>
+                        Move Category<br>
+                        {{$site->subcategory_id}}
                         <br>
-                        @endforeach
+                        <form method="POST" action="/londinium/moveSubcategory">
+                        <select>
+                            <option>new cat</option>
+                            <option>cat 2</option>
+                        </select>
+                        <input type="hidden" name="id" value="{{$site->id}}">
+                        <br>
+                        <input type="submit">
+                        {!! csrf_field() !!}
+                        </form>
+
+
+                    @endforeach
             </div>
         </div>
 
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                
-                <div class="panel-body">
-                <img src="/screenshots/{{$id}}.jpg">
-                </div>
-                
-            </div>
-        </div>
     </div>
 </div>
 @endsection

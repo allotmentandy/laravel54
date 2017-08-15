@@ -53,9 +53,16 @@ Route::get('/londinium/sites/unsave/{id}', 'LondiniumController@unsave');
 
 Route::get('/londinium/site/{id}', 'LondiniumController@site')->name('site');
 Route::post('/londinium/siteEditUrl/{id}', 'LondiniumController@siteEditUrl');
+Route::post('/londinium/siteEditName/{id}', 'LondiniumController@siteEditName');
+
+Route::post('/londinium/moveSubcategory/', 'LondiniumController@moveSubcategory');
+
 
 Route::get('/londinium/saved', 'LondiniumController@saved')->name('saved');
 Route::post('/londinium/search/', 'LondiniumController@search')->name('search');
+Route::post('/londinium/addAsSaved/', 'LondiniumController@addAsSaved');
+
+
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');
 Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcategory')->name('sitesBySubcategory');

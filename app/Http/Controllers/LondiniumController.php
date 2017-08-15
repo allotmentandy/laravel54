@@ -37,13 +37,27 @@ class LondiniumController extends Controller
         return view('londiniumSite', $data);
     }
 
+    public function moveSubcategory()
+    {
+        echo 'controller';
+    }
+
     public function siteEditUrl($id)
     {
-        $site = Londinium::find($id); //select the book using primary id
+        $site = Londinium::find($id);
         $site->url = $_POST['url'];
         $site->save();
 
         return back()->with('message', 'Operation Successful !');
+    }
+
+    public function siteEditName($id)
+    {
+        $site = Londinium::find($id);
+        $site->name = $_POST['name'];
+        $site->save();
+
+        return back()->with('success', 'Name Changed!');
     }
 
     public function saved()
@@ -68,11 +82,20 @@ class LondiniumController extends Controller
     {
         $q = $request->input('q');
 
-        $data['searchResults'] = Londinium::select('url', 'saved', 'name')->where('saved', '=', 'saved')->where('url', 'LIKE', "%$q%")->paginate(5000);
+        $data['searchResults'] = Londinium::select('url', 'saved', 'name', 'id')->where('saved', '=', 'saved')->where('url', 'LIKE', "%$q%")->paginate(5000);
 
         $data['query'] = $q;
 
         return view('londiniumSearchOrAdd', $data);
+    }
+
+    public function addAsSaved(Request $request)
+    {
+        $url = $request->input('url');
+        $values = array('url' => $url, 'saved' => 'saved');
+        DB::table('londinium.sites')->insert($values);
+
+        return redirect('/londinium/site/' . DB::getPdo()->lastInsertId());
     }
 
     public function subcategories()
@@ -151,7 +174,7 @@ class LondiniumController extends Controller
         $data['spiderStatus'] = $spiderStatus;
         $data['spiderTitle'] = $spiderTitle;
         $data['subcategories'] = $subcategories;
-        $data['sites'] = Londinium::where('saved', '=', 'saved')->orderBy('subcategory_id')->paginate(1000);
+        $data['sites'] = Londinium::where('saved', '=', 'saved')->orderBy('subcategory_id')->paginate(10000);
 
         return view('londiniumSavedSubcategory', $data);
     }
