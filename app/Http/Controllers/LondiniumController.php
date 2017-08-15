@@ -364,10 +364,10 @@ class LondiniumController extends Controller
             array_push($linkArray, $url);
         }
         $smle = new \allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorController;
-        echo "<hr>";
-        echo $smle->getTwitter($linkArray);
-        echo "<hr>";
-        echo $smle->getFacebook($linkArray);
+        echo "<h4>Social Media</h4>";
+        echo $smle->getTwitter($linkArray) . "<br>";
+        echo $smle->getFacebook($linkArray) . "<br>";
+        echo $smle->getYoutube($linkArray) . "<br>";
     }
 
     public function londiniumErrors()
