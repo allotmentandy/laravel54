@@ -64,9 +64,15 @@ class LondiniumController extends Controller
         return view('londiniumSites', $data);
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        echo "hi";
+        $q = $request->input('q');
+
+        $data['searchResults'] = Londinium::select('url', 'saved', 'name')->where('saved', '=', 'saved')->where('url', 'LIKE', "%$q%")->paginate(5000);
+
+        $data['query'] = $q;
+
+        return view('londiniumSearchOrAdd', $data);
     }
 
     public function subcategories()

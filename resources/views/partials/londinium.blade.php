@@ -7,7 +7,7 @@
 
 						<form action="/londinium/search" method="POST">
 						 {{ csrf_field() }}
-						Search
+						Search (and add)
 						<input type="text" size="10" name="q">
 						</form>
 

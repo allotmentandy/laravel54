@@ -6,9 +6,6 @@
         <div class="col-md-2">
             <div class="panel panel-info">
                 @include('partials.londinium')
-                saved sites: {{$countSaved}}
-                <br>
-                highest id saved: {{$highestSavedId}}
             </div>
 
         <div class="col-md-10">
@@ -16,18 +13,13 @@
                 
                 <div class="panel-body">
 
-                    @foreach ($sites as $site)
+                    {{ $query }}
+                    <hr>    
                     
-                    <?php
-                    if ($site->saved == 'saved') {
-                        echo("SAVED ");
-                    } else {
-                        echo "<a href=\"/londinium/sites/save/$site->id\" class=\"button\">Save</a> ";
-                    }
-                    ?>
+                    @forelse ($searchResults as $site)
                             
                         <b>{{ $site->url }}</b>
-                        <span class="light">{{$site->id}} </span>
+                        {{$site->name}}
 
                     <?php
                     if ($site->saved == 'saved') {
@@ -35,12 +27,13 @@
                     }
                     ?>
 
+                    @empty
+                        <p>No entry for {{$query}}</p>
+                        click here to add it
+                    @endforelse
 
                         <br>
-                        @endforeach
                     
-
-                    {{ $sites->links() }}
                     
                 </div>
             </div>
