@@ -37,6 +37,9 @@
                         ({{$site->id}})
 
                         {{ $spiderTitle[$site->id] or '???' }}
+                        
+                        {{ $site->name or '???' }}
+
 
                         <br>
                     

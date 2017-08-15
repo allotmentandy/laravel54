@@ -40,6 +40,7 @@ class LondiniumController extends Controller
     public function moveSubcategory()
     {
         echo 'controller';
+        echo $_POST['subcategory'];
     }
 
     public function siteEditUrl($id)
@@ -48,7 +49,7 @@ class LondiniumController extends Controller
         $site->url = $_POST['url'];
         $site->save();
 
-        return back()->with('message', 'Operation Successful !');
+        return back()->with('success', 'URL Changed!');
     }
 
     public function siteEditName($id)

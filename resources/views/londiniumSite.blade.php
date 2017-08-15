@@ -30,8 +30,6 @@
                         {!! csrf_field() !!}
                         </form>
                         
-                        <hr>
-
                         <br>
                         Edit Name
                         <form method="post" action="/londinium/siteEditName/{{$site->id}}">
@@ -60,9 +58,9 @@
                         {{$site->subcategory_id}}
                         <br>
                         <form method="POST" action="/londinium/moveSubcategory">
-                        <select>
-                            <option>new cat</option>
-                            <option>cat 2</option>
+                        <select name="subcategory">
+                            <option value="1">new cat</option>
+                            <option value="2">cat 2</option>
                         </select>
                         <input type="hidden" name="id" value="{{$site->id}}">
                         <br>
