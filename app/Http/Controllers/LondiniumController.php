@@ -34,6 +34,8 @@ class LondiniumController extends Controller
     {
         $data['id'] = $id;
         $data['sites'] = Londinium::orderBy('id')->where('id', '=', $id)->get();
+        $data['spider'] = Spider::where('id', '=', $id)->get();
+
         return view('londiniumSite', $data);
     }
 

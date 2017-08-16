@@ -75,7 +75,7 @@ set a variable for the directory where the corpjet files will be downloaded in t
 BIZJETS_DIRECTORY = /var/www/laravel54/bizjets/
 ```
 
-download data from the corpjet website using this command to the diretory above. The file corpjet.txt contains the urls for the country lists
+download data from the corpjet website using this command to the directory above. The file corpjet.txt contains the urls for the country lists
 
 ```
 php artisan bizjets:download
@@ -123,5 +123,5 @@ php artisan dusk
 
 ### to do
 - compare the planesNew data to the planes table 
-- Xpath extract the data from the donwload jobs - serial, owner and store in db 
+- Xpath extract the data from the download jobs - serial, owner and store in db 
 - blank results for registration eg. 3c-llx
