@@ -75,11 +75,20 @@ set a variable for the directory where the corpjet files will be downloaded in t
 BIZJETS_DIRECTORY = /var/www/laravel54/bizjets/
 ```
 
+### Commands and Queued Jobs
+
+![Planes DB screenshot](/tests/Browser/screenshots/artisan.png)
+
+
 download data from the corpjet website using this command to the directory above. The file corpjet.txt contains the urls for the country lists
+
 
 ```
 php artisan bizjets:download
 ```
+
+![Planes DB screenshot](/tests/Browser/screenshots/downloader.png)
+
 
 Parse the files using xpath and import into the planesNew table from each of these files 
 
@@ -101,6 +110,9 @@ php artisan bizjets:importNewAircraftToLive
 ```
 php artisan queue:work --tries=1
 ```
+
+![Planes DB screenshot](/tests/Browser/screenshots/queue.png)
+
 
 #### phpunit tests
 run with 
