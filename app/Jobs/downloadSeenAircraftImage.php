@@ -41,8 +41,7 @@ class downloadSeenAircraftImage implements ShouldQueue
         $id = $this->id;
         echo "job arrived -> " . $this->reg . PHP_EOL;
 
-        Artisan::queue('bizjets:downloadImageJetPhoto', ['reg' => $this->reg]);
         Artisan::queue('bizjets:downloadImageAirlinersNet', ['reg' => $this->reg]);
-
+        Artisan::queue('bizjets:downloadImageJetPhoto', ['reg' => $this->reg]);
     }
 }

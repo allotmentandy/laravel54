@@ -45,9 +45,9 @@ class DownloadImageAirlinersNet extends Command
         echo "command called to download :" . $reg . PHP_EOL;
 
         $url = "http://www.airliners.net/search?registrationActual=" . $reg;
-
+        // echo $url;
         $client = new Client([
-            'timeout'  => 200.0,
+            'timeout'  => 60.0,
             ]);
         $response = $client->request('GET', $url);
         $html = $response->getBody()->getContents();

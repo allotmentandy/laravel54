@@ -66,3 +66,8 @@ a:visited {
 .light{
     color: pink;
 }
+
+#dropDownMenu{
+    background: black;
+    color: white;
+}
