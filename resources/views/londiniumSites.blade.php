@@ -15,30 +15,36 @@
             <div class="panel panel-default">
                 
                 <div class="panel-body">
+                    <table border="1">
 
                     @foreach ($sites as $site)
                     
                     <?php
+                    echo "<tr><td>";
                     if ($site->saved == 'saved') {
                         echo("SAVED ");
                     } else {
                         echo "<a href=\"/londinium/sites/save/$site->id\" class=\"button\">Save</a> ";
                     }
                     ?>
-                            
-                        <b>{{ $site->url }}</b>
-                        <span class="light">{{$site->id}} </span>
+                    @if ($site->name)
+                        {{$site->name}}
+                    @else 
+                        {{$site->url}}
+                    @endif       
+                    </td><td>
+                    <a href="/londinium/site/{{$site->id}}" target="_blank">details </a>
+                    </td><td>
 
                     <?php
                     if ($site->saved == 'saved') {
                         echo "<a href=\"/londinium/sites/unsave/$site->id\" class=\"button\">UNSAVE</a> ";
                     }
+                    echo "</td></tr>";
                     ?>
 
-
-                        <br>
-                        @endforeach
-                    
+                    @endforeach
+                    </table>    
 
                     {{ $sites->links() }}
                     
