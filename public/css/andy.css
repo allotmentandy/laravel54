@@ -44,6 +44,10 @@ border:1px solid #999999; -webkit-border-radius: 4px; -moz-border-radius: 4px;bo
     border: 0px !important;
 }
 
+tr:hover {
+    background-color: #ffff99;
+}
+
 form, form div { 
     display: inline; 
 }
