@@ -7,34 +7,47 @@
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
     <style>
     body {
-        font-family: Tahoma, Geneva, sans-serif
+        font-family: "Segoe UI", Arial, Tahoma, Geneva, sans-serif
     }
-    
+
+    a:visited {
+        color: purple;
+    }
+
     .container-fluid {
         width: 99%;
     }
-    
+
     .nav-tabs {
         background-color: #C8D3DB;
     }
-    
-    .nav-tabs > li > a {
+
+    .nav-tabs>li>a {
         border-radius: 5px;
     }
-    
-    .nav-tabs > li > a:hover {
+
+    .nav-tabs>li>a:hover {
         background-color: white !important;
         border-radius: 5px;
         color: black;
         border: 1px solid black;
     }
-    
-    .nav-tabs > li.active > a,
-    .nav-tabs > li.active > a:focus,
-    .nav-tabs > li.active > a:hover {
+
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:focus,
+    .nav-tabs>li.active>a:hover {
         background-color: blue !important;
         color: black;
         border: 2px solid #3F515F;
+    }
+
+    .voffset {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        background: #C8D3DB;
     }
     </style>
 </head>
@@ -80,341 +93,261 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="home">
+            <div class="jumbotron">
+                <div class="container">
+                    <h2>Londinium.com is back</h2>
+                    <p> We have recently relaunched this website. The aim is to provide you with the most useful website links and information for London</p>
+                </div>
+            </div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col">
-                    <p>Welcome to the new londinium.com website. We have recently relaunched this website. The aim is to provide you with the most useful website links and information.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
                         <div class="card">
                             <div class="card-header">
-                                Featured
+                                About londinium.com
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-block">
-                                <a href="#" class="btn btn-primary">Visit</a>
+                                <p class="card-text">
+                                    Londinium.com is back with a new slimmed down website directory. Our aim is to make the most useful link directory for Londoners and people visiting London.
+                                </p>
+                                <p>
+                                    Current website count: {{$countSaved}}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 ">
+                    <div class="col-md-4 col-sm-6 col-xs-12 ">
                         <div class="card">
                             <div class="card-header">
-                                Featured
+                                Contact us
                             </div>
                             <div class="card-block">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-block">
-                                <a href="#" class="btn btn-primary">Visit</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 ">
-                        <div class="card">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-block">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-block">
-                                <a href="#" class="btn btn-primary">Visit</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 ">
-                        <div class="card">
-                            <div class="card-header">
-                                Featured
-                            </div>
-                            <div class="card-block">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-block">
-                                <a href="#" class="btn btn-primary">Visit</a>
+                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should list please contact us via <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <footer class="footer">
-                    updated {{$date}}
-                </footer>
             </div>
+            <footer class="footer">
+                &copy; 2017 - Londinium.com
+                <br> Created on: {{ date('F d, Y', strtotime($date)) }}
+                <br />
+            </footer>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="travel">
             <div class="container-fluid">
-                
-                <h1>Travel</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Travel as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Travel</h1>
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
+                         $subcat=0;
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
-
+                            @foreach ($Travel as $site)
+                            <?php
+                            if ($site->subcategory_id != $subcat) {
+                                echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                                $subcat = $site->subcategory_id;
+                            }
+                            ?>
+                                <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                                <br> @endforeach
+                    </div>
                 </div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="tourism">
             <div class="container-fluid">
-                <h1>Tourism</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Tourism as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Tourism</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Tourism as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-</div>
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="food">
             <div class="container-fluid">
-                <h1>Food</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Food as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Food</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Food as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
-
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
                 </div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="five">
             <div class="container-fluid">
-
-</div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="shopping">
             <div class="container-fluid">
-                <h1>Shopping</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Shopping as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Shopping</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Shopping as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="finance">
             <div class="container-fluid">
-                <h1>Finance</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Finance as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Finance</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Finance as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
             </div>
         </div>
-
         <div role="tabpanel" class="tab-pane fade" id="sport">
             <div class="container-fluid">
-                <h1>Sport</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Sport as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Sport</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Sport as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
                 </div>
-        </div>
-
-        <div role="tabpanel" class="tab-pane fade" id="property">
-            <div class="container-fluid">
-                 <h1>Property</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Property as $site)
-                        <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
             </div>
         </div>
-
+        <div role="tabpanel" class="tab-pane fade" id="property">
+            <div class="container-fluid">
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Property</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Property as $site)
+                        <?php
+                        if ($site->subcategory_id != $subcat) {
+                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
+                            $subcat = $site->subcategory_id;
+                        }
+                        ?>
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
         <div role="tabpanel" class="tab-pane fade" id="media">
             <div class="container-fluid">
-               
-                <h1>London Media and News</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Media as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>London Media and News</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Media as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-
-</div>
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
-
         <div role="tabpanel" class="tab-pane fade" id="info">
             <div class="container-fluid">
-                
-                <h1>Information</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Info as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>Information</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Info as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-</div>
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
-
         <div role="tabpanel" class="tab-pane fade" id="events">
             <div class="container-fluid">
-                
-                <h1>London Event Venues</h1>
-
-                    <?php
-                     $subcat=0;
-                    ?>
-
-                    @foreach ($Events as $site)
+                <div class="row voffset">
+                    <div class="col-xs-6 col-xs-offset-1 col1">
+                        <h1>London Event Venues</h1>
+                        <?php
+                        $subcat=0;
+                        ?>
+                        @foreach ($Events as $site)
                         <?php
                         if ($site->subcategory_id != $subcat) {
                             echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-
-
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
-
-                        <br>
-                    
-                    @endforeach
-</div>
+                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <br> @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
     </div>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
@@ -434,5 +367,4 @@
     });
     </script>
 </body>
-
 </html>

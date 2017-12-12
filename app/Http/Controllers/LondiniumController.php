@@ -195,7 +195,7 @@ class LondiniumController extends Controller
 
         $data['subcategories'] = $subcategories;
 
-
+        $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
 
         $Travel = [ 262, 265, 268, 270, 330, 331,341, 368, 332, 1495, 604, 457, 780, 829,];
         $Tourism = [2, 5, 3, 154, 451, 452,  318, 292, ];
@@ -213,15 +213,11 @@ class LondiniumController extends Controller
         $TravelString = implode(", ", $Travel);
         $data['Travel'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Travel)->orderByRaw("FIELD(subcategory_id, $TravelString )")->paginate(1000);
 
-
-
         $TourismString = implode(", ", $Tourism);
         $data['Tourism'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Tourism)->orderByRaw("FIELD(subcategory_id, $TourismString )")->paginate(1000);
 
-
         $FoodString = implode(", ", $Food);
         $data['Food'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Food)->orderByRaw("FIELD(subcategory_id, $FoodString )")->paginate(1000);
-
 
         $ShoppingString = implode(", ", $Shopping);
         $data['Shopping'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Shopping)->orderByRaw("FIELD(subcategory_id, $ShoppingString )")->paginate(1000);
@@ -243,10 +239,6 @@ class LondiniumController extends Controller
 
         $EventsString = implode(", ", $Events);
         $data['Events'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Events)->orderByRaw("FIELD(subcategory_id, $EventsString )")->paginate(1000);
-
-
-
-         
 
         $data['date'] = date('Y-m-d H:i:s');
 
