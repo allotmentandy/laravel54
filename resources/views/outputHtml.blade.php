@@ -48,7 +48,18 @@
 
     .footer {
         background: #C8D3DB;
+        padding-left: 20px;
     }
+
+    .indent {
+        padding-left: 5px;
+        margin: 2px;
+    }
+
+    a:hover {
+        background-color: yellow;
+    }
+
     </style>
 </head>
 
@@ -108,7 +119,7 @@
                             </div>
                             <div class="card-block">
                                 <p class="card-text">
-                                    Londinium.com is back with a new slimmed down website directory. Our aim is to make the most useful link directory for Londoners and people visiting London.
+                                    Londinium.com is back with a new website directory. Our aim is to make the most useful link directory for Londoners and people visiting London.
                                 </p>
                                 <p>
                                     Current website count: {{$countSaved}}
@@ -116,13 +127,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
+                    <div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
                         <div class="card">
                             <div class="card-header">
-                                Contact us
+                                Contact londinium.com
                             </div>
                             <div class="card-block">
-                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should list please contact us via <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
+                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should add please contact us via <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
                             </div>
                         </div>
                     </div>
@@ -149,7 +160,7 @@
                                 $subcat = $site->subcategory_id;
                             }
                             ?>
-                                <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                                <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                                 <br> @endforeach
                     </div>
                 </div>
@@ -170,7 +181,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -191,7 +202,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -216,7 +227,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -237,7 +248,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -258,7 +269,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -279,7 +290,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -300,7 +311,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -321,7 +332,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
@@ -342,7 +353,7 @@
                             $subcat = $site->subcategory_id;
                         }
                         ?>
-                        <a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a>
+                        <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                         <br> @endforeach
                     </div>
                 </div>
