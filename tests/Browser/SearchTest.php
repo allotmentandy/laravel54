@@ -24,7 +24,7 @@ class SearchTest extends DuskTestCase
             $browser->pause(1000)
                     ->screenshot('planesSearchResult');
             $browser->pause(1000)
-                    ->click('.button');
+                    ->click('.showMore');
             $browser->pause(1000)
                     ->screenshot('planesDetails');
         });

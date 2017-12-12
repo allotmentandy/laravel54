@@ -167,7 +167,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -193,7 +193,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -217,7 +217,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -248,7 +248,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -273,7 +273,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -299,7 +299,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -325,7 +325,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -352,7 +352,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -379,7 +379,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     
@@ -405,7 +405,7 @@
                         ?>
 
 
-                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->url }}</a></b>
+                        <b><a href="{{ $site->url }}" target="_blank">{{ $site->name }}</a></b>
 
                         <br>
                     

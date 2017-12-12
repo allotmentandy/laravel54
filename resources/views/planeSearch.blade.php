@@ -59,7 +59,7 @@
 
                 ?>
                 <td>
-                <a href="/planes/details/{{ $id }}" class="button">More..</a>
+                <a href="/planes/details/{{ $id }}" class="button showMore">More..</a>
                 </td>
 
 

@@ -113,6 +113,22 @@ php artisan queue:work --tries=1
 
 ![Planes DB screenshot](/tests/Browser/screenshots/queue.png)
 
+## Bash Scripts
+
+There are a number of bash scripts to automate the laravel setup to clear all the caches and run the tests
+
+```
+./bash.sh 
+./pi.sh a raspberry pi script for the ARM chipset (as there is no chrome for the dusk tests)
+```
+
+## Testing
+
+The bash script runtest.sh runs all the tests using phpunit, codeception and laravel dusk. to run it use:
+
+```
+./runTests.sh
+```
 
 #### phpunit tests
 run with 
