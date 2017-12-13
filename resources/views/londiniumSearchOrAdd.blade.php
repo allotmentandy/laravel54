@@ -15,8 +15,10 @@
                     {{ $query }}
                     <hr>    
                     @forelse ($searchResults as $site)        
+                        {{ $site->id }}
                         {{ $site->url }}
-                        {{$site->name}}
+                        {{ $site->name }}
+                        {{ $site->subcategory_id}}
                     <?php
                     if ($site->saved == 'saved') {
                         echo "<a href=\"/londinium/site/$site->id\" class=\"button\">EDIT</a> ";
@@ -30,6 +32,13 @@
                         {{ csrf_field() }}
                         Add Url<br>
                         <input type="text" size="100" name="url" value="{{$query}}">
+
+@foreach ($subcategories as $subcat)
+
+    {{ $subcat->id}}
+    {{ $subcat->name}}
+                        
+@endforeach
                         <input type="submit">
                         </form>
 

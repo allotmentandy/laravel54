@@ -85,9 +85,11 @@ class LondiniumController extends Controller
     {
         $q = $request->input('q');
 
-        $data['searchResults'] = Londinium::select('url', 'saved', 'name', 'id')->where('saved', '=', 'saved')->where('url', 'LIKE', "%$q%")->paginate(5000);
+        $data['searchResults'] = Londinium::select('url', 'saved', 'name', 'id', 'subcategory_id')->where('saved', '=', 'saved')->where('url', 'LIKE', "%$q%")->paginate(5000);
 
         $data['query'] = $q;
+
+        $data['subcategories'] = Subcategories::orderBy('name')->paginate(5000);
 
         return view('londiniumSearchOrAdd', $data);
     }
@@ -185,22 +187,30 @@ class LondiniumController extends Controller
 
     public function outputHtml()
     {
-        \Debugbar::disable();
+        // \Debugbar::disable();
 
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
             $subcategories[$row['id'] ]= $row['name'];
         }
-
         $data['subcategories'] = $subcategories;
+
+        // get array of the twitter links from spider table
+        $twitter = [];
+        $result = Spider::orderBy('id')->get();
+        foreach ($result as $row) {
+            $twitter[$row['id'] ]= $row['twitter_url'];
+        }
+        $data['twitter'] = $twitter;
+
 
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
 
         $Travel = [ 262, 265, 268, 270, 330, 331,341, 368, 332, 1495, 604, 457, 780, 829,];
         $Tourism = [2, 5, 3, 154, 451, 452,  318, 292, ];
-        $Food = [245, 249, 250, 957, 871, 358, ];
-        $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 609, 611, 612, 615, 437, 168, 189, 863, 563, ];
+        $Food = [245, 249, 250, 957, 871, 358, 609, 611,];
+        $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 612, 615, 437, 168, 189, 863, ];
         $Finance = [284, 285, 348,];
         $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644, ];
         $Property = [ 290,  293, 334,   423,];
@@ -272,7 +282,13 @@ class LondiniumController extends Controller
         // $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
 
         // added updated_at timestamp
-        $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->where('updated_at', '<', time() - (24*60*60))->orderBy('updated_at')->take(1)->first();
+        $data['url'] = Londinium::where('active', '=', 1)
+        ->where('saved', '=', 'saved')
+        ->where('updated_at', '<', time() - (24*60*60))
+        ->whereNotIn('id', [2079])
+        ->orderBy('updated_at')
+        ->take(1)
+        ->first();
 
         if (!$data['url']) {
             echo "all spidering and screendumps complete for today :)";
@@ -315,7 +331,7 @@ class LondiniumController extends Controller
 
         echo '<html>
     <head>
-        <meta http-equiv="refresh" content="3600">
+        <meta http-equiv="refresh" content="5">
     </head>
     <body>';
         echo $id . " -> " . $url . "<hr>";
@@ -341,16 +357,10 @@ class LondiniumController extends Controller
         libxml_clear_errors();
 
         $xpath = new \DOMXpath($doc);
-        $title = $xpath->evaluate("string(//html/head/title[1])");
-        echo "<h1>".$title . "</h1>";
+        $spiderTitle = $xpath->evaluate("string(//html/head/title[1])");
+        echo "<h1>".$spiderTitle . "</h1>";
 
 
-        // store title in spider table with id and status
-
-        $s = Spider::firstOrNew(array('id' => $id));
-        $s->status = $response->getStatusCode();
-        $s->title = $title;
-        $s->save();
 
 
         // update timestamp on sites table
@@ -392,6 +402,45 @@ class LondiniumController extends Controller
         echo $smle->getTwitter($linkArray) . "<br>";
         echo $smle->getFacebook($linkArray) . "<br>";
         echo $smle->getYoutube($linkArray) . "<br>";
+        echo $smle->getInstagram($linkArray) . "<br>";
+        echo $smle->getLinkedin($linkArray) . "<br>";
+        echo $smle->getGoogle($linkArray) . "<br>";
+        echo $smle->getPinterest($linkArray) . "<br>";
+        echo $smle->getGithub($linkArray) . "<br>";
+        echo $smle->getFlickr($linkArray) . "<br>";
+        echo $smle->getTumblr($linkArray) . "<br>";
+
+        // store title in spider table with id and status
+
+        $s = Spider::firstOrNew(array('id' => $id));
+        $s->status = $response->getStatusCode();
+        $s->title = $spiderTitle;
+        $s->twitter_url = $smle->getTwitter($linkArray);
+        $s->facebook_url = $smle->getFacebook($linkArray);
+        $s->youtube_url = $smle->getYoutube($linkArray);
+        $s->instagram_url = $smle->getInstagram($linkArray);
+        $s->linkedin_url = $smle->getLinkedin($linkArray);
+        $s->google_url = $smle->getGoogle($linkArray);
+        $s->pinterest_url = $smle->getPinterest($linkArray);
+        $s->github_url = $smle->getGithub($linkArray);
+        $s->flickr_url = $smle->getFlickr($linkArray);
+        $s->tumblr_url = $smle->getTumblr($linkArray);
+        $s->save();
+    }
+
+    public function socialMedia()
+    {
+        echo "socialmedia links to check for rubbish<hr>";
+
+        $sm = Spider::get();
+        foreach ($sm as $row) {
+            // echo $row->twitter_url . "<br>";
+            // echo $row->id . " " . $row->instagram_url . "<br>";
+            // echo $row->id . " " . $row->tumblr_url . "<br>";
+            // echo $row->id . " " . $row->flickr_url . "<br>";
+            // echo $row->id . " " . $row->facebook_url . "<br>";
+            echo $row->id . " " . $row->youtube_url . "<br>";
+        }
     }
 
     public function londiniumErrors()

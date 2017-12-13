@@ -14,6 +14,7 @@
 						<hr>
 						<a href="{{ route('sitesBySubcategory') }}">sitesBySubcategory</a><br>
 						<a href="{{ route('savedSubcategory') }}">savedSubcategory</a><br>
+						<a href="{{ route('socialMedia') }}">Alll Social Media Links</a><br>
 						<a href="{{ route('londiniumErrors') }}">Errors</a><br>
 
 						<hr>

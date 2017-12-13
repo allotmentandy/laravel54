@@ -72,6 +72,7 @@ Route::get('/londinium/screenshot/{id}', 'LondiniumController@screenshot')->name
 Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
 
 Route::get('/londinium/errors', 'LondiniumController@londiniumErrors')->name('londiniumErrors');
+Route::get('/londinium/socialMedia', 'LondiniumController@socialMedia')->name('socialMedia');
 
 
 

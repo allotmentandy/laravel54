@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Londinium.com - London links and information</title>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <style>
     body {
         font-family: "Segoe UI", Arial, Tahoma, Geneva, sans-serif
@@ -133,7 +134,9 @@
                                 Contact londinium.com
                             </div>
                             <div class="card-block">
-                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should add please contact us via <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
+                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should add please contact us via 
+                                    <i class="fa fa-twitter"></i>
+                                    <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
                             </div>
                         </div>
                     </div>
@@ -160,8 +163,13 @@
                                 $subcat = $site->subcategory_id;
                             }
                             ?>
-                                <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
-                                <br> @endforeach
+                                <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>                                
+
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
+
+                            <br> @endforeach
                     </div>
                 </div>
             </div>
@@ -182,6 +190,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -203,15 +214,15 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
             </div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="five">
-            <div class="container-fluid">
-            </div>
-        </div>
+
         <div role="tabpanel" class="tab-pane fade" id="shopping">
             <div class="container-fluid">
                 <div class="row voffset">
@@ -228,6 +239,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -249,6 +263,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -270,6 +287,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -291,6 +311,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -312,6 +335,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -333,6 +359,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
@@ -354,6 +383,9 @@
                         }
                         ?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
+                            @if (isset($twitter[$site->id]))
+                                <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            @endif
                         <br> @endforeach
                     </div>
                 </div>
