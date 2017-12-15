@@ -30,7 +30,7 @@ class Londinium extends Model
      * @var bool
      */
     protected $fillable = [
-        'saved'
+        'saved', 'subcategory_id'
     ];
 
     // join cat/subcat

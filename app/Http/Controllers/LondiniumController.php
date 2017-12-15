@@ -97,7 +97,8 @@ class LondiniumController extends Controller
     public function addAsSaved(Request $request)
     {
         $url = $request->input('url');
-        $values = array('url' => $url, 'saved' => 'saved');
+        $subcat = $request->input('subcategory');
+        $values = array('url' => $url, 'saved' => 'saved', 'active' => 1, 'subcategory_id' => $subcat);
         DB::table('londinium.sites')->insert($values);
 
         return redirect('/londinium/site/' . DB::getPdo()->lastInsertId());
@@ -215,7 +216,7 @@ class LondiniumController extends Controller
         $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644, ];
         $Property = [ 290,  293, 334,   423,];
         $Media = [174, 176, 177, 178, 179, 181, 601, ];
-        $Info = [327,144, 147, 149, 1147, 940, 1066, 1138,  344, 431,];
+        $Info = [327,144, 147, 149, 1147, 940, 1066, 1138,  344, 431, 1517];
         $Events = [  158, 172, 562, 355, 520, 335,];
 
 

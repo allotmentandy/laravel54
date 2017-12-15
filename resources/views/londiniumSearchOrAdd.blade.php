@@ -12,7 +12,6 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                    {{ $query }}
                     <hr>    
                     @forelse ($searchResults as $site)        
                         {{ $site->id }}
@@ -33,13 +32,15 @@
                         Add Url<br>
                         <input type="text" size="100" name="url" value="{{$query}}">
 
-@foreach ($subcategories as $subcat)
+                        <select name="subcategory">
+                            <option>Select subcategory</option>
+                            @foreach ($subcategories as $subcat)
+                            <option value="{{ $subcat->id}}">{{ $subcat->name}}</option>               
+                            @endforeach
+                        </select>
 
-    {{ $subcat->id}}
-    {{ $subcat->name}}
-                        
-@endforeach
                         <input type="submit">
+
                         </form>
 
                     @endforelse
