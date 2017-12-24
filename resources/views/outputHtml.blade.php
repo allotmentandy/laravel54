@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Londinium.com - London links and information</title>
@@ -107,8 +106,8 @@
         <div role="tabpanel" class="tab-pane fade in active" id="home">
             <div class="jumbotron">
                 <div class="container">
-                    <h2>Londinium.com is back</h2>
-                    <p> We have recently relaunched this website. The aim is to provide you with the most useful website links and information for London</p>
+                    <h2>Merry Christmas from Londinium.com</h2>
+                    <p>The most useful website links for your visit to London</p>
                 </div>
             </div>
             <div class="container-fluid">
@@ -116,14 +115,14 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
                         <div class="card">
                             <div class="card-header">
-                                About londinium.com
+                                About us
                             </div>
                             <div class="card-block">
                                 <p class="card-text">
-                                    Londinium.com is back with a new website directory. Our aim is to make the most useful link directory for Londoners and people visiting London.
+                                    Londinium.com is a new website directory. We are trying to make the most useful link directory for Londoners and people visiting London.
                                 </p>
                                 <p>
-                                    Current website count: {{$countSaved}}
+                                    Current count of websites : {{$countSaved}}
                                 </p>
                             </div>
                         </div>
@@ -134,7 +133,7 @@
                                 Contact londinium.com
                             </div>
                             <div class="card-block">
-                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should add please contact us via 
+                                <p class="card-text">We would like to hear from you about any website that we link to, and would also like to receive your recommendations for other sites that we should add please contact us via
                                     <i class="fa fa-twitter"></i>
                                     <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
                             </div>
@@ -143,9 +142,8 @@
                 </div>
             </div>
             <footer class="footer">
-                &copy; 2017 - Londinium.com
-                <br> Created on: {{ date('F d, Y', strtotime($date)) }}
-                <br />
+                1998 AD - 2018 AD - Londinium.com - The original site for London
+                <br> Built: {{ date('F d, Y', strtotime($date)) }} AD
             </footer>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="travel">
@@ -153,17 +151,17 @@
                 <div class="row voffset">
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Travel</h1>
-                        <?php
-                         $subcat=0;
-                        ?>
+<?php
+$subcat = 0;
+?>
                             @foreach ($Travel as $site)
                             <?php
-                            if ($site->subcategory_id != $subcat) {
-                                echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                                $subcat = $site->subcategory_id;
-                            }
-                            ?>
-                                <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>                                
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
+                                <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
 
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -180,15 +178,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Tourism</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Tourism as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -204,15 +202,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Food</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Food as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -229,15 +227,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Shopping</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Shopping as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -253,15 +251,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Finance</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Finance as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -277,15 +275,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Sport</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Sport as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -301,15 +299,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Property</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Property as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -325,15 +323,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>London Media and News</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Media as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -349,15 +347,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>Information</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Info as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -373,15 +371,15 @@
                     <div class="col-xs-6 col-xs-offset-1 col1">
                         <h1>London Event Venues</h1>
                         <?php
-                        $subcat=0;
-                        ?>
+$subcat = 0;
+?>
                         @foreach ($Events as $site)
                         <?php
-                        if ($site->subcategory_id != $subcat) {
-                            echo "<h4>" . $subcategories [$site->subcategory_id] . "</h4>";
-                            $subcat = $site->subcategory_id;
-                        }
-                        ?>
+if ($site->subcategory_id != $subcat) {
+    echo "<h4>" . $subcategories[$site->subcategory_id] . "</h4>";
+    $subcat = $site->subcategory_id;
+}
+?>
                         <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
                             @if (isset($twitter[$site->id]))
                                 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>

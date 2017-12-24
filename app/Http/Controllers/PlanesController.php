@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use DB;
-use App\Planes;
 use App\Countries;
 use App\Jobs\downloadSeenAircraftImage;
-use Illuminate\Support\Facades\Log;
+use App\Planes;
+use DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
 
 //use PDF; // removed as too intense.
 
@@ -41,42 +40,42 @@ class PlanesController extends Controller
         }
 
         Planes::select('reg', 'type', 'conNumber', 'countryCode', 'seenScrape')
-        ->orderBy('countryCode', 'asc')
-        ->orderBy('id', 'asc')
-        ->chunk(
-            25000,
-            function ($items) use ($countryCodeArray) {
-                if (!isset($countryCode)) {
-                    $countryCode = "";
-                }
-            
-                foreach ($items as $item) {
-                    if ($item['countryCode'] != $countryCode) {
-                        //$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
-                        echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] ."</th></tr>" . PHP_EOL;
-                        $countryCode = $item['countryCode'];
+            ->orderBy('countryCode', 'asc')
+            ->orderBy('id', 'asc')
+            ->chunk(
+                25000,
+                function ($items) use ($countryCodeArray) {
+                    if (!isset($countryCode)) {
+                        $countryCode = "";
                     }
 
-                    $underline =">";
-                    if ($item['seenScrape'] == "seen") {
-                        $underline = " style='border-bottom: 2px solid red;'>";
-                    } elseif ($item['seenScrape'] == "scrape") {
-                        $underline= " style='border-bottom: 2px solid green;'>";
-                    }
+                    foreach ($items as $item) {
+                        if ($item['countryCode'] != $countryCode) {
+                            //$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
+                            echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] . "</th></tr>" . PHP_EOL;
+                            $countryCode = $item['countryCode'];
+                        }
 
-                    echo "<tr><td " . $underline . " <b>☑</b> ";
-                    echo "</td><td" . $underline . $item['reg'];
-                    echo "</td><td" . $underline . $item['type'];
-                    echo "</td><td" . $underline . $item['conNumber'] . "</td></tr>" .PHP_EOL;
+                        $underline = ">";
+                        if ($item['seenScrape'] == "seen") {
+                            $underline = " style='border-bottom: 2px solid red;'>";
+                        } elseif ($item['seenScrape'] == "scrape") {
+                            $underline = " style='border-bottom: 2px solid green;'>";
+                        }
+
+                        echo "<tr><td " . $underline . " <b>☑</b> ";
+                        echo "</td><td" . $underline . $item['reg'];
+                        echo "</td><td" . $underline . $item['type'];
+                        echo "</td><td" . $underline . $item['conNumber'] . "</td></tr>" . PHP_EOL;
+                    }
                 }
-            }
-        );
+            );
         echo("</table></body></html>");
     }
-    
+
     public function planesList()
     {
-        $data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(15);
+        $data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(30);
         return view('planesList', $data);
     }
 
@@ -107,7 +106,6 @@ class PlanesController extends Controller
         }
     }
 
-
     public function types()
     {
         $data['types'] = Planes::select('type', DB::raw("COUNT(*) as count_row"))->groupBy('type')->get();
@@ -128,8 +126,6 @@ class PlanesController extends Controller
             $this->dispatch(new downloadSeenAircraftImage($plane->id));
         }
     }
-
-
 
     // public function seen($id)
     // {
@@ -155,25 +151,25 @@ class PlanesController extends Controller
         // now set the job to download an image of this
         $this->downloadImage($id);
 
-        $response = ".".$id;
+        $response = "." . $id;
         return $response;
     }
 
     private function downloadImage($id)
     {
-        Log::info('downloadImageFunction called with : '.$id);
+        Log::info('downloadImageFunction called with : ' . $id);
         $this->dispatch(new downloadSeenAircraftImage($id));
     }
 
     public function search(Request $request)
     {
         $this->validate($request, [
-        'q' => 'required|min:3',
+            'q' => 'required|min:3',
         ]);
 
         $data['title'] = Input::get('q');
 
-        $data['planes'] =  Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->orWhere('notes', 'like', '%' . Input::get('q') . '%')->get();
+        $data['planes'] = Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->orWhere('notes', 'like', '%' . Input::get('q') . '%')->get();
 
         return view('planeSearch', $data);
     }
@@ -188,42 +184,38 @@ class PlanesController extends Controller
         return view('planesHelp');
     }
 
-
-
-
-
     // pdf view is too much for the server, use browser?
     //   function pdfview(){
 
-        // set_time_limit(5000);
-        // ini_set('memory_limit','1200M');
+    // set_time_limit(5000);
+    // ini_set('memory_limit','1200M');
 
-        // $output = ("<style>body {font-family: Helvetica, Arial, Sans-Serif;} th {background: #ddd; text-align: left; padding: 5px;}</style>");
+    // $output = ("<style>body {font-family: Helvetica, Arial, Sans-Serif;} th {background: #ddd; text-align: left; padding: 5px;}</style>");
 
-        // Planes::select('reg', 'type', 'conNumber', 'countryCode')->orderBy('countryCode', 'asc')->chunk(5000, function($items)  use (&$output) {
-        // $countryCode = "";
-            
-        // $output .= "<table>";
+    // Planes::select('reg', 'type', 'conNumber', 'countryCode')->orderBy('countryCode', 'asc')->chunk(5000, function($items)  use (&$output) {
+    // $countryCode = "";
 
-        // foreach ($items as $item){
+    // $output .= "<table>";
 
-        // 			if ($item['countryCode'] != $countryCode){
-        // 				$output .= "<tr><th colspan='3'>" . $item['countryCode'] ."</th></tr>";
-        // 				$countryCode = $item['countryCode'];
-        // 			}
-        // 			$output .= "<tr><td>" . $item['reg'] . "</td><td>";
-        // 			$output .= $item['type'] . "</td><td>";
-        // 			$output .= $item['conNumber'] . "</td></tr>";
-        // 		}
-        
-        // 	$output .= "</table>";
+    // foreach ($items as $item){
 
-        // 	}
-        // );
-    
-        // $pdf = PDF::loadHTML($output);
+    // 			if ($item['countryCode'] != $countryCode){
+    // 				$output .= "<tr><th colspan='3'>" . $item['countryCode'] ."</th></tr>";
+    // 				$countryCode = $item['countryCode'];
+    // 			}
+    // 			$output .= "<tr><td>" . $item['reg'] . "</td><td>";
+    // 			$output .= $item['type'] . "</td><td>";
+    // 			$output .= $item['conNumber'] . "</td></tr>";
+    // 		}
 
-        // return $pdf->download('planes.pdf');
+    // 	$output .= "</table>";
 
-        // }
+    // 	}
+    // );
+
+    // $pdf = PDF::loadHTML($output);
+
+    // return $pdf->download('planes.pdf');
+
+    // }
 }
