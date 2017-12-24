@@ -1,27 +1,24 @@
                 <div class="panel-heading"><a href="{{ route('londinium') }}">Londinium</a></div>
                     <div class="panel-body">
+						<form action="/londinium/search" method="POST">
+						 {{ csrf_field() }}
+						<label>Search URLs</label>
+						<input type="text" size="20" name="q" value="">
+						</form>
+						<br>
+
                         <a href="{{ route('sites') }}">All sites</a><br>
 						<a href="{{ route('saved') }}">Saved sites</a><br>
 						<a href="{{ route('subcategories') }}">Subcategories</a><br>
-
-
-						<form action="/londinium/search" method="POST">
-						 {{ csrf_field() }}
-						Search (and add)<br>
-						<input type="text" size="20" name="q" value="">
-						</form>
-
-						<hr>
 						<a href="{{ route('sitesBySubcategory') }}">sitesBySubcategory</a><br>
 						<a href="{{ route('savedSubcategory') }}">savedSubcategory</a><br>
-						<a href="{{ route('socialMedia') }}">Alll Social Media Links</a><br>
+						<a href="{{ route('socialMedia') }}">Social Media Link lists</a><br>
 						<a href="{{ route('londiniumErrors') }}">Errors</a><br>
 
-						<hr>
-						<a href="{{ route('outputHtml')}}">Output HTML</a><br>
-						(to be saved and uploaded)
-						<br>json
-						<br>pdf
-						<br>txt text file
+						<hr><h3>PUBLISH</h3>
+						<a href="{{ route('outputHtml')}}"> HTML</a> - json - pdf - txt <br>(to be saved and uploaded)
+						<br>
+						<h4>A-Z list</h4>
+						html - json - pdf - txt
                     </div>
                 </div>
