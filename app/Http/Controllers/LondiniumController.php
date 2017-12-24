@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use DB;
-use App\Londinium;
-use App\Subcategories;
-use App\Spider;
-use Debugbar;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
-use Illuminate\Support\ServiceProvider;
 use allotmentandy\socialmedialinkextractor;
+use App\Londinium;
+use App\Spider;
+use App\Subcategories;
+use DB;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 
 class LondiniumController extends Controller
 {
@@ -69,11 +65,10 @@ class LondiniumController extends Controller
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
         $data['highestSavedId'] = Londinium::select('id')->where('saved', '=', 'saved')->orderBy('id', 'DESC')->take(1)->get();
 
-
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
-            $subcategories[$row['id'] ]= $row['name'];
+            $subcategories[$row['id']] = $row['name'];
         }
 
         $data['subcategories'] = $subcategories;
@@ -136,21 +131,20 @@ class LondiniumController extends Controller
         return back()->with('message', 'Operation Successful !');
     }
 
-
     public function sitesBySubcategory()
     {
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
-            $subcategories[$row['id'] ]= $row['name'];
+            $subcategories[$row['id']] = $row['name'];
         }
 
         $spiderStatus = [];
         $spiderTitle = [];
         $result = Spider::get();
         foreach ($result as $row) {
-            $spiderStatus[$row['id'] ]= $row['status'];
-            $spiderTitle[$row['id'] ]= $row['title'];
+            $spiderStatus[$row['id']] = $row['status'];
+            $spiderTitle[$row['id']] = $row['title'];
         }
 
         $data['spiderStatus'] = $spiderStatus;
@@ -166,15 +160,15 @@ class LondiniumController extends Controller
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
-            $subcategories[$row['id'] ]= $row['name'];
+            $subcategories[$row['id']] = $row['name'];
         }
 
         $spiderStatus = [];
         $spiderTitle = [];
         $result = Spider::get();
         foreach ($result as $row) {
-            $spiderStatus[$row['id'] ]= $row['status'];
-            $spiderTitle[$row['id'] ]= $row['title'];
+            $spiderStatus[$row['id']] = $row['status'];
+            $spiderTitle[$row['id']] = $row['title'];
         }
 
         $data['spiderStatus'] = $spiderStatus;
@@ -185,7 +179,6 @@ class LondiniumController extends Controller
         return view('londiniumSavedSubcategory', $data);
     }
 
-
     public function outputHtml()
     {
         // \Debugbar::disable();
@@ -193,7 +186,7 @@ class LondiniumController extends Controller
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
-            $subcategories[$row['id'] ]= $row['name'];
+            $subcategories[$row['id']] = $row['name'];
         }
         $data['subcategories'] = $subcategories;
 
@@ -201,25 +194,22 @@ class LondiniumController extends Controller
         $twitter = [];
         $result = Spider::orderBy('id')->get();
         foreach ($result as $row) {
-            $twitter[$row['id'] ]= $row['twitter_url'];
+            $twitter[$row['id']] = $row['twitter_url'];
         }
         $data['twitter'] = $twitter;
 
-
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
 
-        $Travel = [ 262, 265, 268, 270, 330, 331,341, 368, 332, 1495, 604, 457, 780, 829,];
-        $Tourism = [2, 5, 3, 154, 451, 452,  318, 292, ];
-        $Food = [245, 249, 250, 957, 871, 358, 609, 611,];
-        $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 612, 615, 437, 168, 189, 863, ];
-        $Finance = [284, 285, 348,];
-        $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644, ];
-        $Property = [ 290,  293, 334,   423,];
-        $Media = [174, 176, 177, 178, 179, 181, 601, ];
-        $Info = [327,144, 147, 149, 1147, 940, 1066, 1138,  344, 431, 1517];
-        $Events = [  158, 172, 562, 355, 520, 335,];
-
-
+        $Travel = [262, 265, 268, 270, 330, 331, 341, 368, 332, 1495, 604, 457, 780, 829];
+        $Tourism = [2, 5, 3, 154, 451, 452, 318, 292];
+        $Food = [245, 249, 250, 957, 871, 358, 609, 611];
+        $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 612, 615, 437, 168, 189, 863];
+        $Finance = [284, 285, 348];
+        $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644];
+        $Property = [290, 293, 334, 423];
+        $Media = [174, 176, 177, 178, 179, 181, 601];
+        $Info = [327, 144, 147, 149, 1147, 940, 1066, 1138, 344, 431, 1517];
+        $Events = [158, 172, 562, 355, 520, 335];
 
         $TravelString = implode(", ", $Travel);
         $data['Travel'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Travel)->orderByRaw("FIELD(subcategory_id, $TravelString )")->paginate(1000);
@@ -270,11 +260,11 @@ class LondiniumController extends Controller
         // uses https://github.com/spatie/browsershot
         $browsershot = new \Spatie\Browsershot\Browsershot();
         $browsershot
-        ->setURL($url)
-        ->setWidth(640)
-        ->setHeightToRenderWholePage()
-        ->setTimeout(5000)
-        ->save('/var/www/laravel54/public/screenshots/'. $id . '.jpg');
+            ->setURL($url)
+            ->setWidth(640)
+            ->setHeightToRenderWholePage()
+            ->setTimeout(5000)
+            ->save('/var/www/laravel54/public/screenshots/' . $id . '.jpg');
     }
 
     public function spider()
@@ -284,12 +274,12 @@ class LondiniumController extends Controller
 
         // added updated_at timestamp
         $data['url'] = Londinium::where('active', '=', 1)
-        ->where('saved', '=', 'saved')
-        ->where('updated_at', '<', time() - (24*60*60))
-        ->whereNotIn('id', [2079])
-        ->orderBy('updated_at')
-        ->take(1)
-        ->first();
+            ->where('saved', '=', 'saved')
+            ->where('updated_at', '=', '0000-00-00 00:00:00')
+            ->whereNotIn('id', [2079])
+            ->orderBy('updated_at')
+            ->take(1)
+            ->first();
 
         if (!$data['url']) {
             echo "all spidering and screendumps complete for today :)";
@@ -299,14 +289,14 @@ class LondiniumController extends Controller
         $id = $data['url']->id;
 
         $client = new \GuzzleHttp\Client([
-            'timeout'  => 200.0,
+            'timeout' => 200.0,
             'http_errors' => false,
             'base_uri' => $url,
             'headers' => [
                 'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36',
-                ],
-            ]);
-        
+            ],
+        ]);
+
         try {
             $response = $client->request('GET', $url);
         } catch (\GuzzleHttp\Exception\RequestException $e) {
@@ -329,10 +319,9 @@ class LondiniumController extends Controller
             exit();
         }
 
-
         echo '<html>
     <head>
-        <meta http-equiv="refresh" content="5">
+        <meta http-equiv="refresh" content="2">
     </head>
     <body>';
         echo $id . " -> " . $url . "<hr>";
@@ -343,11 +332,11 @@ class LondiniumController extends Controller
 
         $doc = new \DOMDocument();
         $tidy_config = array(
-                     'clean' => true,
-                     'output-xhtml' => true,
-                     'show-body-only' => false,
-                     'wrap' => 0,
-                     );
+            'clean' => true,
+            'output-xhtml' => true,
+            'show-body-only' => false,
+            'wrap' => 0,
+        );
         $tidy = tidy_parse_string($html, $tidy_config, 'UTF8');
         $tidy->cleanRepair();
 
@@ -359,10 +348,7 @@ class LondiniumController extends Controller
 
         $xpath = new \DOMXpath($doc);
         $spiderTitle = $xpath->evaluate("string(//html/head/title[1])");
-        echo "<h1>".$spiderTitle . "</h1>";
-
-
-
+        echo "<h1>" . $spiderTitle . "</h1>";
 
         // update timestamp on sites table
 
@@ -450,10 +436,10 @@ class LondiniumController extends Controller
 
         echo "<h2>errors</h2>";
         echo "sites with http status NOT 200<br>";
-        
+
         $blanks = Spider::where('status', '<>', "200")->get();
         foreach ($blanks as $row) {
-            echo "<a target='_blank' href='/londinium/site/" .$row['id'] . "'>". $row['id']. " (". $row['status'].  ") ". $row['title']."</a><br>";
+            echo "<a target='_blank' href='/londinium/site/" . $row['id'] . "'>" . $row['id'] . " (" . $row['status'] . ") " . $row['title'] . "</a><br>";
             $idArray[] = $row['id'];
         }
 
@@ -461,15 +447,13 @@ class LondiniumController extends Controller
         echo "sites with blank title tags<br>";
         $blanks = Spider::where('title', '=', "")->get();
         foreach ($blanks as $row) {
-            echo "<a target='_blank' href='/londinium/site/" .$row['id'] . "'>". $row['id']. " </a><br>";
+            echo "<a target='_blank' href='/londinium/site/" . $row['id'] . "'>" . $row['id'] . " </a><br>";
             $idArray[] = $row['id'];
         }
         echo "<hr>";
         echo "sites with missing screenshots or screenshots < 10kb";
         echo "<hr>";
         echo "title like site not found";
-        
-
 
         if (sizeof($idArray) > 0) {
             $comma_separated = implode(",", $idArray);

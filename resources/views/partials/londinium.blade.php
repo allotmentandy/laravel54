@@ -3,7 +3,7 @@
                         <a href="{{ route('sites') }}">All sites</a><br>
 						<a href="{{ route('saved') }}">Saved sites</a><br>
 						<a href="{{ route('subcategories') }}">Subcategories</a><br>
-						
+
 
 						<form action="/londinium/search" method="POST">
 						 {{ csrf_field() }}
@@ -20,5 +20,8 @@
 						<hr>
 						<a href="{{ route('outputHtml')}}">Output HTML</a><br>
 						(to be saved and uploaded)
+						<br>json
+						<br>pdf
+						<br>txt text file
                     </div>
                 </div>
