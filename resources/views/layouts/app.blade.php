@@ -26,7 +26,13 @@
 
 <div id="dropDownMenu" style="display: none">
     <div class="container">
-        <h1>About this project</h1>
+        <h1>About Andy</h1>
+        I am a UK national in my early 40's and have worked online and with computers for over 20 years. 
+
+        Technology : php laravel css 
+
+                            <img src="/images/andy.jpg">
+
 
     </div>
 </div>
@@ -55,7 +61,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><button class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">Show About</button></li>
+                    <li><button class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</button></li>
                     &nbsp;
                 </ul>
 

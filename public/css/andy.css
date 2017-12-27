@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(25,25,25);
+}
+
 .panel-body {
     font-family: arial, sans-serif;
 }

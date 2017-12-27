@@ -10,10 +10,9 @@ class CssController extends Controller
     {
         echo "index of css";
 
-        echo '
-        <a href="#" class="button">Already Taken? <i class="icon-chevron-right"></i></a>
+        echo '<h1>Buttons</h1>
+<a href="#" class="button">Already Taken? <i class="icon-chevron-right"></i></a>
 <a href="#" class="button">Already Taken</a>
-
 <p>Extra small Size</p>
 <p>
 <button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Signal</button>
@@ -40,8 +39,7 @@ class CssController extends Controller
     text-shadow:0px 1px 0px #fff;
     border:1px solid #a7a7a7;
     width: 145px;
-    margin:0px auto;
-    margin-top:100px;
+    margin-top:10px;
     box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
     -webkit-transition:box-shadow 0.5s;
   }
