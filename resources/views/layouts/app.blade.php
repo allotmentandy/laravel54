@@ -14,7 +14,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/andy.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
