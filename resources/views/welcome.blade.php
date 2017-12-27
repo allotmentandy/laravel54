@@ -4,22 +4,19 @@
     <div class="row">
         <div class="col-md-4">
             <div class="panel panel-info">
+            <div class="panel panel-default">
+                <div class="panel-heading"></i>Andy</div>
+                <div class="panel-body">
+                    <img src="/images/andy.jpg">
+                </div>
+            </div>
                 <div class="panel-heading">Examples</div>
                 <div class="panel-body">
-                    <a href="{{ route('planes') }}">Planes</a><br>
-                    <a href="{{ route('planesApi') }}">Planes API</a><br>
-                    <a href="{{ route('londinium') }}">Londinium</a><br>
                     <a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
                     <a href="{{ route('rssNews') }}">RSS news feeds</a><br>
                     <a href="{{ route('jquery') }}">Jquery Examples</a><br>
                     <a href="{{ route('vue') }}">Vue Examples</a><br>
                     <a href="{{ route('cssE') }}">CSS Examples</a><br>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading"></i>Andy</div>
-                <div class="panel-body">
-                    <img src="/images/andy.jpg">
                 </div>
             </div>
         </div>
@@ -38,7 +35,7 @@
                     /*height: calc(100vh - 8em);*/
                     /*padding: 4em;*/
                     /*color: rgba(255,255,255,.75);*/
-                    font-family: 'Anonymous Pro', monospace;
+                    /*font-family: 'Anonymous Pro', monospace;*/
                     }
                     .line-1{
                     position: relative;

@@ -29,16 +29,16 @@
         <h1>About Andy</h1>
         I am a UK national in my early 40's and have worked online and with computers for over 20 years. 
 
+
+        <img src="/images/andy.jpg">
+
         Technology : php laravel css 
-
-                            <img src="/images/andy.jpg">
-
 
     </div>
 </div>
 
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-static-top navbar-inverse">
         <div class="container">
 
             <div class="navbar-header">
@@ -53,19 +53,19 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Andys Laravel demos') }}
+                    {{ config('app.name', 'Andys') }}
                 </a>
-
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><button class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</button></li>
-                    &nbsp;
+
+                    <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Planes</button></a></li>
+
+                    <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Londinium</button></a></li>
                 </ul>
-
-
             </div>
         </div>
     </nav>
