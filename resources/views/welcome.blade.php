@@ -14,6 +14,8 @@
                     <a href="{{ route('rssNews') }}">RSS news feeds</a><br>
                     <a href="{{ route('jquery') }}">Jquery Examples</a><br>
                     <a href="{{ route('vue') }}">Vue Examples</a><br>
+                    <a href="{{ route('cssE') }}">CSS Examples</a><br>
+
                 </div>
             </div>
         </div>
@@ -21,20 +23,16 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Welcome to my demo laravel site.</div>
+                        <div class="panel-heading"></i>Welcome to my demo laravel site.</div>
                         <div class="panel-body">
                             There are a number of artisan commands to download and import data. Please see the readme.md file
-                            <h4>Also see Andy's BLOG</h4>
-                            <p>
-                            Please visit my <a href="https://allotmentandy.github.io/" target="_blank">https://allotmentandy.github.io/</a> pages for useful links and info about php, laravel, html and other stuff i am interested in.
-                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Andy</div>
+                        <div class="panel-heading"></i>Andy</div>
                         <div class="panel-body">
                         <img src="/images/andy.jpg">
                         </div>
@@ -65,6 +63,20 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+                    <i class="fab fa-vuejs fa-3x"></i>
+                    <i class="fab fa-github fa-3x"></i>
+                    <i class="fab fa-twitter fa-3x"></i>
+                    <i class="fab fa-youtube fa-3x"></i>
+
+
+        </div>
+    </div>
+
+
 </div>
 
 @endsection

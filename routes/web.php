@@ -89,6 +89,8 @@ Route::get('/vuePlanesTypesAxios', 'VueController@planesTypesAxios')->name('vueP
 Route::get('manage-vue', 'VueItemController@manageVue');
 Route::resource('vueitems', 'VueItemController');
 
+Route::get('/cssE', 'CssController@index')->name('cssE');
+
 
 //twitter
 Route::get('/userTimeline', function () {
