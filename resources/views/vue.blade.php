@@ -26,7 +26,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('js/vue.js') }}"></script>
+<script src="{{ asset('js/vue2.5.js') }}"></script>
 
 <script type="text/javascript">
     console.log("Vue Version " +Vue.version );
