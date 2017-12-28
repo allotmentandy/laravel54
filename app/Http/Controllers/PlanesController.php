@@ -18,7 +18,7 @@ class PlanesController extends Controller
 
     public function index()
     {
-        $data['reg'] = Planes::orderByRaw('RAND()')->take(1)->get();
+        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Dassault Falcon 900EX')->take(1)->get();
 
         return view('planes', $data);
     }
@@ -217,5 +217,5 @@ class PlanesController extends Controller
 
     // return $pdf->download('planes.pdf');
 
-    // }
+// }
 }

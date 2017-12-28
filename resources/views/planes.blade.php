@@ -3,48 +3,44 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="panel panel-info">
                 @include('partials.planes')
             </div>
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-3">
             <div class="panel panel-primary">
-                <div class="panel-heading">Welcome to the planes sections</div>
+
+                    @foreach ($details as $item)
+                                    <div class="panel-heading"></div>
                 <div class="panel-body">
-                    <h3>Random Plane:</h3>
-                    @foreach ($reg as $item)<br>
-                        {{$item['reg']}}<br>
+                        <h2>{{$item['reg']}}</h2>
                         {{$item['type']}}<br>
-                        {{$item['conNumber']}}
-                    @endforeach                
-                
-                <hr>
-
-                  <form action="/planes/search" method="get">
-                     {{ csrf_field() }}
-                    Reg Search
-                    <input type="text" size="10" name="q">
-                    <input type="submit" value="search">
-                    </form>
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                        Construction number: <h3>{{$item['conNumber']}}</h3>
                         </div>
-                    @endif
+                    @endforeach
 
-                </div>
+
+
             </div>
         </div>
-        
-
-
+        <div>
+        <?php
+$path = "/var/www/laravel54/public";
+foreach ($details as $row):
+    $filename = "/planeImages/jetPhotos/" . $row->reg . ".jpg";
+    if (file_exists($path . $filename)) {
+        echo "<img src='" . $filename . "'>";
+    }
+    $filename = "/planeImages/airlinersNet/" . $row->reg . ".jpg";
+    if (file_exists($path . $filename)) {
+        echo "<img src='" . $filename . "'>";
+    }
+endforeach;
+?>
         </div>
     </div>
+
 </div>
 @endsection
