@@ -65,6 +65,9 @@
                     <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Private JETS</button></a></li>
 
                     <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Londinium</button></a></li>
+
+                    <li><a href="#">Settings</a></li>
+
                 </ul>
             </div>
         </div>
