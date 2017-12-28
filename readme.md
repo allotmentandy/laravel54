@@ -130,7 +130,7 @@ The bash script runtest.sh runs all the tests using phpunit, codeception and lar
 ./runTests.sh
 ```
 
-#### phpunit tests
+#### phpunit 
 run with 
 
 ```
@@ -138,7 +138,7 @@ run with
 ```
 
 
-### Dusk tests
+#### Dusk tests
 run with 
 
 ```
@@ -146,7 +146,6 @@ php artisan dusk
 ```
 
 ![Planes DB screenshot](/tests/Browser/screenshots/planesDetails.png)
-
 
 
 ### to do
