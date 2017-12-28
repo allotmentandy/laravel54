@@ -27,12 +27,12 @@
 <div id="dropDownMenu" style="display: none">
     <div class="container">
         <h1>About Andy</h1>
-        I am a UK national in my early 40's and have worked online and with computers for over 20 years. 
+        I am a UK national in my early 40's and have worked online and with computers for over 20 years.
 
 
         <img src="/images/andy.jpg">
 
-        Technology : php laravel css 
+        Technology : php laravel css
 
     </div>
 </div>

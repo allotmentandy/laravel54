@@ -1,4 +1,4 @@
-<div class="panel-heading"><a href="{{ route('planes') }}">Planes</a></div>
+<div class="panel-heading"><a href="{{ route('planes') }}"><i class="fa fa-plane fa-lg"> </i>Planes</a></div>
     <div class="panel-body">
         <a href="{{ route('planesList') }}">View all (seen)</a><br>
         <a href="{{ route('txtView') }}">Download HTML</a><br>
@@ -7,6 +7,4 @@
         <hr>
         <a href="{{ route('planesTodo') }}">Todo</a><br>
         <a href="{{ route('planesHelp') }}">Help</a><br>
-        
     </div>
-
