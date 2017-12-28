@@ -145,7 +145,7 @@ run with
 php artisan dusk
 ```
 
-
+![Planes DB screenshot](/tests/Browser/screenshots/planesDetails.png)
 
 
 
