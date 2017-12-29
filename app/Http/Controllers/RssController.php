@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Feeds;
 
 class RssController extends Controller
@@ -10,9 +9,9 @@ class RssController extends Controller
     public function index()
     {
         $data = array(
-          'title'     => "",
-          'permalink' => "",
-          'items'     => array()
+            'title' => "welcome to my feed reader, this isnt a real feed, it is just an example",
+            'permalink' => "http://www.londinium.com/",
+            'items' => array(),
         );
         return View('feed', $data);
     }
@@ -25,12 +24,12 @@ class RssController extends Controller
             'https://remoteok.io/remote-jobs.rss',
             'http://www.indeed.co.uk/rss?q=PHP+Developer&l=Hammersmith',
             'http://uk.dice.com/rss/laravel/all-locations/en/jobs-feed.xml?JobTypeFilter=2&xc=247',
-            'https://larajobs.com/feed'
+            'https://larajobs.com/feed',
         ], 20);
         $data = array(
-          'title'     => $feed->get_title(),
-          'permalink' => $feed->get_permalink(),
-          'items'     => $feed->get_items(),
+            'title' => $feed->get_title(),
+            'permalink' => $feed->get_permalink(),
+            'items' => $feed->get_items(),
         );
 
         return View('feed', $data);
@@ -41,12 +40,12 @@ class RssController extends Controller
         $feed = Feeds::make([
             'http://stackoverflow.com/feeds/tag/laravel',
             'https://www.reddit.com/r/laravel/.rss',
-            'http://laraveldaily.com/feed/'
+            'http://laraveldaily.com/feed/',
         ], 20);
         $data = array(
-          'title'     => $feed->get_title(),
-          'permalink' => $feed->get_permalink(),
-          'items'     => $feed->get_items(),
+            'title' => $feed->get_title(),
+            'permalink' => $feed->get_permalink(),
+            'items' => $feed->get_items(),
         );
 
         return View('feed', $data);

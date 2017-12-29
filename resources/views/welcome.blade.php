@@ -13,6 +13,16 @@
                     <a href="{{ route('cssE') }}">CSS Examples</a><br>
                 </div>
             </div>
+            <div class="panel panel-default">
+                        <div class="panel-heading"></i>Welcome to my demo laravel site.</div>
+                        <div class="panel-body">
+                            There are a number of artisan commands to download and import data. Please see the readme.md file for more details on how to get it setup.
+                            <h6>Private Jet Database Tools</h6>
+                            I am a fan of private aviation, this is the start of a tool to help log 'bizjets' you have seen.
+                            <h6>Londinium website directory</h6>
+                            Tool to manage a website link directory
+                        </div>
+                    </div>
         </div>
         <div class="col-md-8">
             <div class="row">
@@ -58,18 +68,10 @@
                     to{border-right-color: transparent;}
                     }
                     </style>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"></i>Welcome to my demo laravel site.</div>
-                        <div class="panel-body">
-                            There are a number of artisan commands to download and import data. Please see the readme.md file for more details on how to get it setup.
-                            <h6>Private Jet Database Tools</h6>
-                            I am a fan of private aviation, this is the start of a tool to help log 'bizjets' you have seen.
-                            <h6>Londinium website directory</h6>
-                            Tool to manage a website link directory
-                        </div>
-                    </div>
+
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-primary">

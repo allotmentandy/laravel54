@@ -33,12 +33,17 @@
         I am interested in Aviation, Allotment Gardening
         Technology : php laravel css
 
-        <i class="fab fa-vuejs fa-3x"></i>
-        <i class="fab fa-github fa-3x"></i>
-        <i class="fab fa-twitter fa-3x"></i>
-        <i class="fab fa-youtube fa-3x"></i>
-        <i class="fab fa-laravel fa-3x"></i>
+<i class="fab fa-github fa-3x"></i>
+<i class="fab fa-twitter fa-3x"></i>
+<i class="fab fa-youtube fa-3x"></i>
+<i class="fab fa-laravel fa-3x"></i>
 
+
+<a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
+<a href="{{ route('rssNews') }}">RSS news feeds</a><br>
+<a href="{{ route('jquery') }}">Jquery Examples</a><br>
+<a href="{{ route('vue') }}">Vue Examples</a><br>
+<a href="{{ route('cssE') }}">CSS Examples</a><br>
 
     </div>
 </div>
@@ -66,11 +71,15 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-
                     <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fas fa-plane fa-2x"></i> Private JETS</button></a></li>
 
                     <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
+
+                    <li><a href="{{ route('vue') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-vuejs"></i>Vue.js</button></li></a>
+                    <li><a href="{{ route('jquery') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-jquery"></i>Jquery</button></li></a>
                 </ul>
+
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i> Settings</button></a></li>
                     <li><a class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
