@@ -70,11 +70,10 @@
                     <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fas fa-plane fa-2x"></i> Private JETS</button></a></li>
 
                     <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
-
-                    <li><a class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
-
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i> Settings</button></a></li>
-
+                    <li><a class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
                 </ul>
             </div>
         </div>
