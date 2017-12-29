@@ -2,10 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Console\Command;
 
 class DownloadImageJetPhoto extends Command
 {
@@ -42,14 +40,16 @@ class DownloadImageJetPhoto extends Command
     {
         $reg = $this->argument('reg');
 
+        sleep(5); // to delay each download to jetphotos - 429 too many requests!
+
         echo "command called to download :" . $reg . PHP_EOL;
 
         $url = "https://www.jetphotos.com/registration/" . $reg;
         //echo $url;
 
         $client = new Client([
-            'timeout'  => 60.0,
-            ]);
+            'timeout' => 60.0,
+        ]);
         $response = $client->request('GET', $url);
         $html = $response->getBody()->getContents();
 
@@ -67,14 +67,14 @@ class DownloadImageJetPhoto extends Command
         $xpath = new \DOMXpath($doc);
 
         // jetphotos
-        
+
         $src = $xpath->evaluate("string(//img[@class='result__photo']/@src)");
         if ($src) {
-            $imgSrc =  "https:" . $src;
-            $contents=file_get_contents($imgSrc);
-            $save_path="/var/www/laravel54/public/planeImages/jetPhotos/".$reg . ".jpg";
+            $imgSrc = "https:" . $src;
+            $contents = file_get_contents($imgSrc);
+            $save_path = "/var/www/laravel54/public/planeImages/jetPhotos/" . $reg . ".jpg";
             file_put_contents($save_path, $contents);
-            
+
             $alt = $xpath->evaluate("string(//img[@class='result__photo']/@alt)");
             echo "jetphoto " . $alt;
             echo PHP_EOL;
