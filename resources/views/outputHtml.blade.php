@@ -7,17 +7,17 @@
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <style>
 body {font-family: "Segoe UI", Arial, Tahoma, Geneva, sans-serif}
+.container-fluid {width: 99%;}
+.voffset {margin-top: 15px; margin-bottom: 30px; }
+.indent { padding-left: 5px; margin: 2px; }
 a {font-weight: bold;}
 a:hover {background-color: yellow;}
 a:visited {color: purple;}
-.container-fluid {width: 99%;}
 .nav-tabs {background-color: #C8D3DB;}
 .nav-tabs>li>a {border-radius: 5px;}
 .nav-tabs>li>a:hover {background-color: white !important; border-radius: 5px; color: black; border: 1px solid black;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {background-color: blue !important; color: black; border: 2px solid #3F515F; }
-.voffset {margin-top: 15px; margin-bottom: 30px; }
 .footer {background: #C8D3DB; padding-left: 20px; }
-.indent { padding-left: 5px; margin: 2px; }
 </style>
 </head>
 
@@ -25,7 +25,7 @@ a:visited {color: purple;}
 <nav>
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" href="#home" role="tab" data-toggle="tab"><b>Londinium.com</b></a></li>
+<a class="nav-link active" href="#home" role="tab" data-toggle="tab"><i class="fa fa-linode" aria-hidden="true"></i> <b>Londinium.com</b></a></li>
 <li class="nav-item">
 <a class="nav-link" href="#travel" role="tab" data-toggle="tab">Travel</a></li>
 <li class="nav-item">

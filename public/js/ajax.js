@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('form').on('submit', function (e) {
+    $('.seenScrape').on('submit', function (e) {
         e.preventDefault();
         id = $(this).closest("form").find("input[name='id']").val();
         seenScrape = $(this).closest("form").find("input[name='seenScrape']").val();
