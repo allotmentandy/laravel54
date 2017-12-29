@@ -77,13 +77,13 @@
                             <div class="panel-body" style="background:black;">
                                 <div class="css-typing">
                                     <p>
-                                        Welcome to my project
+                                        Love Laravel
                                     </p>
                                     <p>
-                                        using laravel and js
+                                        Private Jets!
                                     </p>
                                     <p>
-                                        hope you like it!
+                                        what more u want?
                                     </p>
                                 </div>
                                 <style>
