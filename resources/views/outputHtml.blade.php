@@ -6,60 +6,18 @@
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <style>
-body {
-font-family: "Segoe UI", Arial, Tahoma, Geneva, sans-serif
-}
-
-a:visited {
-color: purple;
-}
-
-.container-fluid {
-width: 99%;
-}
-
-.nav-tabs {
-background-color: #C8D3DB;
-}
-
-.nav-tabs>li>a {
-border-radius: 5px;
-}
-
-.nav-tabs>li>a:hover {
-background-color: white !important;
-border-radius: 5px;
-color: black;
-border: 1px solid black;
-}
-
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:focus,
-.nav-tabs>li.active>a:hover {
-background-color: blue !important;
-color: black;
-border: 2px solid #3F515F;
-}
-
-.voffset {
-margin-top: 15px;
-margin-bottom: 30px;
-}
-
-.footer {
-background: #C8D3DB;
-padding-left: 20px;
-}
-
-.indent {
-padding-left: 5px;
-margin: 2px;
-}
-
-a:hover {
-background-color: yellow;
-}
-
+body {font-family: "Segoe UI", Arial, Tahoma, Geneva, sans-serif}
+a {font-weight: bold;}
+a:hover {background-color: yellow;}
+a:visited {color: purple;}
+.container-fluid {width: 99%;}
+.nav-tabs {background-color: #C8D3DB;}
+.nav-tabs>li>a {border-radius: 5px;}
+.nav-tabs>li>a:hover {background-color: white !important; border-radius: 5px; color: black; border: 1px solid black;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {background-color: blue !important; color: black; border: 2px solid #3F515F; }
+.voffset {margin-top: 15px; margin-bottom: 30px; }
+.footer {background: #C8D3DB; padding-left: 20px; }
+.indent { padding-left: 5px; margin: 2px; }
 </style>
 </head>
 
@@ -67,46 +25,35 @@ background-color: yellow;
 <nav>
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" href="#home" role="tab" data-toggle="tab"><b>Londinium.com</b></a>
-</li>
+<a class="nav-link active" href="#home" role="tab" data-toggle="tab"><b>Londinium.com</b></a></li>
 <li class="nav-item">
-<a class="nav-link" href="#travel" role="tab" data-toggle="tab">Travel</a>
-</li>
+<a class="nav-link" href="#travel" role="tab" data-toggle="tab">Travel</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#tourism" role="tab" data-toggle="tab">Tourism</a>
-</li>
+<a class="nav-link" href="#tourism" role="tab" data-toggle="tab">Tourism</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#food" role="tab" data-toggle="tab">Food</a>
-</li>
+<a class="nav-link" href="#food" role="tab" data-toggle="tab">Food</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#shopping" role="tab" data-toggle="tab">Shopping</a>
-</li>
+<a class="nav-link" href="#shopping" role="tab" data-toggle="tab">Shopping</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a>
-</li>
+<a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#sport" role="tab" data-toggle="tab">Sport</a>
-</li>
+<a class="nav-link" href="#sport" role="tab" data-toggle="tab">Sport</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#property" role="tab" data-toggle="tab">Property</a>
-</li>
+<a class="nav-link" href="#property" role="tab" data-toggle="tab">Property</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#media" role="tab" data-toggle="tab">Media</a>
-</li>
+<a class="nav-link" href="#media" role="tab" data-toggle="tab">Media</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a>
-</li>
+<a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a></li>
 <li class="nav-item">
-<a class="nav-link" href="#events" role="tab" data-toggle="tab">Events</a>
-</li>
+<a class="nav-link" href="#events" role="tab" data-toggle="tab">Events</a></li>
 </ul>
 </nav>
-<!-- Tab panes -->
+
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane fade in active" id="home">
 <div class="jumbotron">
 <div class="container">
-<h2>Merry Christmas from Londinium.com</h2>
+<h2>Happy New Year from Londinium.com</h2>
 <p>The most useful website links for your visit to London</p>
 </div>
 </div>
@@ -115,11 +62,11 @@ background-color: yellow;
 <div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
 <div class="card">
 <div class="card-header">
-About us
+About Londinium.com
 </div>
 <div class="card-block">
 <p class="card-text">
-Londinium.com is a new website directory. We are trying to make the most useful link directory for Londoners and people visiting London.
+Londinium.com is a new website directory. We are trying to make the most useful link directory for Londoners and people visiting London. Now with Facebook, Twitter, Instagram and LinkedIn links :)
 </p>
 <p>
 Current count of websites : {{$countSaved}}
@@ -143,13 +90,9 @@ Contact londinium.com
 </div>
 <footer class="footer">
 1998 AD - 2018 AD - Londinium.com - The original site for London
-<br> Built: {{ date('F d, Y', strtotime($date)) }} AD
+<br> Built: {{ date('l jS F, Y', strtotime($date)) }} AD
 </footer>
 </div>
-
-
-
-
 
 <div role="tabpanel" class="tab-pane fade" id="travel">
 <div class="container-fluid">
@@ -170,7 +113,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
-
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -195,6 +146,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -218,6 +178,15 @@ if ($site->subcategory_id != $subcat) {
 <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+@endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
 @endif
 <br> @endforeach
 </div>
@@ -244,6 +213,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -267,6 +245,15 @@ if ($site->subcategory_id != $subcat) {
 <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+@endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
 @endif
 <br> @endforeach
 </div>
@@ -292,6 +279,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -315,6 +311,15 @@ if ($site->subcategory_id != $subcat) {
 <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+@endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
 @endif
 <br> @endforeach
 </div>
@@ -340,6 +345,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -364,6 +378,15 @@ if ($site->subcategory_id != $subcat) {
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
 @endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+@endif
 <br> @endforeach
 </div>
 </div>
@@ -387,6 +410,15 @@ if ($site->subcategory_id != $subcat) {
 <a href="{{ $site->url }}" target="_blank" class="indent">{{ $site->name }}</a>
 @if (isset($twitter[$site->id]))
 <a href="{{$twitter[$site->id] }}" target="_blank"><i class="fa fa-twitter"></i></a>
+@endif
+@if (isset($facebook[$site->id]))
+<a href="{{$facebook[$site->id] }}" target="_blank"><i class="fa fa-facebook"></i></a>
+@endif
+@if (isset($instagram[$site->id]))
+<a href="{{$instagram[$site->id] }}" target="_blank"><i class="fa fa-instagram"></i></a>
+@endif
+@if (isset($linkedin[$site->id]))
+<a href="{{$linkedin[$site->id] }}" target="_blank"><i class="fa fa-linkedin"></i></a>
 @endif
 <br> @endforeach
 </div>

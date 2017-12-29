@@ -17,6 +17,8 @@
             <i class="fab fa-github fa-3x"></i>
             <i class="fab fa-twitter fa-3x"></i>
             <i class="fab fa-youtube fa-3x"></i>
+            <i class="fab fa-laravel fa-3x"></i>
+
                 </div>
             </div>
         </div>

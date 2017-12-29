@@ -33,7 +33,10 @@ Route::get('/planes/list', 'PlanesController@planesList')->name('planesList');
 // Route::get('/planes/list/scrape/{id}', 'PlanesController@scrape');
 Route::post('/planes/ajax/', 'PlanesController@ajax');
 Route::get('/planes/details/{id}', 'PlanesController@details');
+
 Route::get('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
+Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearchPOST');
+
 Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 
@@ -57,11 +60,9 @@ Route::post('/londinium/siteEditName/{id}', 'LondiniumController@siteEditName');
 
 Route::post('/londinium/moveSubcategory/', 'LondiniumController@moveSubcategory');
 
-
-Route::get('/londinium/saved', 'LondiniumController@saved')->name('saved');
+Route::get('/londinium/unsaved', 'LondiniumController@unsaved')->name('unsaved');
 Route::post('/londinium/search/', 'LondiniumController@search')->name('search');
 Route::post('/londinium/addAsSaved/', 'LondiniumController@addAsSaved');
-
 
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');
 Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');

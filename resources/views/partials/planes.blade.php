@@ -1,5 +1,12 @@
 <div class="panel-heading"><a href="{{ route('planes') }}"><i class="fa fa-plane fa-lg"> </i>Private Jets Bizjets</a></div>
     <div class="panel-body">
+		<form action="/planes/search" method="get">
+		 {{ csrf_field() }}
+		Search
+		<input type="text" size="10" name="q">
+		<input type="submit" value="GO">
+		</form>
+		<hr>
         <a href="{{ route('planesList') }}">View all (seen/scrape)</a><br>
         <a href="{{ route('planeTypes') }}">Aircraft Types</a><br>
         <a href="{{ route('planeCountries') }}">Countries</a><br>
@@ -9,12 +16,6 @@
 		<hr>
         <a href="{{ route('planesTodo') }}">TO DO</a><br>
 
-		<form action="/planes/search" method="get">
-		 {{ csrf_field() }}
-		Reg Search
-		<input type="text" size="10" name="q">
-		<input type="submit" value="search">
-		</form>
 		@if (count($errors) > 0)
 		    <div class="alert alert-danger">
 		        <ul>

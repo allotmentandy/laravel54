@@ -62,9 +62,9 @@
                 <ul class="nav navbar-nav">
                     <li><button class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</button></li>
 
-                    <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Private JETS</button></a></li>
+                    <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fas fa-plane fa-2x"></i> Private JETS</button></a></li>
 
-                    <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-signal"></span> Londinium</button></a></li>
+                    <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
 
                     <li><a href="#">Settings</a></li>
 
