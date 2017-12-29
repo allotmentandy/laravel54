@@ -12,14 +12,6 @@
                     <a href="{{ route('vue') }}">Vue Examples</a><br>
                     <a href="{{ route('cssE') }}">CSS Examples</a><br>
                 </div>
-                <div>
-            <i class="fab fa-vuejs fa-3x"></i>
-            <i class="fab fa-github fa-3x"></i>
-            <i class="fab fa-twitter fa-3x"></i>
-            <i class="fab fa-youtube fa-3x"></i>
-            <i class="fab fa-laravel fa-3x"></i>
-
-                </div>
             </div>
         </div>
         <div class="col-md-8">

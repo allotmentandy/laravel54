@@ -67,10 +67,10 @@ form, form div {
     padding: 2px;
 }
 
-a:visited {
+/*a:visited {
     color: purple !important;
 }
-
+*/
 .light{
     color: pink;
 }

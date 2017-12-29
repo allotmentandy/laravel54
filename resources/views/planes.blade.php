@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <div class="panel panel-info">
+            <div class="panel panel-default">
                 @include('partials.planes')
             </div>
         </div>
@@ -11,7 +11,7 @@
             <div class="panel panel-primary">
                 @foreach ($details as $item)
                 <div class="panel-heading">
-                    <i class="fa fa-plane fa-lg"></i> {{$item['reg']}}
+                    <h2><i class="fa fa-plane fa-lg"></i> - {{$item['reg']}}</h2>
                 </div>
                 <div class="panel-body">
                     <h3>{{$item['type']}}<br></h3>
