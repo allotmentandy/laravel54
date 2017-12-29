@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-info">
+            <div class="panel panel-primary">
                 @include('partials.planes')
             </div>
         </div>
@@ -20,23 +20,23 @@
             </tr>
             </thead>
             <?php
-            foreach ($planes as $p) :
-                echo "<tr>";
-                echo "<td><a href='/planes/country/" . $p->A. "'>" . $p->A . "</a></td>";
-                echo "<td>" . $p->B . "</td>";
-                echo "<td>" . $p->id . "</td>";
-                echo "<td>";
-                echo "<a href='/planes/country/job/" . $p->A ."'>queue photo jobs for all</a>";
+foreach ($planes as $p):
+    echo "<tr>";
+    echo "<td><a href='/planes/country/" . $p->A . "'>" . $p->A . "</a></td>";
+    echo "<td>" . $p->B . "</td>";
+    echo "<td>" . $p->id . "</td>";
+    echo "<td>";
+    echo "<a href='/planes/country/job/" . $p->A . "'>queue photo jobs for all</a>";
 
-                echo "</tr>";
-            endforeach;
-            ?>
+    echo "</tr>";
+endforeach;
+?>
 
             </table>
 
             <?php
-                echo $planes->links();
-            ?>
+echo $planes->links();
+?>
 
         </div>
     </div>

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel Demo') }}</title>
+    <title>{{ config('app.name', 'Andy Demo') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,23 +28,9 @@
     <div class="container">
         <h1>About Andy</h1>
         <img src="/images/andy.jpg">
-        I am a UK national in my early 40's and have worked online and with computers for over 20 years.
-        Recent work has focused on PHP, Laravel and front end web development
-        I am interested in Aviation, Allotment Gardening
-        Technology : php laravel css
-
-<i class="fab fa-github fa-3x"></i>
-<i class="fab fa-twitter fa-3x"></i>
-<i class="fab fa-youtube fa-3x"></i>
-<i class="fab fa-laravel fa-3x"></i>
-
-
-<a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
-<a href="{{ route('rssNews') }}">RSS news feeds</a><br>
-<a href="{{ route('jquery') }}">Jquery Examples</a><br>
-<a href="{{ route('vue') }}">Vue Examples</a><br>
-<a href="{{ route('cssE') }}">CSS Examples</a><br>
-
+        Hi, i am Andy, a Londoner in my early 40's and have worked online for over 20 years.
+        Recent work has focused on PHP, Laravel <i class="fab fa-laravel fa-3x"></i> and front end web development
+        I am interested in Aviation, Allotment Gardening and lots of technology : php laravel css
     </div>
 </div>
 
@@ -76,13 +62,19 @@
                     <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
 
                     <li><a href="{{ route('vue') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-vuejs"></i>Vue.js</button></li></a>
-                    <li><a href="{{ route('jquery') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-jquery"></i>Jquery</button></li></a>
+
+                    <li><a href="{{ route('rss') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-rss"></i>rss feeds</button></li></a>
+
+                    <li><a href="{{ route('jquery') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-node-js"></i>Jquery</button></li></a>
+
+                    <li><a href="{{ route('cssE') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-css3"></i>css</button></li></a>
+
                 </ul>
 
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i> Settings</button></a></li>
-                    <li><a class="navbar-toggle button" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
+                    <li><a class="navbar-toggle btn btn-default btn-sm" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
                 </ul>
             </div>
         </div>
