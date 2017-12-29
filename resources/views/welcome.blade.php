@@ -3,13 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-info">
             <div class="panel panel-default">
-                <div class="panel-heading"></i>Andy</div>
-                <div class="panel-body">
-                    <img src="/images/andy.jpg">
-                </div>
-            </div>
                 <div class="panel-heading">Examples</div>
                 <div class="panel-body">
                     <a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
@@ -17,6 +11,12 @@
                     <a href="{{ route('jquery') }}">Jquery Examples</a><br>
                     <a href="{{ route('vue') }}">Vue Examples</a><br>
                     <a href="{{ route('cssE') }}">CSS Examples</a><br>
+                </div>
+                <div>
+            <i class="fab fa-vuejs fa-3x"></i>
+            <i class="fab fa-github fa-3x"></i>
+            <i class="fab fa-twitter fa-3x"></i>
+            <i class="fab fa-youtube fa-3x"></i>
                 </div>
             </div>
         </div>
@@ -216,15 +216,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <img src="/images/andy.jpg">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <i class="fab fa-vuejs fa-3x"></i>
-            <i class="fab fa-github fa-3x"></i>
-            <i class="fab fa-twitter fa-3x"></i>
-            <i class="fab fa-youtube fa-3x"></i>
         </div>
     </div>
 </div>
