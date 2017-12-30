@@ -12,6 +12,21 @@
                             Tool to manage a website link directory
                         </div>
                     </div>
+                <div class="panel-heading">Examples</div>
+                <div class="panel-body">
+                    <a href="{{ route('rssJobs') }}">RSS job feeds</a><br>
+                    <a href="{{ route('rssNews') }}">RSS news feeds</a><br>
+                    <a href="{{ route('jquery') }}">Jquery Examples</a><br>
+                    <a href="{{ route('vue') }}">Vue Examples</a><br>
+                    <a href="{{ route('cssE') }}">CSS Examples</a><br>
+                </div>
+                <div>
+                <i class="fab fa-vuejs fa-3x"></i>
+                <i class="fab fa-github fa-3x"></i>
+                <i class="fab fa-twitter fa-3x"></i>
+                <i class="fab fa-youtube fa-3x"></i>
+                <i class="fab fa-laravel fa-3x"></i>
+                </div>
         </div>
         <div class="col-md-8">
             <div class="row">
