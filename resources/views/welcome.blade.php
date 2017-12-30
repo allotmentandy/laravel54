@@ -30,57 +30,10 @@
         </div>
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-12">
-                    <p class="line-1 anim-typewriter">Full stack developer looking for a new role</p>
-                    <style>
-                    /* Google Fonts */
-                    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-                    /* Global */
-                    html{
-                    min-height: 100%;
-                    }
-                    body{
-                    /*height: calc(100vh - 8em);*/
-                    /*padding: 4em;*/
-                    /*color: rgba(255,255,255,.75);*/
-                    /*font-family: 'Anonymous Pro', monospace;*/
-                    }
-                    .line-1{
-                    position: relative;
-                    top: 50%;
-                    width: 24em;
-                    margin: 0 auto;
-                    border-right: 2px solid rgba(255,255,255,.75);
-                    font-size: 180%;
-                    text-align: center;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    transform: translateY(-50%);
-                    color: green;
-                    }
-                    /* Animation */
-                    .anim-typewriter{
-                    animation: typewriter 4s steps(45) 1s 1 normal both,
-                    blinkTextCursor 500ms steps(45) infinite normal;
-                    }
-                    @keyframes typewriter{
-                    from{width: 0;}
-                    to{width: 24em;}
-                    }
-                    @keyframes blinkTextCursor{
-                    from{border-right-color: rgba(255,255,255,.75);}
-                    to{border-right-color: transparent;}
-                    }
-                    </style>
-
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <div class="panel-body" style="background:black;">
+                            <div class="panel-body" style="background:black; color: green;">
                                 <div class="css-typing">
                                     <p>
                                         Love Laravel <i class="fab fa-laravel fa-lg"></i>
