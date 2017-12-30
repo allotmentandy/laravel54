@@ -3,8 +3,6 @@
 namespace Tests\Browser;
 
 use Tests\DuskTestCase;
-use Laravel\Dusk\Chrome;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SearchTest extends DuskTestCase
 {
@@ -20,13 +18,13 @@ class SearchTest extends DuskTestCase
             $browser->visit('http://localhost/planes');
             $browser->maximize();
             $browser->type('q', 'I-ADVD');
-            $browser->press("search");
+            $browser->press("GO");
             $browser->pause(1000)
-                    ->screenshot('planesSearchResult');
+                ->screenshot('planesSearchResult');
             $browser->pause(1000)
-                    ->click('.showMore');
+                ->click('.showMore');
             $browser->pause(1000)
-                    ->screenshot('planesDetails');
+                ->screenshot('planesDetails');
         });
     }
 }
