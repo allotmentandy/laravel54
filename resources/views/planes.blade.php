@@ -11,7 +11,7 @@
             <div class="panel panel-primary whiteBG">
                 @foreach ($details as $item)
                 <div class="panel-heading">
-                    <h2><i class="fa fa-plane fa-lg"></i> - {{$item['reg']}}</h2>
+                    <h2>{{$item['reg']}}</h2>
                 </div>
                 <div class="panel-body ">
                     <h3>{{$item['type']}}<br></h3>

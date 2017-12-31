@@ -1,6 +1,7 @@
 <div class="panel-heading">
-	<a href="{{ route('planes') }}">
-		<i class="fa fa-plane fa-lg"> </i>Private Jets Bizjets</a>
+	<h1><a href="{{ route('planes') }}">
+		Private Jets<i class="fa fa-plane fa-2x"> </i>
+		</a></h1>
 	</div>
     <div class="panel-body">
 		<form action="/planes/search" method="get">
