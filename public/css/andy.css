@@ -4,7 +4,11 @@ body{
 
 .panel-body {
     font-family: arial, sans-serif;
-    background: black;}
+    background: black;
+}
+
+.panel{
+        border-color: black;
 }
 
 .whiteBG {
