@@ -73,8 +73,10 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i> Settings</button></a></li>
                     <li><a class="navbar-toggle btn btn-default btn-sm" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
+
+                    <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i></button></a></li>
+
                 </ul>
             </div>
         </div>

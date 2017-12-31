@@ -22,7 +22,8 @@ class PlanesController extends Controller
         // $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Dassault Falcon 900')->take(1)->get();
         // $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream IV')->take(1)->get();
 
-        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
+//        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
+        $data['details'] = Planes::orderByRaw('RAND()')->where('reg', 'LIKE', '%G-%')->take(1)->get();
 //        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G450')->take(1)->get();
 
         return view('planes', $data);
@@ -93,7 +94,7 @@ class PlanesController extends Controller
     public function countries()
     {
         $data['planes'] = Countries::orderBy('B')->orderBy('A')->paginate(300);
-        return view('countriesList', $data);
+        return view(planeCountriesList', $data);
     }
 
     public function country($countryCode)
