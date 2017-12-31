@@ -58,38 +58,4 @@ endforeach;
     </div>
 </div>
 
-<div class="DemoModal2">
- <!-- Launch Modal -->
-    <a href="#DemoModal2" class="btn btn-lg btn-primary"
-  data-toggle="modal">Click to Launch Modal(Large)</a>
-
-    <!-- Modal Contents -->
-    <div id="DemoModal2" class="modal fade "> <!-- class modal and fade -->
-
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-           <div class="modal-header"> <!-- modal header -->
-            <button type="button" class="close"
-             data-dismiss="modal" aria-hidden="true">×</button>
-
-                    <h4 class="modal-title">Browser Update</h4>
-           </div>
-
-     <div class="modal-body"> <!-- modal body -->
-       <p>A New Version of the Browser is Available.</p>
-       <p class="text-warning"><small>Would you like to Download it Now</small></p>
-     </div>
-
-     <div class="modal-footer"> <!-- modal footer -->
-       <button type="button" class="btn btn-default" data-dismiss="modal">Not Now!</button>
-      <button type="button" class="btn btn-primary">Download</button>
-      </div>
-
-      </div> <!-- / .modal-content -->
-
-    </div> <!-- / .modal-dialog -->
-
- </div><!-- / .modal -->
-</div>
 @endsection

@@ -75,7 +75,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="navbar-toggle btn btn-default btn-sm" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
 
-                    <li><a href="#"><button type="button" class="btn btn-default btn-sm"> <i class="fas fa-cogs fa-2x"></i></button></a></li>
+                    <li><a href="#DemoModal2" class="btn btn-lg btn-primary" data-toggle="modal"><i class="fas fa-cogs"></i></a>
 
                 </ul>
             </div>
@@ -89,5 +89,34 @@
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/jquery.bootstrap-growl.min.js') }}"></script>
     @yield('scripts')
+
+<!-- Modal Contents -->
+    <div id="DemoModal2" class="modal fade "> <!-- class modal and fade -->
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+           <div class="modal-header"> <!-- modal header -->
+            <button type="button" class="close"
+             data-dismiss="modal" aria-hidden="true">×</button>
+
+                    <h4 class="modal-title">Andys settings panel</h4>
+           </div>
+
+     <div class="modal-body"> <!-- modal body -->
+        body
+     </div>
+
+     <div class="modal-footer"> <!-- modal footer -->
+       <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+      <button type="button" class="btn btn-primary">save</button>
+      </div>
+
+      </div> <!-- / .modal-content -->
+
+    </div> <!-- / .modal-dialog -->
+
+ </div><!-- / .modal -->
+
 </body>
 </html>
