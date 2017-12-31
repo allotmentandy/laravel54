@@ -1,4 +1,7 @@
-<div class="panel-heading"><a href="{{ route('planes') }}"><i class="fa fa-plane fa-lg"> </i>Private Jets Bizjets</a></div>
+<div class="panel-heading">
+	<a href="{{ route('planes') }}">
+		<i class="fa fa-plane fa-lg"> </i>Private Jets Bizjets</a>
+	</div>
     <div class="panel-body">
 		<form action="/planes/search" method="get">
 		 {{ csrf_field() }}
@@ -13,8 +16,6 @@
         <hr>
         <h4>Downloads</h4>
         <a href="{{ route('txtView') }}"> HTML</a> <a href="{{ route('planesHelp') }}">PDF</a> JSON TXT
-		<hr>
-        <a href="{{ route('planesTodo') }}">TO DO</a><br>
 
 		@if (count($errors) > 0)
 		    <div class="alert alert-danger">
@@ -27,5 +28,7 @@
 		@endif
 
 
-
     </div>
+	<div class="panel-footer">
+        <a href="{{ route('planesTodo') }}">TO DO</a><br>
+	</div>

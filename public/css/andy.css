@@ -4,8 +4,12 @@ body{
 
 .panel-body {
     font-family: arial, sans-serif;
+    background: black;}
 }
 
+.whiteBG {
+    background: white;    
+}
 
 .button{
 border:1px solid #999999; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 5px 15px 5px 15px; text-decoration:none; display:inline-block;text-shadow: 1px 1px 0 rgba(255,255,255,0.3);font-weight:bold; color: #000000;
