@@ -94,7 +94,7 @@ class PlanesController extends Controller
     public function countries()
     {
         $data['planes'] = Countries::orderBy('B')->orderBy('A')->paginate(300);
-        return view(planeCountriesList', $data);
+        return view('planeCountriesList', $data);
     }
 
     public function country($countryCode)
