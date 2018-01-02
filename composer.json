@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "allotmentandy/socialmedialinkextractor": "dev-master",
+        "barryvdh/laravel-debugbar": "^2.3",
         "barryvdh/laravel-dompdf": "^0.8.0",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/dusk": "1.1.*",
@@ -39,12 +40,8 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
         ]
     },
     "config": {

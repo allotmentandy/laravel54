@@ -218,8 +218,6 @@ class LondiniumController extends Controller
         }
         $data['linkedin'] = $linkedin;
 
-
-
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
 
         $Travel = [262, 265, 268, 270, 330, 331, 341, 368, 332, 1495, 604, 457, 780, 829, 1518];
@@ -291,10 +289,6 @@ class LondiniumController extends Controller
 
     public function spider()
     {
-        // get random url from sites table
-        // $data['url'] = Londinium::where('active', '=', 1)->where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->first();
-
-        // added updated_at timestamp
         $data['url'] = Londinium::where('active', '=', 1)
             ->where('saved', '=', 'saved')
             ->where('updated_at', '=', '0000-00-00 00:00:00')
@@ -343,7 +337,7 @@ class LondiniumController extends Controller
 
         echo '<html>
     <head>
-        <meta http-equiv="refresh" content="2">
+        <meta http-equiv="refresh" content="1">
     </head>
     <body>';
         echo $id . " -> " . $url . "<hr>";
@@ -372,8 +366,6 @@ class LondiniumController extends Controller
         $spiderTitle = $xpath->evaluate("string(//html/head/title[1])");
         echo "<h1>" . $spiderTitle . "</h1>";
 
-        // update timestamp on sites table
-
         Londinium::find($id)->touch();
 
         $makeScreenshots = env("LONDINIUM_SPIDER_SCREENSHOTS_MAKE");
@@ -381,8 +373,6 @@ class LondiniumController extends Controller
         if ($makeScreenshots) {
             $this->screenshot($id);
         }
-
-//        exit;
 
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
