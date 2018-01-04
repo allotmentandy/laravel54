@@ -152,3 +152,9 @@ php artisan dusk
 - compare the planesNew data to the planes table 
 - Xpath extract the data from the download jobs - serial, owner and store in db 
 - blank results for registration eg. 3c-llx
+
+- build API version using Laravel Passport Oauth2
+- experment with React JS
+- eloquent models - complex joins and examples
+- 
+- 
