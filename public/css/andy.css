@@ -1,5 +1,5 @@
-body{
-    background-color: rgb(25,25,25);
+body {
+    background-color: rgb(25, 25, 25);
 }
 
 .panel-body {
@@ -7,34 +7,48 @@ body{
     background: black;
 }
 
-.panel{
-        border-color: black;
+.panel {
+    border-color: black;
 }
 
 .whiteBG {
-    background: white;    
+    background: white;
 }
 
-.button{
-border:1px solid #999999; -webkit-border-radius: 4px; -moz-border-radius: 4px;border-radius: 4px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 5px 15px 5px 15px; text-decoration:none; display:inline-block;text-shadow: 1px 1px 0 rgba(255,255,255,0.3);font-weight:bold; color: #000000;
- background-color: #FFFFFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CFCFCF));
- background-image: -webkit-linear-gradient(top, #FFFFFF, #CFCFCF);
- background-image: -moz-linear-gradient(top, #FFFFFF, #CFCFCF);
- background-image: -ms-linear-gradient(top, #FFFFFF, #CFCFCF);
- background-image: -o-linear-gradient(top, #FFFFFF, #CFCFCF);
- background-image: linear-gradient(to bottom, #FFFFFF, #CFCFCF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FFFFFF, endColorstr=#CFCFCF);
+.button {
+    border: 1px solid #999999;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: arial, helvetica, sans-serif;
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    color: #000000;
+    background-color: #FFFFFF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CFCFCF));
+    background-image: -webkit-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -moz-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -ms-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: -o-linear-gradient(top, #FFFFFF, #CFCFCF);
+    background-image: linear-gradient(to bottom, #FFFFFF, #CFCFCF);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FFFFFF, endColorstr=#CFCFCF);
 }
 
-.button_example:hover{
- border:1px solid #7A7A7A;
- background-color: #EEEEEE; background-image: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#C7C7C7));
- background-image: -webkit-linear-gradient(top, #EEEEEE, #C7C7C7);
- background-image: -moz-linear-gradient(top, #EEEEEE, #C7C7C7);
- background-image: -ms-linear-gradient(top, #EEEEEE, #C7C7C7);
- background-image: -o-linear-gradient(top, #EEEEEE, #C7C7C7);
- background-image: linear-gradient(to bottom, #EEEEEE, #C7C7C7);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#EEEEEE, endColorstr=#C7C7C7);
+.button_example:hover {
+    border: 1px solid #7A7A7A;
+    background-color: #EEEEEE;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#C7C7C7));
+    background-image: -webkit-linear-gradient(top, #EEEEEE, #C7C7C7);
+    background-image: -moz-linear-gradient(top, #EEEEEE, #C7C7C7);
+    background-image: -ms-linear-gradient(top, #EEEEEE, #C7C7C7);
+    background-image: -o-linear-gradient(top, #EEEEEE, #C7C7C7);
+    background-image: linear-gradient(to bottom, #EEEEEE, #C7C7C7);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#EEEEEE, endColorstr=#C7C7C7);
 }
-
 
 .button {
     font-weight: bold;
@@ -45,7 +59,7 @@ border:1px solid #999999; -webkit-border-radius: 4px; -moz-border-radius: 4px;bo
 }
 
 .table {
-    border:0px !important;
+    border: 0px !important;
 }
 
 .table td {
@@ -60,148 +74,166 @@ tr:hover {
     background-color: #ffff99;
 }
 
-form, form div { 
-    display: inline; 
+form,
+form div {
+    display: inline;
 }
 
-.red{
+.red {
     color: white;
     background: red;
     padding: 2px;
 }
-.green{
+
+.green {
     color: white;
     background: green;
     padding: 2px;
 }
 
+
 /*a:visited {
-    color: purple !important;
+color: purple !important;
 }
 */
-.light{
+
+.light {
     color: pink;
 }
 
-#dropDownMenu{
+#dropDownMenu {
     background: black;
     color: white;
 }
+
 .css-typing p {
-border-right: .15em solid orange;
-font-family: "Courier";
-font-size: 14px;
-white-space: nowrap;
-overflow: hidden;
+    border-right: .15em solid orange;
+    font-family: "Courier";
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 .css-typing p:nth-child(1) {
-width: 20.5em;
--webkit-animation: type 2s steps(100, end);
-animation: type 2s steps(100, end);
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards;
+    width: 20.5em;
+    -webkit-animation: type 2s steps(100, end);
+    animation: type 2s steps(100, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
+
 .css-typing p:nth-child(2) {
-width: 11.5em;
-opacity: 0;
--webkit-animation: type2 2s steps(20, end);
-animation: type2 2s steps(30, end);
--webkit-animation-delay: 2s;
-animation-delay: 2s;
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards;
+    width: 11.5em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(20, end);
+    animation: type2 2s steps(30, end);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
+
 .css-typing p:nth-child(3) {
-width: 11.5em;
-opacity: 0;
--webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
--webkit-animation-delay: 4s;
-animation-delay: 4s;
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards;
+    width: 14.5em;
+    opacity: 0;
+    -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+    animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
+
+
+
 @keyframes type {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    99.9% {
+        border-right: .15em solid orange;
+    }
+    100% {
+        border: none;
+    }
 }
-99.9% {
-border-right: .15em solid orange;
-}
-100% {
-border: none;
-}
-}
+
 @-webkit-keyframes type {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    99.9% {
+        border-right: .15em solid orange;
+    }
+    100% {
+        border: none;
+    }
 }
-99.9% {
-border-right: .15em solid orange;
-}
-100% {
-border: none;
-}
-}
+
 @keyframes type2 {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    99.9% {
+        border-right: .15em solid orange;
+    }
+    100% {
+        opacity: 1;
+        border: none;
+    }
 }
-1% {
-opacity: 1;
-}
-99.9% {
-border-right: .15em solid orange;
-}
-100% {
-opacity: 1;
-border: none;
-}
-}
+
 @-webkit-keyframes type2 {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    99.9% {
+        border-right: .15em solid orange;
+    }
+    100% {
+        opacity: 1;
+        border: none;
+    }
 }
-1% {
-opacity: 1;
-}
-99.9% {
-border-right: .15em solid orange;
-}
-100% {
-opacity: 1;
-border: none;
-}
-}
+
 @keyframes type3 {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-1% {
-opacity: 1;
-}
-100% {
-opacity: 1;
-}
-}
+
 @-webkit-keyframes type3 {
-0% {
-width: 0;
+    0% {
+        width: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-1% {
-opacity: 1;
-}
-100% {
-opacity: 1;
-}
-}
+
 @keyframes blink {
-50% {
-border-color: transparent;
+    50% {
+        border-color: transparent;
+    }
 }
-}
+
 @-webkit-keyframes blink {
-50% {
-border-color: tranparent;
-}
+    50% {
+        border-color: tranparent;
+    }
 }

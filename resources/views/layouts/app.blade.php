@@ -57,15 +57,15 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fas fa-plane fa-2x"></i> Private JETS</button></a></li>
+                    <li><a href="{{ route('planes') }}"><button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plane fa-2x"></i> Private JETS</button></a></li>
 
-                    <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"> <i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
+                    <li><a href="{{ route('londinium') }}"><button type="button" class="btn btn-primary btn-sm"><i class="fab fa-linode fa-2x"></i> Londinium</button></a></li>
 
-                    <li><a href="{{ route('vue') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-vuejs fa-2x"></i>Vue.js</button></li></a>
+                    <li><a href="{{ route('vue') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-vuejs fa-2x"></i> Vue.js</button></li></a>
 
-                    <li><a href="{{ route('rss') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-rss fa-2x"></i>RSS</button></li></a>
+                    <li><a href="{{ route('rss') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-rss fa-2x"></i> RSS</button></li></a>
 
-                    <li><a href="{{ route('jquery') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-node-js fa-2x"></i>Jquery</button></li></a>
+                    <li><a href="{{ route('jquery') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-node-js fa-2x"></i> Jquery</button></li></a>
 
 <!--                     <li><a href="{{ route('cssE') }}"><button class="btn btn-primary btn-sm"><i class="fab fa-css3"></i>css</button></li></a>
  -->
