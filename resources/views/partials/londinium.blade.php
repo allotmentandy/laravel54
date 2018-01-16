@@ -1,4 +1,4 @@
-                <div class="panel-heading"><a href="{{ route('londinium') }}">Londinium</a></div>
+                <div class="panel-heading"><a href="{{ route('londinium') }}"><i class="fab fa-linode fa-2x"></i> Londinium</a></div>
                     <div class="panel-body">
 						<form action="/londinium/search" method="POST">
 						 {{ csrf_field() }}
