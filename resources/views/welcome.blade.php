@@ -68,9 +68,10 @@
                 <div class="panel-body">
                     <h4>Get in contact  </h4>
                     <hr>
-                    <i class="fab fa-github fa-1x"></i> github.com/allotmentandy 
-                    <i class="fab fa-github fa-1x"></i> allotmentandy.github.io 
-                    <i class="fab fa-twitter fa-1x"></i> twitter.com/londiniumcom
+                    <i class="fab fa-github fa-1x"></i> <a href="http://www.github.com/allotmentandy">github/allotmentandy</a> 
+                    <i class="fab fa-github fa-1x"></i> <a href="http://allotmentandy.github.io">allotmentandy.github.io</a>
+                    <i class="fab fa-twitter fa-1x"></i> <a href="http://www.twitter.com/londiniumcom">twitter/londiniumcom</a>
+                    <i class="fab fa-stack-overflow fa-1x"></i> <a href="http://www.stackoverflow.com/users/2726031/andylondon">stackoverflow/users/2726031/andylondon</a>
                 </div>
             </div>
         </div>
