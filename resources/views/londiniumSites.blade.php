@@ -10,10 +10,11 @@
                 <br>
                 highest id saved: {{$highestSavedId}}
             </div>
+        </div>
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <table border="1">
+                    <table class="table">
                     @foreach ($sites as $site)
                         <?php
                         echo "<tr><td>";
@@ -26,9 +27,9 @@
                         </td><td>
                         @if ($site->name)
                             {{$site->name}}
-                        @else 
+                        @endif
+                        <br>
                             {{$site->url}}
-                        @endif       
                         </td><td>
                         <a href="/londinium/site/{{$site->id}}" target="_blank">details </a>
                         </td></tr>

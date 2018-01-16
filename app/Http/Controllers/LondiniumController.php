@@ -20,7 +20,7 @@ class LondiniumController extends Controller
 
     public function sites()
     {
-        $data['sites'] = Londinium::orderBy('id')->where('active', '=', 1)->paginate(15);
+        $data['sites'] = Londinium::orderBy('id')->where('active', '=', 1)->paginate(1500);
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
         $data['highestSavedId'] = Londinium::select('id')->where('saved', '=', 'saved')->orderBy('id', 'DESC')->take(1)->get();
         return view('londiniumSites', $data);

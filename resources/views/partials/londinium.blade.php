@@ -24,4 +24,3 @@
 						<h4>A-Z list</h4>
 						html - json - pdf - txt
                     </div>
-                </div>

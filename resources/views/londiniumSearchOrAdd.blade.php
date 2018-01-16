@@ -7,7 +7,7 @@
             <div class="panel panel-info">
                 @include('partials.londinium')
             </div>
-
+        </div>
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
