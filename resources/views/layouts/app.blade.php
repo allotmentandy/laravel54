@@ -75,7 +75,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="navbar-toggle btn btn-default btn-sm" id="toggleText" onclick="$('#dropDownMenu').toggle();">About Andy</a></li>
 
-                    <li><a href="#DemoModal2" class="btn btn-lg btn-primary" data-toggle="modal"><i class="fas fa-cogs"></i></a>
+                    <li><a href="#DemoModal2" class="navbar-toggle btn btn-primary btn-sm" data-toggle="modal"><i class="fas fa-cogs"></i></a></li>
 
                 </ul>
             </div>
