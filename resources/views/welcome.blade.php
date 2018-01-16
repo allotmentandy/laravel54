@@ -55,6 +55,7 @@
                                 <li>jQuery</li>
                                 <li>Web Spiders</li>
                                 <li>Shell Scripting</li>
+                                <li>Testing - Selenium, Dusk, PhpUnit</li>
                             </ul>
                         </div>
                     </div>
