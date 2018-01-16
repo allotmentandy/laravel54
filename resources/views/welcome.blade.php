@@ -24,6 +24,7 @@
                             <img src="/images/andy.jpg" style="width:100%">    
                         </div>
                     </div>
+                    <div class="well">The idea of this app is to provide a wide variety of examples of using laravel, bootstrap and javascipt examples in one place.  </div>
                 </div>
                 <div class="col-md-6">
                     <div class="panel panel-primary">
@@ -43,20 +44,21 @@
 
                         <div class="panel-body">
                         
-                            <p>I am a London based full stack developer looking for a new role.</p>
+                            <p class="lead">I am a London based full stack developer looking for a new role.</p>
                             <h4>Technology Stack</h4>
                             <ul>
                                 <li>PHP</li>
                                 <li>MySql</li>
-                                <li>Laravel</li>
+                                <li><mark>Laravel</mark></li>
                                 <li>Packagist</li>
                                 <li>Vue.js</li>
                                 <li>Bootstrap CSS</li>
                                 <li>jQuery</li>
                                 <li>Web Spiders</li>
-                                <li>Shell Scripting</li>
+                                <li>Shell Scripting <kbd>./bash.sh</kbd></li>
                                 <li>Testing - Selenium, Dusk, PhpUnit</li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -67,14 +69,15 @@
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-body">
-                    <h4>Get in contact  </h4>
-                    <hr>
+                     <span class="badge">ContactAndy</span> 
                     <i class="fab fa-github fa-1x"></i> <a href="http://www.github.com/allotmentandy">github/allotmentandy</a> 
                     <i class="fab fa-github fa-1x"></i> <a href="http://allotmentandy.github.io">allotmentandy.github.io</a>
                     <i class="fab fa-twitter fa-1x"></i> <a href="http://www.twitter.com/londiniumcom">twitter/londiniumcom</a>
+                    <i class="fa fa-link fa-1x"></i> <a href="https://packagist.org/packages/allotmentandy/socialmedialinkextractor">packagist/socialmedialinkextractor</a>
                     <i class="fab fa-stack-overflow fa-1x"></i> <a href="http://www.stackoverflow.com/users/2726031/andylondon">stackoverflow/users/2726031/andylondon</a>
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection
