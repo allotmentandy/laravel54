@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Londinium.com - London links and information</title>
+<title>Londinium.com - London links and tourist information</title>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <style>
@@ -53,8 +53,8 @@ a:visited {color: purple;}
 <div role="tabpanel" class="tab-pane fade in active" id="home">
 <div class="jumbotron">
 <div class="container">
-<h2>Happy New Year from Londinium.com</h2>
-<p>The most useful website links for your visit to London</p>
+<h2>Londinium.com</h2>
+<p>Useful website links for London</p>
 </div>
 </div>
 <div class="container-fluid">
@@ -97,7 +97,9 @@ Contact londinium.com
 <div role="tabpanel" class="tab-pane fade" id="travel">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-3">
+{!! $adsense !!}</div>
+<div class="col-xs-8">
 <h1>Travel</h1>
 <?php
 $subcat = 0;

@@ -183,6 +183,9 @@ class LondiniumController extends Controller
     {
         // \Debugbar::disable();
 
+        $data['adsense'] = env("LONDINIUM_ADSENSE");
+
+
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
