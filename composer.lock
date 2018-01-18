@@ -43,7 +43,7 @@
                 }
             ],
             "description": "extracts social media links for an array of links eg. twitter, facebook etc.",
-            "time": "2017-12-29T12:59:16+00:00"
+            "time": "2017-12-29 12:59:16"
         },
         {
             "name": "barryvdh/laravel-debugbar",
