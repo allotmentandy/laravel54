@@ -19,7 +19,7 @@ php artisan cache:clear
 php artisan route:clear
 php artisan clear-compiled
 php artisan config:cache
-
+php artisan optimize
 
 php artisan up
 

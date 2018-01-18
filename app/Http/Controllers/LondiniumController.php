@@ -185,7 +185,6 @@ class LondiniumController extends Controller
 
         $data['adsense'] = env("LONDINIUM_ADSENSE");
 
-
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
         foreach ($result as $row) {
@@ -273,6 +272,8 @@ class LondiniumController extends Controller
     {
         $data['url'] = Londinium::where('id', '=', $id)->take(1)->first();
 
+        echo "screenshot called<br>";
+
         if (!$data['url']) {
             echo "no id/url. finished";
             exit;
@@ -340,6 +341,7 @@ class LondiniumController extends Controller
 
         echo '<html>
     <head>
+    <title>Londinium Spider</title>
         <meta http-equiv="refresh" content="1">
     </head>
     <body>';
@@ -371,7 +373,9 @@ class LondiniumController extends Controller
 
         Londinium::find($id)->touch();
 
-        $makeScreenshots = env("LONDINIUM_SPIDER_SCREENSHOTS_MAKE");
+        $makeScreenshots = config('LONDINIUM_SPIDER_SCREENSHOTS_MAKE');
+
+        echo $makeScreenshots . "<br>";
 
         if ($makeScreenshots) {
             $this->screenshot($id);
