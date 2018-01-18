@@ -48,7 +48,7 @@ a:visited {color: purple;}
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
+<div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1 ">
 <div class="card">
 <div class="card-header">
 About Londinium.com
@@ -62,8 +62,6 @@ Current count of websites : {{$countSaved}}
 </p>
 </div>
 </div>
-</div>
-<div class="col-md-4 col-sm-6 col-xs-12 col-xs-offset-1 ">
 <div class="card">
 <div class="card-header">
 Contact londinium.com
@@ -74,6 +72,32 @@ Contact londinium.com
 <a href="https://twitter.com/londiniumcom" target="_blank">Twitter</a></p>
 </div>
 </div>
+
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1 ">
+
+
+<div class="card">
+<div class="card-header">
+Top 10 London Websites
+</div>
+<div class="card-block">
+<p class="card-text">
+<ol>
+    <li><a href="https://tfl.gov.uk">TFL - Transport for London</a></li>
+    <li><a href="https://www.timeout.com/london">TimeOut London</a></li>
+    <li><a href="https://www.standard.co.uk/">Evening Standard</a></li>
+    <li><a href="https://www.bbc.co.uk">BBC</a></li>
+    <li><a href="http://www.britishmuseum.org">British Museum</a></li>
+    <li><a href="http://www.topshop.com/?geoip=home">TopShop</a></li>
+    <li><a href="http://www.selfridges.com/GB/en/">Selfridges</a></li>
+    <li><a href="https://www.madametussauds.com/london/en/tickets/">Madame Tussauds</a></li>
+    <li><a href="https://www.visitlondon.com/">Visit London</a></li>
+    <li><a href="http://www.londontown.com">London Town</a></li>
+</ol>
+</div>
+</div>
+
 </div>
 </div>
 </div>
