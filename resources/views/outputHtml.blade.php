@@ -24,28 +24,17 @@ a:visited {color: purple;}
 <body>
 <nav>
 <ul class="nav nav-tabs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" href="#home" role="tab" data-toggle="tab"><i class="fa fa-linode" aria-hidden="true"></i> <b>Londinium.com</b></a></li>
-<li class="nav-item">
-<a class="nav-link" href="#travel" role="tab" data-toggle="tab">Travel</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#tourism" role="tab" data-toggle="tab">Tourism</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#food" role="tab" data-toggle="tab">Food</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#shopping" role="tab" data-toggle="tab">Shopping</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#sport" role="tab" data-toggle="tab">Sport</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#property" role="tab" data-toggle="tab">Property</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#media" role="tab" data-toggle="tab">Media</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a></li>
-<li class="nav-item">
-<a class="nav-link" href="#events" role="tab" data-toggle="tab">Events</a></li>
+<li class="nav-item"><a class="nav-link active" href="#home" role="tab" data-toggle="tab"><i class="fa fa-linode" aria-hidden="true"></i> <b>Londinium.com</b></a></li>
+<li class="nav-item"><a class="nav-link" href="#travel" role="tab" data-toggle="tab">Travel</a></li>
+<li class="nav-item"><a class="nav-link" href="#tourism" role="tab" data-toggle="tab">Tourism</a></li>
+<li class="nav-item"><a class="nav-link" href="#food" role="tab" data-toggle="tab">Food</a></li>
+<li class="nav-item"><a class="nav-link" href="#shopping" role="tab" data-toggle="tab">Shopping</a></li>
+<li class="nav-item"><a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a></li>
+<li class="nav-item"><a class="nav-link" href="#sport" role="tab" data-toggle="tab">Sport</a></li>
+<li class="nav-item"><a class="nav-link" href="#property" role="tab" data-toggle="tab">Property</a></li>
+<li class="nav-item"><a class="nav-link" href="#media" role="tab" data-toggle="tab">Media</a></li>
+<li class="nav-item"><a class="nav-link" href="#info" role="tab" data-toggle="tab">Info</a></li>
+<li class="nav-item"><a class="nav-link" href="#events" role="tab" data-toggle="tab">Events</a></li>
 </ul>
 </nav>
 
@@ -97,9 +86,9 @@ Contact londinium.com
 <div role="tabpanel" class="tab-pane fade" id="travel">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-3">
+<div class="col-xs-12 col-md-3">
 {!! $adsense !!}</div>
-<div class="col-xs-8">
+<div class="col-xs-12 col-md-9">
 <h1>Travel</h1>
 <?php
 $subcat = 0;
@@ -132,7 +121,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="tourism">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Tourism</h1>
 <?php
 $subcat = 0;
@@ -165,7 +156,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="food">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Food</h1>
 <?php
 $subcat = 0;
@@ -199,7 +192,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="shopping">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Shopping</h1>
 <?php
 $subcat = 0;
@@ -232,7 +227,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="finance">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Finance</h1>
 <?php
 $subcat = 0;
@@ -265,7 +262,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="sport">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Sport</h1>
 <?php
 $subcat = 0;
@@ -298,7 +297,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="property">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Property</h1>
 <?php
 $subcat = 0;
@@ -331,7 +332,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="media">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>London Media and News</h1>
 <?php
 $subcat = 0;
@@ -364,7 +367,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="info">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>Information</h1>
 <?php
 $subcat = 0;
@@ -397,7 +402,9 @@ if ($site->subcategory_id != $subcat) {
 <div role="tabpanel" class="tab-pane fade" id="events">
 <div class="container-fluid">
 <div class="row voffset">
-<div class="col-xs-6 col-xs-offset-1 col1">
+<div class="col-xs-12 col-md-3">
+{!! $adsense !!}</div>
+<div class="col-xs-12 col-md-9">
 <h1>London Event Venues</h1>
 <?php
 $subcat = 0;
