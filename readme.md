@@ -35,13 +35,13 @@ mkdir rss
 mkdir public/planeImages
 mkdir public/planeImages/jetPhotos
 mkdir public/planeImages/airlinersNet
+
+UPDATE: the composer install script should make these for you.
 ```
 
 PHP requirements
 ```
-apt-get install php7.0-gd
-apt-get install php7.0-tidy
-apt-get install php7.0-mbstring
+apt-get install php7.2-gd php7.2-tidy php7.2-mbstring php7.2-curl php7.2-mysql php7.2-xml php7.2-zip
 ```
 
 run
