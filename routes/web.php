@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
@@ -90,7 +90,7 @@ Route::get('/cssE', 'CssController@index')->name('cssE');
 
 //twitter
 Route::get('/userTimeline', function () {
-    $tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
-    echo("<pre>");
-    var_dump($tweets);
+	$tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
+	echo ("<pre>");
+	var_dump($tweets);
 });
