@@ -18,16 +18,16 @@
                     Con no: <br>{{$item['conNumber']}}
                     <hr>
                     <?php
-$path = "/var/www/laravel54/public";
+$path = public_path();
 foreach ($details as $row):
-    $filename = "/planeImages/jetPhotos/" . $row->reg . ".jpg";
-    if (file_exists($path . $filename)) {
-        echo "<img src='" . $filename . "'>";
-    }
-    $filename = "/planeImages/airlinersNet/" . $row->reg . ".jpg";
-    if (file_exists($path . $filename)) {
-        echo "<img src='" . $filename . "'>";
-    }
+	$filename = "/planeImages/jetPhotos/" . $row->reg . ".jpg";
+	if (file_exists($path . $filename)) {
+		echo "<img src='" . $filename . "'>";
+	}
+	$filename = "/planeImages/airlinersNet/" . $row->reg . ".jpg";
+	if (file_exists($path . $filename)) {
+		echo "<img src='" . $filename . "'>";
+	}
 endforeach;
 ?>
 
