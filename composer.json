@@ -40,6 +40,11 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "php -r \"if (!file_exists('bizjets')) mkdir('bizjets');\"",
+            "php -r \"if (!file_exists('rss')) mkdir('rss');\"",
+            "php -r \"if (!file_exists('public/planeImages')) mkdir('public/planeImages');\"",
+            "php -r \"if (!file_exists('public/planeImages/jetPhotos')) mkdir('public/planeImages/jetPhotos');\"",
+            "php -r \"if (!file_exists('public/planeImages/airlinersNet')) mkdir('public/planeImages/airlinersNet');\""
         ],
         "post-update-cmd": [
         ]
