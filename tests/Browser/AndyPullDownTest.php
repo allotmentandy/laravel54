@@ -16,18 +16,15 @@ class AndyPullDownTest extends DuskTestCase
      */
     public function testBasicExample()
     {
-        // $this->browse(function ($browser) {
-        //     $browser->visit('http://localhost/')
-        //             ->maximize()
-        //             ->pause(1000)
-        //             ->click('#toggleText')
-        //             ->pause(1000)
-        //             ->screenshot('aboutAndy');
-        // });
-
-
-
-
+        $this->browse(function ($browser) {
+            $browser->visit('http://localhost/')
+                    ->maximize()
+                    ->pause(1000)
+                    ->click('#toggleText')
+                    ->pause(1000)
+                    ->screenshot('aboutAndy')
+                    ->assertSee('About Andy');
+        });
 
 
         // read https://github.com/laravel/dusk/blob/master/src/Browser.php

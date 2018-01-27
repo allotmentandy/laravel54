@@ -14,6 +14,11 @@ class KeyboardTest extends DuskTestCase
      */
     public function testBasicExample()
     {
+        $this->browse(function ($browser) {
+            $browser->visit('http://localhost/rss/')
+                    ->assertSee("job");
+        });
+
         // $this->browse(function ($browser) {
         // $browser->visit('http://localhost/rss/jobs')
         // ->maximize()

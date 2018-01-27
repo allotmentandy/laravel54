@@ -21,6 +21,7 @@ class SearchTest extends DuskTestCase
             $browser->press("GO");
             $browser->pause(1000)
                 ->screenshot('planesSearchResult');
+            $browser->assertSee('I-ADVD');
             $browser->pause(1000)
                 ->click('.showMore');
             $browser->pause(1000)

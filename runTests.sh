@@ -6,7 +6,7 @@ echo "--------------"
 cd /var/www/laravel54
 
 echo "--------------running phpunit tests"
-phpunit
+./vendor/bin/phpunit
 
 
 echo "--------------running codeception tests"

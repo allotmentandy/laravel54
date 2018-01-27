@@ -23,8 +23,10 @@ class ExampleTest extends DuskTestCase
 
         $this->browse(function ($browser) {
             $browser->visit('http://localhost/planes/list')
-                    ->screenshot('planesList');
+                    ->screenshot('planesList')
+                    ->assertSee('Private');
         });
+
 
 
 
