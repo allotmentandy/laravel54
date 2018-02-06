@@ -10,17 +10,18 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "barryvdh/laravel-dompdf": "^0.8.0",
         "guzzlehttp/guzzle": "^6.2",
-        "laravel/dusk": "1.1.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "spatie/browsershot": "^1.9",
         "thujohn/twitter": "^2.2",
-        "willvincent/feeds": "1.1.*"
+        "willvincent/feeds": "1.1.*",
+        "cornford/googlmapper": "2.*"
     },
     "require-dev": {
         "codeception/codeception": "^2.2",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
+        "laravel/dusk": "1.1.*",
         "phpunit/phpunit": "~6.0"
     },
     "autoload": {

@@ -187,7 +187,7 @@ return [
 
 		Spatie\Browsershot\BrowsershotServiceProvider::class,
 		allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorServiceProvider::class,
-
+		Cornford\Googlmapper\MapperServiceProvider::class,
 	],
 
 /*
@@ -241,6 +241,7 @@ return [
 		'Feeds' => willvincent\Feeds\Facades\FeedsFacade::class,
 		'PDF' => Barryvdh\DomPDF\Facade::class,
 		'Debugbar' => Barryvdh\Debugbar\Facade::class,
+		'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 	],
 
 ];

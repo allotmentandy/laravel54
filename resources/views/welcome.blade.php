@@ -12,6 +12,7 @@
                     <a href="{{ route('rssNews') }}"><i class="fas fa-rss fa-2x"></i> RSS news feeds</a><br>
                     <a href="{{ route('jquery') }}"><i class="fab fa-node-js fa-2x"></i> Jquery Examples</a><br>
                     <a href="{{ route('vue') }}"><i class="fab fa-vuejs fa-2x"></i> Vue Examples</a><br>
+                    <a href="{{ route('maps') }}"><i class="fab fa-fa fa-2x"></i> Maps Examples</a><br>
                     <!-- <a href="{{ route('cssE') }}"><i class="fab fa-css3"></i>CSS Examples</a><br> -->
                 </div>
             </div>

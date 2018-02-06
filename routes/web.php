@@ -88,6 +88,8 @@ Route::resource('vueitems', 'VueItemController');
 
 Route::get('/cssE', 'CssController@index')->name('cssE');
 
+Route::get('/maps', 'MapsController@index')->name('maps');
+
 //twitter
 Route::get('/userTimeline', function () {
 	$tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
