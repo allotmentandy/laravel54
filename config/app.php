@@ -188,6 +188,7 @@ return [
 		Spatie\Browsershot\BrowsershotServiceProvider::class,
 		allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorServiceProvider::class,
 		Cornford\Googlmapper\MapperServiceProvider::class,
+		
 	],
 
 /*
