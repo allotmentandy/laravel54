@@ -90,6 +90,9 @@ Route::get('/cssE', 'CssController@index')->name('cssE');
 
 Route::get('/maps', 'MapsController@index')->name('maps');
 
+Route::get('/embed', 'EmbedController@index')->name('embed');
+
+
 //twitter
 Route::get('/userTimeline', function () {
 	$tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);

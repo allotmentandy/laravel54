@@ -11,10 +11,10 @@
             </div>
         </div>
         <div class="col-md-9">
-            google maps
-
+        embed
             <div style="width: 100%; height: 500px;">
-                {!! Mapper::render() !!}
+        
+                
             </div>
         </div>
     </div>

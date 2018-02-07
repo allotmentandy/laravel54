@@ -26,7 +26,9 @@ class MapsController extends Controller
     {
 
         //Mapper::map(53.381128999999990000, -1.470085000000040000);
-        Mapper::streetview(51.513870, -0.098362, 1, 1, ['ui' => false]);
+        // St pauls 51.513, -0.0983
+//        Mapper::streetview(51.513870, -0.098362, 1, 1, ['ui' => false]);
+        Mapper::streetview(51.5138, -0.0983, 1, 1);
 
         return view('maps');
     }

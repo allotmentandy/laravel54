@@ -9,13 +9,14 @@
         "allotmentandy/socialmedialinkextractor": "dev-master",
         "barryvdh/laravel-debugbar": "^2.3",
         "barryvdh/laravel-dompdf": "^0.8.0",
+        "cornford/googlmapper": "2.*",
+        "embed/embed": "^3.3",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "spatie/browsershot": "^1.9",
         "thujohn/twitter": "^2.2",
-        "willvincent/feeds": "1.1.*",
-        "cornford/googlmapper": "2.*"
+        "willvincent/feeds": "1.1.*"
     },
     "require-dev": {
         "codeception/codeception": "^2.2",
