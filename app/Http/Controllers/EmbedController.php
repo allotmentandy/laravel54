@@ -62,8 +62,14 @@ $info->license; //The license url of the resource
 $info->linkedData; //The linked-data info (http://json-ld.org/)
 $info->feeds; //The RSS/Atom feeds
 
-print_r($info->title);
+//print_r($info->title);
 
-//        return view('embed');
+$info->title; //The page title
+$info->description; //The page description
+$info->url; //The canonical url
+$info->type; //The page type (link, video, image, rich)
+$info->tags; //The page keywords (tags)
+
+        return view('embed', compact('info') );
     }
 }
