@@ -30,6 +30,8 @@ class EmbedController extends Controller
 
 //Load any url:
 $info = Embed::create('https://www.youtube.com/watch?v=gF3xGzssFso');
+//$info = Embed::create('https:github.com/allotmentandy/laravel54/');
+//$info = Embed::create('');
 
 //Get content info
 
@@ -41,8 +43,8 @@ $info->tags; //The page keywords (tags)
 
 $info->images; //List of all images found in the page
 $info->image; //The image choosen as main image
-$info->imageWidth; //The width of the main image
-$info->imageHeight; //The height of the main image
+// $info->imageWidth; //The width of the main image
+// $info->imageHeight; //The height of the main image
 
 $info->code; //The code to embed the image, video, etc
 $info->width; //The width of the embed code

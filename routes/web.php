@@ -29,16 +29,12 @@ Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountr
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
 Route::get('/planes/country/job/{countryCode}', 'PlanesController@countryPhotoJob');
 Route::get('/planes/list', 'PlanesController@planesList')->name('planesList');
-
 Route::post('/planes/ajax/', 'PlanesController@ajax');
 Route::get('/planes/details/{id}', 'PlanesController@details');
-
 Route::get('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
 Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearchPOST');
-
 Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
-
 // planesApi
 Route::get('/planesApi', 'PlanesApiController@index')->name('planesApi');
 Route::get('/planesApi/getTypes', 'PlanesApiController@getTypes')->name('planesApiGetTypes');
@@ -51,17 +47,13 @@ Route::get('/londinium', 'LondiniumController@index')->name('londinium');
 Route::get('/londinium/sites', 'LondiniumController@sites')->name('sites');
 Route::get('/londinium/sites/save/{id}', 'LondiniumController@save');
 Route::get('/londinium/sites/unsave/{id}', 'LondiniumController@unsave');
-
 Route::get('/londinium/site/{id}', 'LondiniumController@site')->name('site');
 Route::post('/londinium/siteEditUrl/{id}', 'LondiniumController@siteEditUrl');
 Route::post('/londinium/siteEditName/{id}', 'LondiniumController@siteEditName');
-
 Route::post('/londinium/moveSubcategory/', 'LondiniumController@moveSubcategory');
-
 Route::get('/londinium/unsaved', 'LondiniumController@unsaved')->name('unsaved');
 Route::post('/londinium/search/', 'LondiniumController@search')->name('search');
 Route::post('/londinium/addAsSaved/', 'LondiniumController@addAsSaved');
-
 Route::get('/londinium/subcategories', 'LondiniumController@subcategories')->name('subcategories');
 Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcategory')->name('sitesBySubcategory');
@@ -69,7 +61,6 @@ Route::get('/londinium/savedSubcategory', 'LondiniumController@savedSubcategory'
 Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
 Route::get('/londinium/screenshot/{id}', 'LondiniumController@screenshot')->name('screenshot');
 Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
-
 Route::get('/londinium/errors', 'LondiniumController@londiniumErrors')->name('londiniumErrors');
 Route::get('/londinium/socialMedia', 'LondiniumController@socialMedia')->name('socialMedia');
 
