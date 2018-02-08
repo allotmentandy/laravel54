@@ -59,6 +59,8 @@ Route::get('/londinium/subcategory/{id}', 'LondiniumController@subcategory');
 Route::get('/londinium/sitesBySubcategory', 'LondiniumController@sitesBySubcategory')->name('sitesBySubcategory');
 Route::get('/londinium/savedSubcategory', 'LondiniumController@savedSubcategory')->name('savedSubcategory');
 Route::get('/londinium/outputHtml', 'LondiniumController@outputHtml')->name('outputHtml');
+Route::get('/londinium/outputJson', 'LondiniumController@outputJson')->name('outputJson');
+
 Route::get('/londinium/screenshot/{id}', 'LondiniumController@screenshot')->name('screenshot');
 Route::get('/londinium/spider', 'LondiniumController@spider')->name('spider');
 Route::get('/londinium/errors', 'LondiniumController@londiniumErrors')->name('londiniumErrors');

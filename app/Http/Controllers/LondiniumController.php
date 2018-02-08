@@ -268,6 +268,15 @@ class LondiniumController extends Controller
         return view('outputHtml', $data);
     }
 
+    public function outputJson()
+    {
+return '
+{
+"4": 5,
+"6": 7
+}';
+    }
+
     public function screenshot($id)
     {
         $data['url'] = Londinium::where('id', '=', $id)->take(1)->first();
