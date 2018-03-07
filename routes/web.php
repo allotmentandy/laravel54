@@ -75,6 +75,7 @@ Route::get('/vue', 'VueController@index')->name('vue');
 Route::get('/vueAjax', 'VueController@ajax')->name('vueAjax');
 Route::get('/vuePlanesTypes', 'VueController@planesTypes')->name('vuePlanesTypes');
 Route::get('/vuePlanesTypesAxios', 'VueController@planesTypesAxios')->name('vuePlanesTypesAxios');
+Route::get('/vueLondiniumSitesAxios', 'VueController@londiniumSitesAxios')->name('vueLondiniumSitesAxios');
 
 Route::get('manage-vue', 'VueItemController@manageVue');
 Route::resource('vueitems', 'VueItemController');

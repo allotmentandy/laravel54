@@ -19,7 +19,10 @@
 						<a href="{{ route('londiniumErrors') }}">Errors</a><br>
 
 						<hr><h3>PUBLISH</h3>
-						<a href="{{ route('outputHtml')}}"> HTML</a> - json - pdf - txt <br>(to be saved and uploaded)
+						<a href="{{ route('outputHtml')}}"> HTML</a>
+						 - 
+						<a href="{{ route('outputJson')}}"> Json</a>
+						 - pdf - txt <br>(to be saved and uploaded)
 						<br>
 						<h4>A-Z list</h4>
 						html - json - pdf - txt

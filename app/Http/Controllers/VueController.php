@@ -25,4 +25,9 @@ class VueController extends Controller
     {
         return view('vuePlanesTypesAxios');
     }
+
+    public function londiniumSitesAxios()
+    {
+        return view('vueLondiniumSitesAxios');
+    }
 }

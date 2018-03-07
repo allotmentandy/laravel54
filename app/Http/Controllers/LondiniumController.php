@@ -270,11 +270,11 @@ class LondiniumController extends Controller
 
     public function outputJson()
     {
-return '
-{
-"4": 5,
-"6": 7
-}';
+        // return '{"4": 5,"6": 7}';
+
+        $data['sites'] = Londinium::select()->get();
+        return $data;
+
     }
 
     public function screenshot($id)
