@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Subcategories;
 use Illuminate\Http\Request;
+use App\Londinium;
 
 class VueController extends Controller
 {
@@ -28,6 +30,14 @@ class VueController extends Controller
 
     public function londiniumSitesAxios()
     {
-        return view('vueLondiniumSitesAxios');
+        $data = Subcategories::active()
+            ->select('id', 'name')
+            ->with(['sites' => function ($query) {
+                $query->active()->select('url', 'subcategory_id');
+            }])
+            ->get()
+            ->toJson();
+
+        return view('vueLondiniumSitesAxios', compact('data'));
     }
 }
