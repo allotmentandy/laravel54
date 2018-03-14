@@ -34,4 +34,14 @@ class Londinium extends Model
     ];
 
     // join cat/subcat
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategories::class, 'subcategory_id', 'id');
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('active', true);
+    }
 }

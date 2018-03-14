@@ -12,4 +12,10 @@ let mix = require('laravel-mix').mix;
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .js('resources/assets/js/vue-londinium-sites-axios.js', 'public/js')
+    .extract([
+        "axios",
+        "vue",
+        "vue-search-select"
+    ])
+    .sass('resources/assets/sass/app.scss', 'public/css');
