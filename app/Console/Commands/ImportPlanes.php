@@ -90,7 +90,11 @@ class ImportPlanes extends Command
             $fileContents = fread($myfile, filesize($file));
             $tidy = tidy_parse_string($fileContents);
             $html = $tidy->html();
-            $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+            
+            libxml_use_internal_errors(true);
+                $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+            libxml_use_internal_errors(false);
+            
             $xpath = new \DOMXpath($doc);
 
             // get counrty code from the filename
