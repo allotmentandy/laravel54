@@ -102,6 +102,10 @@ Compate the planesNew table with the planes table
 php artisan bizjets:importNewAircraftToLive 
 
 * version 1 - only imports new aircraft so far!
+
+* version 2 - changed - re-reg? 
+* version 2 - 
+
 ```
 
 

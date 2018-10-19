@@ -67,13 +67,13 @@ class ImportNewAircraftToLive extends Command
                     
                     // echo "------------------". PHP_EOL;
                                         
-                    $plane = new Planes;
-                    $plane->reg = $row->reg;
-                    $plane->type = $row->type;
-                    $plane->conNumber = $row->conNumber;
-                    $plane->notes = $row->notes;
-                    $plane->countryCode = $row->countryCode;
-                    $plane->save();
+//                     $plane = new Planes;
+//                     $plane->reg = $row->reg;
+//                     $plane->type = $row->type;
+//                     $plane->conNumber = $row->conNumber;
+//                     $plane->notes = $row->notes;
+//                     $plane->countryCode = $row->countryCode;
+//                     $plane->save();
                 }
             }
         });

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\rss::class,
         Commands\ImportPlanes::class,
         Commands\ImportNewAircraftToLive::class,
+        Commands\ImportDeletedAircraftToLive::class,
         Commands\downloadCorpjet::class,
         Commands\DownloadImageJetPhoto::class,
         Commands\DownloadImageAirlinersNet::class,
