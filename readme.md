@@ -46,9 +46,9 @@ apt-get install php7.2-gd php7.2-tidy php7.2-mbstring php7.2-curl php7.2-mysql p
 
 run
 ``` 
+composer install
 php artisan key:generate
 php artisan config:clear
-composer install
 ```
 
 import 3 databases

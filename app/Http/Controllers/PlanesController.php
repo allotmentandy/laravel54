@@ -21,7 +21,7 @@ class PlanesController extends Controller {
 		// $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream IV')->take(1)->get();
 
 //        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
-		$data['details'] = Planes::orderByRaw('RAND()')->where('reg', 'LIKE', 'G-%')->take(1)->get();
+		$data['details'] = Planes::orderByRaw('RAND()')->where('countryCode', '=' , 'G')->take(1)->get();
 //        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G450')->take(1)->get();
 
 		return view('planes', $data);
