@@ -16,7 +16,10 @@
         <a href="{{ route('planeCountries') }}">Countries</a><br>
         <hr>
         <h4>Downloads</h4>
-        <a href="{{ route('txtView') }}"> HTML</a> <a href="{{ route('planesHelp') }}">PDF</a> JSON TXT
+        <a href="{{ route('txtView') }}"> HTML</a> 
+        <a href="{{ route('planesHelp') }}">PDF</a> 
+        <a href="{{ route('planesJson') }}">JSON</a> 
+          TXT
 
 		@if (count($errors) > 0)
 		    <div class="alert alert-danger">

@@ -34,6 +34,7 @@ Route::get('/planes/details/{id}', 'PlanesController@details');
 Route::get('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
 Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearchPOST');
 Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
+Route::get('/planes/json', 'PlanesController@json')->name('planesJson');
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 // planesApi
 Route::get('/planesApi', 'PlanesApiController@index')->name('planesApi');

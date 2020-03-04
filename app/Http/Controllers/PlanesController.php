@@ -9,6 +9,7 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
+use File;
 
 //use PDF; // removed as too intense.
 
@@ -21,8 +22,8 @@ class PlanesController extends Controller {
 		// $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream IV')->take(1)->get();
 
 //        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
-		$data['details'] = Planes::orderByRaw('RAND()')->where('countryCode', '=' , 'G')->take(1)->get();
-//        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G450')->take(1)->get();
+		// $data['details'] = Planes::orderByRaw('RAND()')->where('countryCode', '=' , 'G')->take(1)->get();
+       $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G650ER')->take(1)->get();
 
 		return view('planes', $data);
 	}
@@ -135,6 +136,13 @@ class PlanesController extends Controller {
 	//     Planes::where('id', $id)->update(['seenScrape' => 'scrape']);
 	//     return back()->with('message', 'Operation Successful ' . $id);
 	// }
+
+	public function json(){
+
+		$aides = Planes::all();
+$aides->toJson(JSON_PRETTY_PRINT);
+return response()->json( $aides, 200);
+	}
 
 	public function ajax() {
 		$id = Input::get('id');
