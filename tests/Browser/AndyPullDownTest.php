@@ -2,9 +2,9 @@
 
 namespace Tests\Browser;
 
-use Tests\DuskTestCase;
-use Laravel\Dusk\Chrome;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Chrome;
+use Tests\DuskTestCase;
 
 class AndyPullDownTest extends DuskTestCase
 {
@@ -25,7 +25,6 @@ class AndyPullDownTest extends DuskTestCase
                     ->screenshot('aboutAndy')
                     ->assertSee('About Andy');
         });
-
 
         // read https://github.com/laravel/dusk/blob/master/src/Browser.php
     }

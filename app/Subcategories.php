@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subcategories extends Model
 {
-
     protected $connection = 'mysql3';
 
     /**
@@ -14,7 +13,6 @@ class Subcategories extends Model
      *
      * @var string
      */
-
     protected $table = 'subcategories';
 
     /**
@@ -22,18 +20,16 @@ class Subcategories extends Model
      *
      * @var bool
      */
-
     public $timestamps = false;
 
     /**
-     * Indicates what can be updated or edited
+     * Indicates what can be updated or edited.
      *
      * @var bool
      */
     protected $fillable = [
-        'saved'
+        'saved',
     ];
-
 
     public function sites()
     {

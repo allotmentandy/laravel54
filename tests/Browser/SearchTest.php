@@ -18,7 +18,7 @@ class SearchTest extends DuskTestCase
             $browser->visit('http://localhost/planes');
             $browser->maximize();
             $browser->type('q', 'I-ADVD');
-            $browser->press("GO");
+            $browser->press('GO');
             $browser->pause(1000)
                 ->screenshot('planesSearchResult');
             $browser->assertSee('I-ADVD');

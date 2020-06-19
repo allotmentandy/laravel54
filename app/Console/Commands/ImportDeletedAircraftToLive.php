@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-use DB;
+use App\Countries;
 use App\Planes;
 use App\PlanesNew;
-use App\Countries;
+use DB;
+use Illuminate\Console\Command;
 
 class ImportDeletedAircraftToLive extends Command
 {
@@ -41,7 +41,7 @@ class ImportDeletedAircraftToLive extends Command
      */
     public function handle()
     {
-        $this->comment("STARTING " . time());
+        $this->comment('STARTING '.time());
 
         // first loop - get the results from planes (the original list)
 
@@ -50,15 +50,10 @@ class ImportDeletedAircraftToLive extends Command
                 $planesNew = PlanesNew::select('type', 'conNumber')->where('type', '=', $row->type)->where('conNumber', '=', $row->conNumber)->first();
 
                 if (isset($planesNew)) {
-
                 } else {
-
-                             echo "DELETED ".  $row->reg . " ". $row->type ." " . $row->conNumber .PHP_EOL;
-                        
-                    } 
+                    echo 'DELETED '.$row->reg.' '.$row->type.' '.$row->conNumber.PHP_EOL;
                 }
-            
+            }
         });
-
     }
 }

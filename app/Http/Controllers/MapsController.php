@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
+use Illuminate\Http\Request;
 
 class MapsController extends Controller
 {

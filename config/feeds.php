@@ -11,7 +11,7 @@ return [
   | most cases.
   |
   */
-  'cache.location' => storage_path() . '/framework/cache',
+  'cache.location' => storage_path().'/framework/cache',
 
   /*
   |--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ return [
   |
   */
   // 'base', 'blink', 'body', 'doctype', 'embed', 'font', 'form', 'frame', 'frameset', 'html', 'iframe', 'input', 'marquee', 'meta', 'noscript', 'object', 'param', 'script', 'style'
-  'strip_html_tags.tags'=> [ 'base', 'blink', 'body', 'doctype', 'embed', 'font', 'form', 'frame', 'frameset', 'html', 'iframe', 'input', 'marquee', 'meta', 'noscript', 'object', 'param', 'script', 'style'],
+  'strip_html_tags.tags'=> ['base', 'blink', 'body', 'doctype', 'embed', 'font', 'form', 'frame', 'frameset', 'html', 'iframe', 'input', 'marquee', 'meta', 'noscript', 'object', 'param', 'script', 'style'],
 
   /*
   |--------------------------------------------------------------------------
@@ -84,6 +84,6 @@ return [
   |
   */
   // 'bgsound', 'class', 'expr', 'id', 'style', 'onclick', 'onerror', 'onfinish', 'onmouseover', 'onmouseout', 'onfocus', 'onblur', 'lowsrc', 'dynsrc'
-    'strip_attributes.tags'=> [ 'bgsound', 'class', 'expr', 'id', 'style', 'onclick', 'onerror', 'onfinish', 'onmouseover', 'onmouseout', 'onfocus', 'onblur', 'lowsrc', 'dynsrc'],
+    'strip_attributes.tags'=> ['bgsound', 'class', 'expr', 'id', 'style', 'onclick', 'onerror', 'onfinish', 'onmouseover', 'onmouseout', 'onfocus', 'onblur', 'lowsrc', 'dynsrc'],
 
 ];

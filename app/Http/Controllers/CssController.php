@@ -8,7 +8,7 @@ class CssController extends Controller
 {
     public function index()
     {
-        echo "index of css";
+        echo 'index of css';
 
         echo '<h1>Buttons</h1>
 <a href="#" class="button">Already Taken? <i class="icon-chevron-right"></i></a>

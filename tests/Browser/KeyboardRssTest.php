@@ -4,7 +4,7 @@ namespace Tests\Browser;
 
 use Tests\DuskTestCase;
 
-class KeyboardTest extends DuskTestCase
+class KeyboardRssTest extends DuskTestCase
 {
     /**
      * @group rss
@@ -16,7 +16,7 @@ class KeyboardTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('http://localhost/rss/')
-                    ->assertSee("Job");
+                    ->assertSee('Job');
         });
 
         // $this->browse(function ($browser) {

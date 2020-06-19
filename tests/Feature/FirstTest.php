@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
 
 class FirstTest extends TestCase
 {
@@ -21,8 +21,6 @@ class FirstTest extends TestCase
 
         $response = $this->get('/');
         $response->assertStatus(200);
-
-
 
         $response = $this->get('/404page');
         $response->assertStatus(404);
