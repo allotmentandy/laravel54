@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Londinium;
 use App\Subcategories;
 use Illuminate\Http\Request;
-use App\Londinium;
 
 class VueController extends Controller
 {

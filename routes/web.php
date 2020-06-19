@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -20,8 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/planes', 'PlanesController@index')->name('planes');
-Route::get('/planes/pdf', array('as' => 'pdfview', 'uses' => 'PlanesController@pdfview'));
-Route::get('/planes/txt', array('as' => 'txtView', 'uses' => 'PlanesController@txtview'));
+Route::get('/planes/pdf', ['as' => 'pdfview', 'uses' => 'PlanesController@pdfview']);
+Route::get('/planes/txt', ['as' => 'txtView', 'uses' => 'PlanesController@txtview']);
 Route::get('/planes/types', 'PlanesController@types')->name('planeTypes');
 Route::get('/planes/type/{type}', 'PlanesController@type')->name('planeType');
 Route::get('/planes/type/job/{type}', 'PlanesController@typePhotoJob');
@@ -87,10 +87,9 @@ Route::get('/maps', 'MapsController@index')->name('maps');
 
 Route::get('/embed', 'EmbedController@index')->name('embed');
 
-
 //twitter
 Route::get('/userTimeline', function () {
-	$tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
-	echo ("<pre>");
-	var_dump($tweets);
+    $tweets = Twitter::getUserTimeline(['screen_name' => 'londiniumcom', 'count' => 10, 'format' => 'array']);
+    echo '<pre>';
+    var_dump($tweets);
 });

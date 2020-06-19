@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Embed\Embed;
+use Illuminate\Http\Request;
 
 class EmbedController extends Controller
 {
@@ -25,17 +25,14 @@ class EmbedController extends Controller
     public function index()
     {
 
-
-
-
 //Load any url:
-$info = Embed::create('https://www.youtube.com/watch?v=gF3xGzssFso');
-//$info = Embed::create('https:github.com/allotmentandy/laravel54/');
-//$info = Embed::create('');
+        $info = Embed::create('https://www.youtube.com/watch?v=gF3xGzssFso');
+        //$info = Embed::create('https:github.com/allotmentandy/laravel54/');
+        //$info = Embed::create('');
 
-//Get content info
+        //Get content info
 
-$info->title; //The page title
+        $info->title; //The page title
 $info->description; //The page description
 $info->url; //The canonical url
 $info->type; //The page type (link, video, image, rich)
@@ -66,12 +63,12 @@ $info->feeds; //The RSS/Atom feeds
 
 //print_r($info->title);
 
-$info->title; //The page title
+        $info->title; //The page title
 $info->description; //The page description
 $info->url; //The canonical url
 $info->type; //The page type (link, video, image, rich)
 $info->tags; //The page keywords (tags)
 
-        return view('embed', compact('info') );
+        return view('embed', compact('info'));
     }
 }

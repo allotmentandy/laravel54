@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use DB;
+use App\Countries;
 use App\Planes;
 use App\PlanesNew;
-use App\Countries;
+use DB;
+use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class ImportNewAircraftToLive extends Command
 {
@@ -43,7 +43,7 @@ class ImportNewAircraftToLive extends Command
      */
     public function handle()
     {
-        $this->comment("STARTING " . time());
+        $this->comment('STARTING '.time());
 
         // first loop - get the results from planesNew
 
@@ -53,20 +53,18 @@ class ImportNewAircraftToLive extends Command
                 //does it already exist as this row?
                 $planes = Planes::select('reg', 'type', 'conNumber', 'notes')->where('reg', '=', $row->reg)->where('type', '=', $row->type)->where('conNumber', '=', $row->conNumber)->first();
 
-                if (!isset($planes->reg)) {
-                        echo "NEW " . $row->reg . " " . $row->type ." " . $row->conNumber . " " .$row->notes . PHP_EOL;
+                if (! isset($planes->reg)) {
+                    echo 'NEW '.$row->reg.' '.$row->type.' '.$row->conNumber.' '.$row->notes.PHP_EOL;
 
-                            $plane = new Planes;
-                            $plane->reg = $row->reg;
-                            $plane->type = $row->type;
-                            $plane->conNumber = $row->conNumber;
-                            $plane->notes = $row->notes;
-                            $plane->countryCode = $row->countryCode;
-                            $plane->save();
-
-                    }
-                                                            
+                    $plane = new Planes;
+                    $plane->reg = $row->reg;
+                    $plane->type = $row->type;
+                    $plane->conNumber = $row->conNumber;
+                    $plane->notes = $row->notes;
+                    $plane->countryCode = $row->countryCode;
+                    $plane->save();
                 }
+            }
         });
     }
 }

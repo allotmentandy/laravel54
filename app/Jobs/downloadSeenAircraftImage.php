@@ -2,14 +2,14 @@
 
 namespace App\Jobs;
 
-use DB;
 use App\Planes;
+use Artisan;
+use DB;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Artisan;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class downloadSeenAircraftImage implements ShouldQueue
 {
@@ -39,7 +39,7 @@ class downloadSeenAircraftImage implements ShouldQueue
     public function handle()
     {
         $id = $this->id;
-        echo "job arrived -> " . $this->reg . PHP_EOL;
+        echo 'job arrived -> '.$this->reg.PHP_EOL;
 
         Artisan::queue('bizjets:downloadImageAirlinersNet', ['reg' => $this->reg]);
         Artisan::queue('bizjets:downloadImageJetPhoto', ['reg' => $this->reg]);

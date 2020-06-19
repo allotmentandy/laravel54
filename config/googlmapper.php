@@ -297,7 +297,7 @@ return [
         | hidden and a count is shown.
         |
         */
-        'size' => 2
+        'size' => 2,
 
     ],
 

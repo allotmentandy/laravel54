@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Console\Command;
 
 class rss extends Command
 {
@@ -39,29 +39,28 @@ class rss extends Command
      */
     public function handle()
     {
-            
-    $files = file("/var/www/laravel54/rss/feeds.txt", FILE_IGNORE_NEW_LINES);
-    foreach ($files as $file) {
-        // echo $file . PHP_EOL;
-    
-        $client = new Client([
+        $files = file('/var/www/laravel54/rss/feeds.txt', FILE_IGNORE_NEW_LINES);
+        foreach ($files as $file) {
+            // echo $file . PHP_EOL;
+
+            $client = new Client([
         // You can set any number of default request options.
         'timeout'  => 200.0,
         ]);
-        $response = $client->request('GET', $file);
-        $html = $response->getBody()->getContents();
+            $response = $client->request('GET', $file);
+            $html = $response->getBody()->getContents();
 
-        $file = $name = str_replace(array('-','/'), "-", $file);
+            $file = $name = str_replace(['-', '/'], '-', $file);
 
-        if (file_put_contents('/var/www/laravel54/rss/' . $file.".rss", $html)) {
-            echo $file . ' DOWNLOADED';
-        } else {
-            echo 'failed';
+            if (file_put_contents('/var/www/laravel54/rss/'.$file.'.rss', $html)) {
+                echo $file.' DOWNLOADED';
+            } else {
+                echo 'failed';
+            }
+
+            echo PHP_EOL;
+
+            sleep(4);
         }
-
-        echo PHP_EOL;
-
-        sleep(4);
-    }
     }
 }

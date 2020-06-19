@@ -1,13 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
+use Illuminate\Http\Request;
 
 class VueItemController extends Controller
 {
-
     public function manageVue()
     {
         return view('manage-vue');
@@ -29,9 +29,9 @@ class VueItemController extends Controller
                 'current_page' => $items->currentPage(),
                 'last_page' => $items->lastPage(),
                 'from' => $items->firstItem(),
-                'to' => $items->lastItem()
+                'to' => $items->lastItem(),
             ],
-            'data' => $items
+            'data' => $items,
         ];
 
         return response()->json($response);
@@ -83,6 +83,7 @@ class VueItemController extends Controller
     public function destroy($id)
     {
         Item::find($id)->delete();
+
         return response()->json(['done']);
     }
 }

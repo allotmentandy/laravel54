@@ -12,5 +12,5 @@
  */
 
 Route::get('/getRegistrations', function () {
-    return "ok";
+    return 'ok';
 });

@@ -6,21 +6,23 @@ use Illuminate\Http\Request;
 
 class JqueryController extends Controller
 {
-
-    function index(){
-    	return view('jquery');
+    public function index()
+    {
+        return view('jquery');
     }
 
-	function jquery_smsMessage(){
-    	return view('jquery_smsMessage');
+    public function jquery_smsMessage()
+    {
+        return view('jquery_smsMessage');
     }
 
-	function jquery_togglePanels(){
-    	return view('jquery_togglePanels');
+    public function jquery_togglePanels()
+    {
+        return view('jquery_togglePanels');
     }
 
-	function jquery_emailRecipients(){
-    	return view('jquery_emailRecipients');
+    public function jquery_emailRecipients()
+    {
+        return view('jquery_emailRecipients');
     }
-
 }

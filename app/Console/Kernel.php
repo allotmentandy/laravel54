@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
         Commands\downloadCorpjet::class,
         Commands\DownloadImageJetPhoto::class,
         Commands\DownloadImageAirlinersNet::class,
-               
+
     ];
 
     /**

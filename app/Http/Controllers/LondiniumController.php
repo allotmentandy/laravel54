@@ -15,6 +15,7 @@ class LondiniumController extends Controller
     public function index()
     {
         $data['site'] = Londinium::where('saved', '=', 'saved')->orderByRaw('RAND()')->take(1)->get();
+
         return view('londinium', $data);
     }
 
@@ -23,6 +24,7 @@ class LondiniumController extends Controller
         $data['sites'] = Londinium::orderBy('id')->where('active', '=', 1)->paginate(1500);
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
         $data['highestSavedId'] = Londinium::select('id')->where('saved', '=', 'saved')->orderBy('id', 'DESC')->take(1)->get();
+
         return view('londiniumSites', $data);
     }
 
@@ -93,10 +95,10 @@ class LondiniumController extends Controller
     {
         $url = $request->input('url');
         $subcat = $request->input('subcategory');
-        $values = array('url' => $url, 'saved' => 'saved', 'active' => 1, 'subcategory_id' => $subcat);
+        $values = ['url' => $url, 'saved' => 'saved', 'active' => 1, 'subcategory_id' => $subcat];
         DB::table('londinium.sites')->insert($values);
 
-        return redirect('/londinium/site/' . DB::getPdo()->lastInsertId());
+        return redirect('/londinium/site/'.DB::getPdo()->lastInsertId());
     }
 
     public function subcategories()
@@ -120,6 +122,7 @@ class LondiniumController extends Controller
         $Londinium = Londinium::where('id', '=', $id)->first();
         $Londinium->saved = 'saved';
         $Londinium->save();
+
         return back()->with('message', 'Operation Successful !');
     }
 
@@ -128,6 +131,7 @@ class LondiniumController extends Controller
         $Londinium = Londinium::where('id', '=', $id)->first();
         $Londinium->saved = '';
         $Londinium->save();
+
         return back()->with('message', 'Operation Successful !');
     }
 
@@ -183,7 +187,7 @@ class LondiniumController extends Controller
     {
         // \Debugbar::disable();
 
-        $data['adsense'] = env("LONDINIUM_ADSENSE");
+        $data['adsense'] = env('LONDINIUM_ADSENSE');
 
         $subcategories = [];
         $result = Subcategories::orderBy('name')->get();
@@ -233,34 +237,34 @@ class LondiniumController extends Controller
         $Info = [327, 144, 147, 149, 1147, 940, 1066, 1138, 344, 431, 1517];
         $Events = [158, 172, 562, 355, 520, 335];
 
-        $TravelString = implode(", ", $Travel);
+        $TravelString = implode(', ', $Travel);
         $data['Travel'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Travel)->orderByRaw("FIELD(subcategory_id, $TravelString )")->paginate(1000);
 
-        $TourismString = implode(", ", $Tourism);
+        $TourismString = implode(', ', $Tourism);
         $data['Tourism'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Tourism)->orderByRaw("FIELD(subcategory_id, $TourismString )")->paginate(1000);
 
-        $FoodString = implode(", ", $Food);
+        $FoodString = implode(', ', $Food);
         $data['Food'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Food)->orderByRaw("FIELD(subcategory_id, $FoodString )")->paginate(1000);
 
-        $ShoppingString = implode(", ", $Shopping);
+        $ShoppingString = implode(', ', $Shopping);
         $data['Shopping'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Shopping)->orderByRaw("FIELD(subcategory_id, $ShoppingString )")->paginate(1000);
 
-        $FinanceString = implode(", ", $Finance);
+        $FinanceString = implode(', ', $Finance);
         $data['Finance'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Finance)->orderByRaw("FIELD(subcategory_id, $FinanceString )")->paginate(1000);
 
-        $SportString = implode(", ", $Sport);
+        $SportString = implode(', ', $Sport);
         $data['Sport'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Sport)->orderByRaw("FIELD(subcategory_id, $SportString )")->paginate(1000);
 
-        $PropertyString = implode(", ", $Property);
+        $PropertyString = implode(', ', $Property);
         $data['Property'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Property)->orderByRaw("FIELD(subcategory_id, $PropertyString )")->paginate(1000);
 
-        $MediaString = implode(", ", $Media);
+        $MediaString = implode(', ', $Media);
         $data['Media'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Media)->orderByRaw("FIELD(subcategory_id, $MediaString )")->paginate(1000);
 
-        $InfoString = implode(", ", $Info);
+        $InfoString = implode(', ', $Info);
         $data['Info'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Info)->orderByRaw("FIELD(subcategory_id, $InfoString )")->paginate(1000);
 
-        $EventsString = implode(", ", $Events);
+        $EventsString = implode(', ', $Events);
         $data['Events'] = Londinium::where('saved', '=', 'saved')->whereIn('subcategory_id', $Events)->orderByRaw("FIELD(subcategory_id, $EventsString )")->paginate(1000);
 
         $data['date'] = date('Y-m-d H:i:s');
@@ -273,18 +277,18 @@ class LondiniumController extends Controller
         // return '{"4": 5,"6": 7}';
 
         $data['sites'] = Londinium::select()->get();
-        return $data;
 
+        return $data;
     }
 
     public function screenshot($id)
     {
         $data['url'] = Londinium::where('id', '=', $id)->take(1)->first();
 
-        echo "screenshot called<br>";
+        echo 'screenshot called<br>';
 
-        if (!$data['url']) {
-            echo "no id/url. finished";
+        if (! $data['url']) {
+            echo 'no id/url. finished';
             exit;
         }
 
@@ -297,7 +301,7 @@ class LondiniumController extends Controller
             ->setWidth(640)
             ->setHeightToRenderWholePage()
             ->setTimeout(5000)
-            ->save('/var/www/laravel54/public/screenshots/' . $id . '.jpg');
+            ->save('/var/www/laravel54/public/screenshots/'.$id.'.jpg');
     }
 
     public function spider()
@@ -310,8 +314,8 @@ class LondiniumController extends Controller
             ->take(1)
             ->first();
 
-        if (!$data['url']) {
-            echo "all spidering and screendumps complete for today :)";
+        if (! $data['url']) {
+            echo 'all spidering and screendumps complete for today :)';
             exit;
         }
         $url = $data['url']->url;
@@ -336,14 +340,14 @@ class LondiniumController extends Controller
                 $exception = (string) $e->getResponse()->getBody();
                 $exception = json_decode($exception);
                 echo $e->getCode();
-                echo "request exception" . $response->getStatusCode() . " " . $id;
+                echo 'request exception'.$response->getStatusCode().' '.$id;
                 exit;
             } else {
-                echo "request exception else " . $url . $id;
+                echo 'request exception else '.$url.$id;
                 exit;
             }
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            echo "connection exception";
+            echo 'connection exception';
             // var_dump($e);
             exit();
         }
@@ -354,37 +358,37 @@ class LondiniumController extends Controller
         <meta http-equiv="refresh" content="1">
     </head>
     <body>';
-        echo $id . " -> " . $url . "<hr>";
+        echo $id.' -> '.$url.'<hr>';
 
-        echo "Status Code: " . $response->getStatusCode();
+        echo 'Status Code: '.$response->getStatusCode();
 
         $html = $response->getBody()->getContents();
 
         $doc = new \DOMDocument();
-        $tidy_config = array(
+        $tidy_config = [
             'clean' => true,
             'output-xhtml' => true,
             'show-body-only' => false,
             'wrap' => 0,
-        );
+        ];
         $tidy = tidy_parse_string($html, $tidy_config, 'UTF8');
         $tidy->cleanRepair();
 
         $html = $tidy->html();
 
         libxml_use_internal_errors(true);
-        $doc->loadHTML(mb_convert_encoding($html, "UTF-8"));
+        $doc->loadHTML(mb_convert_encoding($html, 'UTF-8'));
         libxml_clear_errors();
 
         $xpath = new \DOMXpath($doc);
-        $spiderTitle = $xpath->evaluate("string(//html/head/title[1])");
-        echo "<h1>" . $spiderTitle . "</h1>";
+        $spiderTitle = $xpath->evaluate('string(//html/head/title[1])');
+        echo '<h1>'.$spiderTitle.'</h1>';
 
         Londinium::find($id)->touch();
 
         $makeScreenshots = config('LONDINIUM_SPIDER_SCREENSHOTS_MAKE');
 
-        echo $makeScreenshots . "<br>";
+        echo $makeScreenshots.'<br>';
 
         if ($makeScreenshots) {
             $this->screenshot($id);
@@ -392,18 +396,18 @@ class LondiniumController extends Controller
 
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
-            echo $content->value . PHP_EOL;
+            echo $content->value.PHP_EOL;
         }
-        echo "<hr>";
+        echo '<hr>';
         $desc = $xpath->query('/html/head/meta[@name="keywords"]/@content');
         foreach ($desc as $content) {
-            echo $content->value . PHP_EOL;
+            echo $content->value.PHP_EOL;
         }
-        echo "<hr>";
+        echo '<hr>';
 
         // extract links
         $linkArray = [];
-        $hrefs = $xpath->evaluate("/html/body//a");
+        $hrefs = $xpath->evaluate('/html/body//a');
 
         for ($i = 0; $i < $hrefs->length; $i++) {
             $href = $hrefs->item($i);
@@ -413,22 +417,22 @@ class LondiniumController extends Controller
             array_push($linkArray, $url);
         }
         $smle = new \allotmentandy\socialmedialinkextractor\SocialMediaLinkExtractorController;
-        echo "<h4>Social Media</h4>";
-        echo $smle->getTwitter($linkArray) . "<br>";
-        echo $smle->getFacebook($linkArray) . "<br>";
-        echo $smle->getYoutube($linkArray) . "<br>";
-        echo $smle->getInstagram($linkArray) . "<br>";
-        echo $smle->getLinkedin($linkArray) . "<br>";
-        echo $smle->getGoogle($linkArray) . "<br>";
-        echo $smle->getPinterest($linkArray) . "<br>";
-        echo $smle->getGithub($linkArray) . "<br>";
-        echo $smle->getFlickr($linkArray) . "<br>";
-        echo $smle->getTumblr($linkArray) . "<br>";
-        echo $smle->getRss($linkArray) . "<br>";
+        echo '<h4>Social Media</h4>';
+        echo $smle->getTwitter($linkArray).'<br>';
+        echo $smle->getFacebook($linkArray).'<br>';
+        echo $smle->getYoutube($linkArray).'<br>';
+        echo $smle->getInstagram($linkArray).'<br>';
+        echo $smle->getLinkedin($linkArray).'<br>';
+        echo $smle->getGoogle($linkArray).'<br>';
+        echo $smle->getPinterest($linkArray).'<br>';
+        echo $smle->getGithub($linkArray).'<br>';
+        echo $smle->getFlickr($linkArray).'<br>';
+        echo $smle->getTumblr($linkArray).'<br>';
+        echo $smle->getRss($linkArray).'<br>';
 
         // store title in spider table with id and status
 
-        $s = Spider::firstOrNew(array('id' => $id));
+        $s = Spider::firstOrNew(['id' => $id]);
         $s->status = $response->getStatusCode();
         $s->title = $spiderTitle;
         $s->twitter_url = $smle->getTwitter($linkArray);
@@ -447,12 +451,12 @@ class LondiniumController extends Controller
 
     public function socialMedia()
     {
-        echo "socialmedia links to check for rubbish<hr>";
+        echo 'socialmedia links to check for rubbish<hr>';
 
         $sm = Spider::get();
         foreach ($sm as $row) {
             // echo $row->twitter_url . "<br>";
-            echo $row->id . " " . $row->instagram_url . "<br>";
+            echo $row->id.' '.$row->instagram_url.'<br>';
             // echo $row->id . " " . $row->tumblr_url . "<br>";
             // echo $row->id . " " . $row->flickr_url . "<br>";
             // echo $row->id . " " . $row->facebook_url . "<br>";
@@ -464,34 +468,34 @@ class LondiniumController extends Controller
     {
         $idArray = [];
 
-        echo "<h2>errors</h2>";
-        echo "sites with http status NOT 200<br>";
+        echo '<h2>errors</h2>';
+        echo 'sites with http status NOT 200<br>';
 
-        $blanks = Spider::where('status', '<>', "200")->get();
+        $blanks = Spider::where('status', '<>', '200')->get();
         foreach ($blanks as $row) {
-            echo "<a target='_blank' href='/londinium/site/" . $row['id'] . "'>" . $row['id'] . " (" . $row['status'] . ") " . $row['title'] . "</a><br>";
+            echo "<a target='_blank' href='/londinium/site/".$row['id']."'>".$row['id'].' ('.$row['status'].') '.$row['title'].'</a><br>';
             $idArray[] = $row['id'];
         }
 
-        echo "<hr>";
-        echo "sites with blank title tags<br>";
-        $blanks = Spider::where('title', '=', "")->get();
+        echo '<hr>';
+        echo 'sites with blank title tags<br>';
+        $blanks = Spider::where('title', '=', '')->get();
         foreach ($blanks as $row) {
-            echo "<a target='_blank' href='/londinium/site/" . $row['id'] . "'>" . $row['id'] . " </a><br>";
+            echo "<a target='_blank' href='/londinium/site/".$row['id']."'>".$row['id'].' </a><br>';
             $idArray[] = $row['id'];
         }
-        echo "<hr>";
-        echo "sites with missing screenshots or screenshots < 10kb";
-        echo "<hr>";
-        echo "title like site not found";
+        echo '<hr>';
+        echo 'sites with missing screenshots or screenshots < 10kb';
+        echo '<hr>';
+        echo 'title like site not found';
 
-        if (sizeof($idArray) > 0) {
-            $comma_separated = implode(",", $idArray);
-            echo "<hr>";
-            echo "all ids to reset the sql<pre>";
-            echo "UPDATE sites set updated_at = '0000-00-00 00:00:00' and screenshot_at = '0000-00-00 00:00:00' where id in (" . $comma_separated . ");\n";
+        if (count($idArray) > 0) {
+            $comma_separated = implode(',', $idArray);
+            echo '<hr>';
+            echo 'all ids to reset the sql<pre>';
+            echo "UPDATE sites set updated_at = '0000-00-00 00:00:00' and screenshot_at = '0000-00-00 00:00:00' where id in (".$comma_separated.");\n";
 
-            echo "DELETE FROM spider WHERE id in (" . $comma_separated . ")";
+            echo 'DELETE FROM spider WHERE id in ('.$comma_separated.')';
         }
     }
 }

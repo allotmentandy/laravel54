@@ -8,11 +8,12 @@ class RssController extends Controller
 {
     public function index()
     {
-        $data = array(
-            'title' => "welcome to my feed reader, this isnt a real feed, it is just an example",
-            'permalink' => "http://www.londinium.com/",
-            'items' => array(),
-        );
+        $data = [
+            'title' => 'welcome to my feed reader, this isnt a real feed, it is just an example',
+            'permalink' => 'http://www.londinium.com/',
+            'items' => [],
+        ];
+
         return View('feed', $data);
     }
 
@@ -26,11 +27,11 @@ class RssController extends Controller
             'http://uk.dice.com/rss/laravel/all-locations/en/jobs-feed.xml?JobTypeFilter=2&xc=247',
             'https://larajobs.com/feed',
         ], 20);
-        $data = array(
+        $data = [
             'title' => $feed->get_title(),
             'permalink' => $feed->get_permalink(),
             'items' => $feed->get_items(),
-        );
+        ];
 
         return View('feed', $data);
     }
@@ -42,11 +43,11 @@ class RssController extends Controller
             'https://www.reddit.com/r/laravel/.rss',
             'http://laraveldaily.com/feed/',
         ], 20);
-        $data = array(
+        $data = [
             'title' => $feed->get_title(),
             'permalink' => $feed->get_permalink(),
             'items' => $feed->get_items(),
-        );
+        ];
 
         return View('feed', $data);
     }
