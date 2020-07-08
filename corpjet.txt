@@ -39,6 +39,7 @@ http://www.laasdata.com/corpjet/corpjets-panama-icao-hp.php
 http://www.laasdata.com/corpjet/corpjets-honduras-icao-hr.php
 http://www.laasdata.com/corpjet/corpjets-thailand-icao-hs.php
 http://www.laasdata.com/corpjet/corpjets-saudi-arabia-icao-hz.php
+http://www.laasdata.com/corpjet/corpjets-solomon-islands-icao-h4.php
 http://www.laasdata.com/corpjet/corpjets-italy-icao-i.php
 http://www.laasdata.com/corpjet/corpjets-japan-icao-ja.php
 http://www.laasdata.com/corpjet/corpjets-jordan-icao-jy.php
@@ -86,9 +87,11 @@ http://www.laasdata.com/corpjet/corpjets-chad-icao-tt.php
 http://www.laasdata.com/corpjet/corpjets-ivory-coast-icao-tu.php
 http://www.laasdata.com/corpjet/corpjets-mali-icao-tz.php
 http://www.laasdata.com/corpjet/corpjets-san-marino-icao-t7.php
+http://www.laasdata.com/corpjet/corpjets-uzbekistan-icao-uk.php
 http://www.laasdata.com/corpjet/corpjets-kazakhstan-icao-up.php
 http://www.laasdata.com/corpjet/corpjets-ukraine-icao-ur.php
 http://www.laasdata.com/corpjet/corpjets-australia-icao-vh.php
+http://www.laasdata.com/corpjet/corpjets-vietnam-icao-vn.php
 http://www.laasdata.com/corpjet/corpjets-bermuda-icao-vp-b.php
 http://www.laasdata.com/corpjet/corpjets-cayman-islands-icao-vp-c.php
 http://www.laasdata.com/corpjet/corpjets-india-icao-vt.php

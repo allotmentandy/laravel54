@@ -30,11 +30,12 @@ class PlanesController extends Controller {
 
 	public function txtview() {
 		echo ("<html><head>");
-		echo "<style>body {font-family: Verdana, Sans-Serif;} </style";
-		echo "<style>th {background: #ddd; text-align: left; padding: 5px; } table, tr, td { line-height: 12px; margin: 0; padding: 0; border: 0; font-size: 11px } </style>";
+		echo "<link href='http://localhost/bizjet.css' rel='stylesheet' type='text/css' media='screen, print' />";
 		echo ("</head>
 			<body>");
-		echo ("<table cellspacing='0' cellpadding='0'>");
+echo "<code>";
+		// echo ("<table>");
+		//tr {background-color: beige; }
 
 		$countryCodeArray = [];
 
@@ -56,26 +57,52 @@ class PlanesController extends Controller {
 					foreach ($items as $item) {
 						if ($item['countryCode'] != $countryCode) {
 							//$name = Countries::select('B')->where('A', '=', $item['countryCode'] )->first();
-							echo "<tr><th colspan='3'>" . $item['countryCode'] . " " . $countryCodeArray[$item['countryCode']] . "</th></tr>" . PHP_EOL;
+							echo "</pre><table><tr><th colspan='4'>" . $item['countryCode'] . " - " . $countryCodeArray[$item['countryCode']] . "</th></tr></table><pre>" . PHP_EOL;
 							$countryCode = $item['countryCode'];
 						}
+						$char = "☐";
+						$regUnderline = " '>";
+						$underline = " '>";
+						if ($item['seenScrape'] == "Seen") {
+							$regUnderline = " class='seen' style='border-bottom: 1px solid red; font-weight:bold;'>";
+							$underline = " class='seen' style='border-bottom: 1px solid red; font-weight:bold;'>";
+							$char = "☑";
 
-						$underline = ">";
-						if ($item['seenScrape'] == "seen") {
-							$underline = " style='border-bottom: 2px solid red;'>";
-						} elseif ($item['seenScrape'] == "scrape") {
-							$underline = " style='border-bottom: 2px solid green;'>";
+						} elseif ($item['seenScrape'] == "Scrape") {
+							$regUnderline = " class='scrape' style='border:0; font-weight:bold; color:green;'>";
+							$underline = " class='scrape' style='border-bottom: 1px solid green; font-weight:bold;'>";
+							$char = "☑";
+
 						}
 
-						echo "<tr><td " . $underline . " <b>☑</b> ";
-						echo "</td><td" . $underline . $item['reg'];
-						echo "</td><td" . $underline . $item['type'];
-						echo "</td><td" . $underline . $item['conNumber'] . "</td></tr>" . PHP_EOL;
+						echo "<p><span " . $regUnderline . $char . "&nbsp;</span>";
+						echo "<span " . $regUnderline ;
+						print pack('A10', $item['reg']);
+						echo "</span><span ". $underline;
+						print pack('A40A10', $item['type'], $item['conNumber']) ;
+						echo "&nbsp;". "&nbsp;". "&nbsp;". "&nbsp;". "&nbsp;" . "</span>\n</p>";
+						// echo . PHP_EOL;
+
+
+
+						// echo "<tr><td width='2%' " . $regUnderline .  $char . "&nbsp;";
+						// echo "</td><td width='18%' " . $regUnderline . $item['reg'];
+						// echo "</td><td width='40%' " . $underline . $item['type'];
+						// echo "</td><td width='20%' " . $underline . $item['conNumber'];
+						// echo "</td></tr>" . PHP_EOL;
+
 					}
 				}
 			);
-		echo ("</table></body></html>");
+		echo ("</code></body></html>");
 	}
+
+	public function planesInputScreen() {
+		$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(150);
+		return view('planesInputScreen', $data);
+	}
+
+
 
 	public function planesList() {
 		$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(30);
@@ -138,16 +165,17 @@ class PlanesController extends Controller {
 	// }
 
 	public function json(){
-
 		$aides = Planes::all();
-$aides->toJson(JSON_PRETTY_PRINT);
-return response()->json( $aides, 200);
-	}
+		$aides->toJson(JSON_PRETTY_PRINT);
+		return response()->json( $aides, 200);
+			}
 
 	public function ajax() {
 		$id = Input::get('id');
 		$seenScrape = Input::get('seenScrape');
-
+		if ($seenScrape == 'Undo'){
+			$seenScrape = null;
+		}
 		Planes::where('id', $id)->update(['seenScrape' => $seenScrape]);
 
 		// now set the job to download an image of this
@@ -164,12 +192,12 @@ return response()->json( $aides, 200);
 
 	public function search(Request $request) {
 		$this->validate($request, [
-			'q' => 'required|min:3',
+			'search' => 'required|min:3',
 		]);
 
-		$data['title'] = Input::get('q');
+		$data['title'] = Input::get('search');
 
-		$data['planes'] = Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('q') . '%')->orWhere('notes', 'like', '%' . Input::get('q') . '%')->get();
+		$data['planes'] = Planes::where('reg', Input::get('q'))->orWhere('reg', 'like', '%' . Input::get('search') . '%')->orWhere('notes', 'like', '%' . Input::get('search') . '%')->get();
 
 		return view('planeSearch', $data);
 	}

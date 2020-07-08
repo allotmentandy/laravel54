@@ -222,7 +222,7 @@ class LondiniumController extends Controller
 
         $data['countSaved'] = Londinium::where('saved', '=', 'saved')->count();
 
-        $Travel = [262, 265, 268, 270, 330, 331, 341, 368, 332, 1495, 604, 457, 780, 829, 1518];
+        $Travel = [262, 265, 268, 270, 330, 331, 341, 368, 332, 1495, 604, 457, 780, 829];
         $Tourism = [2, 5, 3, 154, 451, 452, 318, 292];
         $Food = [245, 249, 250, 957, 871, 358, 609, 611];
         $Shopping = [105, 139, 1470, 1484, 1494, 155, 157, 612, 615, 437, 168, 189, 863];
@@ -230,7 +230,7 @@ class LondiniumController extends Controller
         $Sport = [29, 35, 36, 37, 40, 426, 460, 461, 462, 463, 464, 465, 466, 467, 468, 424, 644];
         $Property = [290, 293, 334, 423];
         $Media = [174, 176, 177, 178, 179, 181, 601];
-        $Info = [327, 144, 147, 149, 1147, 940, 1066, 1138, 344, 431, 1517];
+        $Info = [327, 144, 147, 149, 1147, 940, 1066, 1138, 344, 431];
         $Events = [158, 172, 562, 355, 520, 335];
 
         $TravelString = implode(", ", $Travel);
@@ -265,7 +265,7 @@ class LondiniumController extends Controller
 
         $data['date'] = date('Y-m-d H:i:s');
 
-        return view('outputHtml', $data);
+        return view('outputHtml2020', $data);
     }
 
     public function outputJson()
@@ -305,10 +305,13 @@ class LondiniumController extends Controller
         $data['url'] = Londinium::where('active', '=', 1)
             ->where('saved', '=', 'saved')
             ->where('updated_at', '=', '0000-00-00 00:00:00')
-            ->whereNotIn('id', [2079])
+            ->whereNotIn('id', [2079, 2205, 44901, 44925, 57137, 62437, 70317, 72843, 79106])
             ->orderBy('updated_at')
             ->take(1)
             ->first();
+
+            // sql to run all -
+            // 
 
         if (!$data['url']) {
             echo "all spidering and screendumps complete for today :)";
@@ -392,13 +395,28 @@ class LondiniumController extends Controller
 
         $desc = $xpath->query('/html/head/meta[@name="description"]/@content');
         foreach ($desc as $content) {
-            echo $content->value . PHP_EOL;
+            echo 'DESC: '.$content->value . PHP_EOL;
         }
         echo "<hr>";
         $desc = $xpath->query('/html/head/meta[@name="keywords"]/@content');
         foreach ($desc as $content) {
-            echo $content->value . PHP_EOL;
+            echo 'KEYW:'. $content->value . PHP_EOL;
         }
+        echo "<hr>";
+        $rssFeed = null;
+        $rssX = $xpath->query("//head/link[@href][@type='application/rss+xml']/@href");
+        foreach ($rssX as $content) {
+            echo 'RSS: '. $content->value . '<br>';
+            $rssFeed  = $content->value;
+            break;
+        }
+        echo "<hr>";
+
+        $atomX = $xpath->query("//head/link[@href][@type='application/atom+xml']/@href");
+        foreach($atomX as $content) {
+            echo 'ATOM: '.$content->nodeValue . '<br>';
+        }
+    
         echo "<hr>";
 
         // extract links
@@ -418,12 +436,12 @@ class LondiniumController extends Controller
         echo $smle->getFacebook($linkArray) . "<br>";
         echo $smle->getYoutube($linkArray) . "<br>";
         echo $smle->getInstagram($linkArray) . "<br>";
-        echo $smle->getLinkedin($linkArray) . "<br>";
-        echo $smle->getGoogle($linkArray) . "<br>";
-        echo $smle->getPinterest($linkArray) . "<br>";
-        echo $smle->getGithub($linkArray) . "<br>";
-        echo $smle->getFlickr($linkArray) . "<br>";
-        echo $smle->getTumblr($linkArray) . "<br>";
+        // echo $smle->getLinkedin($linkArray) . "<br>";
+        // echo $smle->getGoogle($linkArray) . "<br>";
+        // echo $smle->getPinterest($linkArray) . "<br>";
+        // echo $smle->getGithub($linkArray) . "<br>";
+        // echo $smle->getFlickr($linkArray) . "<br>";
+        // echo $smle->getTumblr($linkArray) . "<br>";
         echo $smle->getRss($linkArray) . "<br>";
 
         // store title in spider table with id and status
@@ -441,7 +459,7 @@ class LondiniumController extends Controller
         $s->github_url = $smle->getGithub($linkArray);
         $s->flickr_url = $smle->getFlickr($linkArray);
         $s->tumblr_url = $smle->getTumblr($linkArray);
-        $s->rss_url = $smle->getRss($linkArray);
+        $s->rss_url = $rssFeed;
         $s->save();
     }
 

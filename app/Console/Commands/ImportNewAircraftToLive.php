@@ -51,10 +51,22 @@ class ImportNewAircraftToLive extends Command
             foreach ($planesNew as $row) {
 
                 //does it already exist as this row?
-                $planes = Planes::select('reg', 'type', 'conNumber', 'notes')->where('reg', '=', $row->reg)->where('type', '=', $row->type)->where('conNumber', '=', $row->conNumber)->first();
+                $planes = Planes::select('id', 'reg', 'type', 'conNumber', 'notes')
+                                  ->where('reg', '=', $row->reg)
+                                  ->where('type', '=', $row->type)
+                                  ->where('conNumber', '=', $row->conNumber)
+                                  ->where('notes', '=', $row->notes)
+                                  ->first();
 
-                if (!isset($planes->reg)) {
-                        echo "NEW " . $row->reg . " " . $row->type ." " . $row->conNumber . " " .$row->notes . PHP_EOL;
+                if (isset($planes->reg)) {
+                    Planes::where('id', '=' , $row->id)->update(['status' => 'Same']);
+                    continue;
+                }
+
+//look up just type and conNumber
+
+                elseif (!isset($planes->reg)) {
+                        echo "New? or changed? " . $row->reg . " " . $row->type ." " . $row->conNumber . " " .$row->notes . PHP_EOL;
 
                             $plane = new Planes;
                             $plane->reg = $row->reg;
@@ -62,8 +74,8 @@ class ImportNewAircraftToLive extends Command
                             $plane->conNumber = $row->conNumber;
                             $plane->notes = $row->notes;
                             $plane->countryCode = $row->countryCode;
+                            $plane->status = '* DIFF *';
                             $plane->save();
-
                     }
                                                             
                 }

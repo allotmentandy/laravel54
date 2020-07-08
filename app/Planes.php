@@ -34,7 +34,8 @@ class Planes extends Model
         'reg',
         'type',
         'conNumber',
-        'seenScrape'
+        'seenScrape',
+        'status'
     ];     
 
 

@@ -151,6 +151,14 @@ php artisan dusk
 
 ![Planes DB screenshot](/tests/Browser/screenshots/planesDetails.png)
 
+### Londinium db
+
+to run the spider for all websites
+
+```sql
+update sites SET updated_at = '0000-00-00 00:00:00'
+```
+
 
 ### to do
 - compare the planesNew data to the planes table 

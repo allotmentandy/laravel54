@@ -13,8 +13,8 @@
                    <form action="/planes/search" method="get">
                      {{ csrf_field() }}
                     Reg Search
-                    <input type="text" size="10" name="q" value={{$title}}>
-                    <input type="submit" value="search">
+                    <input type="text" size="10" name="search" value={{$title}}>
+                    <input type="submit" value="go">
                     </form>
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

@@ -23,4 +23,25 @@ class PlanesApiController extends Controller
         $data['types'] = Planes::select('type')->groupBy('type')->get();
         return $data;
     }
+
+    public function getSeenScrape()
+    {
+        $data['types'] = Planes::select('reg', 'type', 'conNumber', 'seenScrape')->
+            where('seenScrape', "!=", 'null')->orderBy('countryCode', 'asc')->orderBy('id', 'asc')->get();
+        return $data;
+    }
+
+    public function getPlanes()
+    {
+        $data['planes'] = Planes::select('reg', 'type', 'conNumber')->orderBy('countryCode', 'asc')->orderBy('id', 'asc')->get();
+        return $data;
+    }
+
+    public function getCountries()
+    {
+        $data['countries'] = Countries::select('A', 'B')->get();
+        return $data;
+    }
+
+
 }

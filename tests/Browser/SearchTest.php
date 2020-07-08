@@ -15,17 +15,20 @@ class SearchTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function ($browser) {
-            $browser->visit('http://localhost/planes');
+            // $browser->visit('http://localhost/planes');
+            $browser->visit('http://localhost/planes/search?q=i-advd');
             $browser->maximize();
-            $browser->type('q', 'I-ADVD');
-            $browser->press("GO");
             $browser->pause(1000)
                 ->screenshot('planesSearchResult');
             $browser->assertSee('I-ADVD');
+            // $browser->pause(1000)
+            //     ->click('.showMore');
+            // $browser->pause(1000)
+            //     ->screenshot('planesDetails');
             $browser->pause(1000)
-                ->click('.showMore');
-            $browser->pause(1000)
-                ->screenshot('planesDetails');
+            ->type('#search', "and")
+            ->press('GO');
+
         });
     }
 }

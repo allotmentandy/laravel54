@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bizjets Cover</title>
+</head>
+<body style="background-color:#E6E6FA">
+	<span id="javascript-day"></span>
+	<span id="javascript-month"></span>
+	<span id="javascript-year"></span>
+	<hr>
+	<img src="/images/cover.jpg">
+
+    <script type="text/javascript">
+      (function() {
+
+        document.getElementById("javascript-year").innerHTML = new Date().getFullYear();
+        document.getElementById("javascript-month").innerHTML = new Date().getMonth()+1;
+        document.getElementById("javascript-day").innerHTML = new Date().getDate();
+       
+      })();
+    </script>
+
+</body>
+
+</html>

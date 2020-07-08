@@ -29,16 +29,25 @@ Route::get('/planes/countries', 'PlanesController@countries')->name('planeCountr
 Route::get('/planes/country/{country}', 'PlanesController@country')->name('planeCountry');
 Route::get('/planes/country/job/{countryCode}', 'PlanesController@countryPhotoJob');
 Route::get('/planes/list', 'PlanesController@planesList')->name('planesList');
+Route::get('/planes/InputScreen', 'PlanesController@planesInputScreen')->name('planesInputScreen');
 Route::post('/planes/ajax/', 'PlanesController@ajax');
 Route::get('/planes/details/{id}', 'PlanesController@details');
 Route::get('/planes/search/', 'PlanesController@search')->name('aircraftSearch');
 Route::post('/planes/search/', 'PlanesController@search')->name('aircraftSearchPOST');
 Route::get('/planes/todo', 'PlanesController@todo')->name('planesTodo');
+
+
 Route::get('/planes/json', 'PlanesController@json')->name('planesJson');
+
+
 Route::get('/planes/help', 'PlanesController@help')->name('planesHelp');
 // planesApi
 Route::get('/planesApi', 'PlanesApiController@index')->name('planesApi');
 Route::get('/planesApi/getTypes', 'PlanesApiController@getTypes')->name('planesApiGetTypes');
+Route::get('/planesApi/getPlanes', 'PlanesApiController@getPlanes')->name('planesApiGetPlanes');
+Route::get('/planesApi/getSeenScrape', 'PlanesApiController@getSeenScrape')->name('planesApiGetSeenScrape');
+
+Route::get('/planesApi/getCountries', 'PlanesApiController@getCountries')->name('planesApiGetCountries');
 
 Route::get('/rss', 'RssController@index')->name('rss');
 Route::get('/rss/jobs', 'RssController@jobs')->name('rssJobs');
