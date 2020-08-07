@@ -14,8 +14,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('css/andy.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('bizjet.css') }}" rel="stylesheet">
-
-
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 
     <script>
@@ -26,9 +24,7 @@
 </head>
 <body>
 
-
 <div id="app">
-    
 @yield('content')
 </div>
 

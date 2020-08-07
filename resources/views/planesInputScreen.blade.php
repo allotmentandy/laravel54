@@ -2,18 +2,24 @@
 
 @section('content')
 
-<ul class="nav nav-pills">
-   <li role="presentation" class="nav-item"><a href="#" class="nav-link active" data-toggle="pill">AP</a></li>
-   <li role="presentation" class="nav-item"><a class="nav-link" data-toggle="pill" href="#">A6</a></li>
-   <li role="presentation" class="nav-item"><a class="nav-link" data-toggle="pill" href="#">A7</a></li>
-</ul>
+
+
 
 <div class="container inputScreen">
     <div class="row">
+        <?php
+        echo $planes->links();
+        ?>
+    </div>
+
+
+    <div class="row">
+
         <div class="col-md-6">
-            <table class="">
+            <table class="table table-condensed">
 
             <?php
+$country = '';
 $counter = 0;
 foreach ($planes as $p):
 
@@ -25,6 +31,14 @@ foreach ($planes as $p):
             <table class="table table-condensed">';
     }
         $counter++;
+
+if ($p->countryCode != $country){
+    echo "<tr><th colspan=6>". $p->countryCode . " " . $countries[$p->countryCode];
+    echo "</th></tr>";
+    $country = $p->countryCode;
+
+}
+
 
     if ($p->seenScrape == "Seen") {
         echo("<tr class='red'>");
@@ -57,12 +71,9 @@ if ($p->seenScrape == "Seen") {
 </td>
 <?php
 }
-?>
 
-
-    <?php
-echo "<td> " . $p->reg . "</td><td>";
-$id = $p->id;
+echo "<td  style='font-weight: bold;'> " . $p->reg  . "</td><td style='width=50%;'>";
+$id = $p->id; 
 echo $p->type . " </td><td>";
 echo $p->conNumber . "</td><td>";
 if ($p->seenScrape != null) {
@@ -87,13 +98,15 @@ endforeach;
 
         </div>
     </div>
-            <?php
-echo $planes->links();
-?>
 
 </div>
 
-   AP A2 A4O A6 A7 A9C B B-T C CC CN CP CS CX C5 C6 C9 D D2 EC EI EK EP ES EW EZ E3 E5 E7 F G HA HB HC HI HK HL HP HR HS HZ I JA JY J2 J8 LN LV LX LY LZ M N OB OD OE OH OK OM OO OY PH PJ PK PP P2 P4 RA RP SE SP ST SU SX S2 S5 S9 TC TG TI TJ TN TR TS TT TU TZ T7 UP UR VH VP-B VP-C VT V5 XY V8 XA YI YK YL YR YU YV ZA ZJ ZK ZP ZS Z3 2 3A 3B 3C 4K 4L 4O 4X 5A 5B 5H 5N 5R 5U 5X 5Y 6V 7T 8P 9A 9G 9H 9K 9J 9M 9Q 9V
+    <div class="row">
+        <?php
+        echo $planes->links();
+        ?>
+    </div>
+
 
 
 @endsection

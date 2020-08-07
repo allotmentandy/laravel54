@@ -18,7 +18,25 @@
                     Con no: {{$item['conNumber']}}
                     <br>
                     Notes: {{$item['notes']}}
-
+                    <br>
+                    <?php
+                    if ($moreDetails){
+                    ?>
+                    <h4>More Details</h4>
+                        reg: {{$moreDetails['reg']}}<br>
+                        conNumber: {{$moreDetails['conNumber']}}<br>
+                        typeCode3: {{$moreDetails['typeCode3']}}<br>
+                        typeCode4: {{$moreDetails['typeCode4']}}<br>
+                        typeCode5: {{$moreDetails['typeCode5']}}<br>
+                        adsb: {{$moreDetails['adsb']}}<br>
+                        owner1: {{$moreDetails['owner1']}}<br>
+                        owner2: {{$moreDetails['owner2']}}<br>
+                        owner3: {{$moreDetails['owner3']}}
+                    <?php
+                    }
+                    ?>
+                </div>
+                <div class="panel-body">
                     <h4>Links</h4>
                     <a href="https://www.jetphotos.com/registration/{{$item['reg']}}" target="_blank">Jetphotos</a>
                     <br>

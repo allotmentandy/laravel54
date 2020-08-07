@@ -87,6 +87,11 @@ Route::get('/vuePlanesTypes', 'VueController@planesTypes')->name('vuePlanesTypes
 Route::get('/vuePlanesTypesAxios', 'VueController@planesTypesAxios')->name('vuePlanesTypesAxios');
 Route::get('/vueLondiniumSitesAxios', 'VueController@londiniumSitesAxios')->name('vueLondiniumSitesAxios');
 
+//file uploader
+Route::get('file-upload', 'FileUploadController@fileUpload')->name('file.upload');
+Route::post('file-upload', 'FileUploadController@fileUploadPost')->name('file.upload.post');
+
+
 Route::get('manage-vue', 'VueItemController@manageVue');
 Route::resource('vueitems', 'VueItemController');
 

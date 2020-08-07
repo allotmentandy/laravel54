@@ -2,8 +2,12 @@
 td, tr, p, span, pre{font-family: 'CourierAndy';}
 
 th {background: #ddd; text-align: left; padding: 4px; margin:3px; width:100%;} 
-table, tr, td {  margin: 0; padding: 0; font-size: 11px; width:100%;} 
+table, tr {  margin: 0; padding: 0; font-size: 11px; width:100%;} 
 tr, td { overflow: hidden; padding: 0; } 
+
+span{
+    width: 100%;
+}
 
 p{
 	height: 12px;

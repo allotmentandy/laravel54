@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Countries;
 use App\Jobs\downloadSeenAircraftImage;
 use App\Planes;
+use App\AircraftData;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -17,13 +18,17 @@ class PlanesController extends Controller {
 	public $output;
 
 	public function index() {
-//        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Dassault Falcon 900EX')->take(1)->get();
+       // $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Dassault Falcon 900EX')->take(1)->get();
 		// $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Dassault Falcon 900')->take(1)->get();
 		// $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream IV')->take(1)->get();
 
-//        $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
-		// $data['details'] = Planes::orderByRaw('RAND()')->where('countryCode', '=' , 'G')->take(1)->get();
-       $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G650ER')->take(1)->get();
+//      $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Airbus A319CJ')->take(1)->get();
+		$data['details'] = Planes::orderByRaw('RAND()')->where('countryCode', '=' , 'G')->take(1)->get();
+        // $data['details'] = Planes::orderByRaw('RAND()')->where('type', '=', 'Gulfstream G650ER')->take(1)->get();
+
+        $reg = $data['details'][0]->reg;
+
+		$data['moreDetails'] = AircraftData::where("reg", "=", $reg)->first();
 
 		return view('planes', $data);
 	}
@@ -98,11 +103,17 @@ echo "<code>";
 	}
 
 	public function planesInputScreen() {
-		$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(150);
+		$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->simplePaginate(150);
+
+		$data['countries'] = [];
+
+		$result = Countries::select('A', 'B')->get();
+		foreach ($result as $row) {
+			$data['countries'][$row['A']] = $row['B'];
+		}
+
 		return view('planesInputScreen', $data);
 	}
-
-
 
 	public function planesList() {
 		$data['planes'] = Planes::orderBy('countryCode')->orderBy('id')->paginate(30);
@@ -111,6 +122,12 @@ echo "<code>";
 
 	public function details($id) {
 		$data['details'] = Planes::where("id", "=", $id)->get();
+		$reg = Planes::where("id", "=", $id)->take(1)->get();
+
+		foreach ($reg as $r) {
+			$data['moreDetails'] = AircraftData::where("reg", "=", $r->reg)->first();
+		}
+
 		return view('planeDetails', $data);
 	}
 

@@ -26,7 +26,29 @@ foreach ($details as $row):
 
                     <?php
 endforeach;
+if ($moreDetails){
 ?>
+                    <h2>{{ $moreDetails->adsb }}
+                    </h2>
+                    {{ $moreDetails->typeCode3 }}
+                    <br>
+                    {{ $moreDetails->typeCode4 }}
+                    <br>
+                    {{ $moreDetails->typeCode5 }}
+                    <br>
+                    {{ $moreDetails->conNumber }}
+                    {{ $moreDetails->owner1}}
+                    <br>
+                    {{ $moreDetails->owner2}}
+                    <br>
+                    {{ $moreDetails->owner3}}
+                    <br>
+
+                    <?php
+}
+?>
+
+
                     seen / scrape? <b>{{$row->seenScrape}}</b> <button>undo</button>
                     <br><br>
 
