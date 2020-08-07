@@ -1,5 +1,8 @@
 -- Adminer 4.3.1 MySQL dump
 
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `londinium` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+
 SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
